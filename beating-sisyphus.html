@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beating Sisyphus — EMIC</title>
+<meta name="description" content="EMIC's media production division — podcasts, blogs, and videos on the emerging world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .bs-team{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 18px;}
+  @media (max-width:520px){ .bs-team{grid-template-columns:repeat(2,1fr);} }
+  .bs-member{background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:inherit;color:inherit;}
+  .bs-member .bsm-photo{width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--parchment);margin-bottom:9px;}
+  .bs-member img{width:100%;height:100%;object-fit:cover;}
+  .bs-member .bsm-name{
+    font-size:16px;text-decoration:underline;text-decoration-color:var(--hairline);
+    text-underline-offset:3px;
+  }
+  .bs-member:hover .bsm-name{text-decoration-color:var(--red);}
+  #bs-bio{display:none;margin-top:26px;padding-top:22px;border-top:1px solid var(--hairline);font-size:16px;line-height:1.6;}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="mark" href="index.html"><span><span class="mark-red">EMIC</span></span><small>Emerging Markets Institute Club · Cornell University</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="beating-sisyphus.html" aria-current="page">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+</header>
+
+<div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
+  <div class="market-tab">EM Watch</div>
+  <div class="market-track" id="market-track">Loading market data…</div>
+</div>
+
+<main>
+
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Beating Sisyphus</h1>
+      <p class="lede">EMIC's media production division, producing podcasts, blogs, and videos.</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:0;border-top:none;">
+    <div class="wrap">
+      <div class="split">
+
+        <div>
+          <div class="featured" id="bs-featured">Loading…</div>
+
+          <div class="index-rule">
+            <span class="ir-label">The Team</span>
+            <span class="ir-line"></span>
+            <span class="ir-detail">Select a name for a short bio</span>
+          </div>
+          <div class="bs-team" id="bs-team"></div>
+          <div id="bs-bio"></div>
+        </div>
+
+        <div>
+          <div class="index-rule">
+            <span class="ir-label">Notable Guests</span>
+            <span class="ir-line"></span>
+            <span class="ir-detail">On the record</span>
+          </div>
+
+          <div class="guest">
+            <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_a8e27b92d38b4cf7947245a3ce55850a~mv2.jpg" alt="Christopher Barrett"></div>
+            <div>
+              <div class="g-name">Christopher Barrett</div>
+              <div class="g-title">Professor, Cornell SC Johnson College of Business</div>
+            </div>
+          </div>
+          <div class="guest">
+            <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_48cddd5eb4384dc3824b105b765d1adc~mv2.jpg" alt="Iván Duque"></div>
+            <div>
+              <div class="g-name">Iván Duque</div>
+              <div class="g-title">Former President of Colombia</div>
+            </div>
+          </div>
+          <div class="guest">
+            <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_d6cd173e42ea46109682d8eaa478609f~mv2.jpg" alt="Laura Chinchilla"></div>
+            <div>
+              <div class="g-name">Laura Chinchilla</div>
+              <div class="g-title">Former President of Costa Rica</div>
+            </div>
+          </div>
+          <div class="guest">
+            <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_9eb4b56c50514b1883446e64cda8b7a8~mv2.jpg" alt="The Lord O'Neill of Gatley"></div>
+            <div>
+              <div class="g-name">The Lord O'Neill of Gatley</div>
+              <div class="g-title">Economist who coined BRICS</div>
+            </div>
+          </div>
+
+          <div class="index-rule" style="margin-top:44px;">
+            <span class="ir-label">Find us on</span>
+            <span class="ir-line"></span>
+          </div>
+          <div class="platforms">
+            <a class="textlink" href="https://beatingsisyphus.substack.com/" target="_blank" rel="noopener">Substack</a>
+            <a class="textlink" href="#" target="_blank" rel="noopener">Spotify</a>
+            <a class="textlink" href="#" target="_blank" rel="noopener">Apple Podcasts</a>
+            <a class="textlink" href="#" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="f-mark">EMIC</div>
+      <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <span>This organization is a registered student organization of Cornell University.</span>
+    <span>Equal Education and Employment</span>
+  </div>
+</footer>
+
+<script src="members-data.js"></script>
+<script src="site.js"></script>
+<script>
+  const teamGrid = document.getElementById('bs-team');
+  const bioPanel = document.getElementById('bs-bio');
+  teamGrid.innerHTML = BS_TEAM.map((m, i) => `
+    <button class="bs-member" data-i="${i}" type="button">
+      <span class="bsm-photo"><img src="${m.photo}" alt="" style="object-position:${m.objectPosition || 'center'};transform:scale(${m.scale || 1});"></span>
+      <span class="bsm-name">${m.name}</span>
+    </button>
+  `).join('');
+  teamGrid.querySelectorAll('.bs-member').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const m = BS_TEAM[Number(btn.dataset.i)];
+      bioPanel.style.display = 'block';
+      bioPanel.innerHTML = `<strong style="font-family:'Fraunces',serif;font-weight:500;">${m.name}</strong><br>${m.major}`;
+    });
+  });
+</script>
+</body>
+</html>

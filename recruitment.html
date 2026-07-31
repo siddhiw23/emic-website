@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruitment — EMIC</title>
+<meta name="description" content="How to join EMIC — timeline, applications, and coffee chats.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="mark" href="index.html"><span><span class="mark-red">EMIC</span></span><small>Emerging Markets Institute Club · Cornell University</small></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html" aria-current="page">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+</header>
+
+<div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
+  <div class="market-tab">EM Watch</div>
+  <div class="market-track" id="market-track">Loading market data…</div>
+</div>
+
+<main>
+
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Recruitment</h1>
+      <p class="lede">EMIC welcomes students of all academic backgrounds. Applications open each semester — here's how to get involved.</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:0;border-top:none;">
+    <div class="wrap">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:clamp(44px,7vw,72px);">
+        <a class="btn" href="PASTE_APPLICATION_FORM_URL_HERE" target="_blank" rel="noopener">Apply now</a>
+        <a class="btn btn-ghost" href="PASTE_COFFEE_CHAT_FORM_URL_HERE" target="_blank" rel="noopener">Sign up for a coffee chat</a>
+      </div>
+
+      <div class="index-rule">
+        <span class="ir-label">Recruitment Timeline</span>
+        <span class="ir-line"></span>
+        <span class="ir-detail">Dates subject to change</span>
+      </div>
+
+      <div class="timeline" id="rec-timeline"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="f-mark">EMIC</div>
+      <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <span>This organization is a registered student organization of Cornell University.</span>
+    <span>Equal Education and Employment</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script>
+  /* Edit this list to update the timeline — order here is display order.
+     Leave date '' to hide the date line; leave desc '' to hide the description. */
+  const TIMELINE = [
+    { label: 'Coffee chats with members', date: '[Date]', desc: '' },
+    { label: 'Club fest', date: '[Date]', desc: '' },
+    { label: 'Info session 1', date: '[Date]', desc: '' },
+    { label: 'Info session 2', date: '[Date]', desc: '' },
+    { label: 'Coffee chats close', date: '[Date]', desc: '' },
+    { label: 'Applications open', date: '[Date]', desc: '' },
+    { label: 'Applications close', date: '[Date]', desc: '' },
+    { label: 'Interviews', date: '[Date]', desc: '' }
+  ];
+
+  document.getElementById('rec-timeline').innerHTML = TIMELINE.map((t) => `
+    <div class="t-item">
+      <div class="t-dot"></div>
+      <div class="t-label">${t.label}</div>
+      ${t.date ? `<div class="t-date">${t.date}</div>` : ''}
+      ${t.desc ? `<div class="t-desc">${t.desc}</div>` : ''}
+    </div>
+  `).join('');
+</script>
+</body>
+</html>
