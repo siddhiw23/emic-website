@@ -118,28 +118,47 @@ function renderPeople(gridId, list, opts = {}) {
   const grid = document.getElementById(gridId);
   if (!grid || !list) return;
   grid.innerHTML = list.map((p, i) => `
-    <button class="person" data-i="${i}" type="button">
+    <button class="person" data-i="${i}" type="button" aria-expanded="false">
       <span class="p-photo">${p.photo ? `<img src="${p.photo}" alt="" style="object-position:${p.objectPosition || 'center'};transform:scale(${p.scale || 1});">` : ''}</span>
       <span class="p-name" style="display:block;">${p.name}</span>
       ${opts.showRole && p.role ? `<span class="p-role" style="display:block;">${p.role}</span>` : ''}
       ${p.major ? `<span class="p-major" style="display:block;">${p.major}</span>` : ''}
     </button>
   `).join('');
+
   grid.querySelectorAll('.person').forEach((card) => {
     card.addEventListener('click', () => {
       const p = list[Number(card.dataset.i)];
-      const next = card.nextElementSibling;
-      if (next && next.classList.contains('person-detail') && next.dataset.for === card.dataset.i) {
-        next.remove();
+
+      // The detail panel lives AFTER the whole grid as a normal block, so the
+      // grid's auto-flow can never reshuffle it on top of the cards.
+      const sib = grid.nextElementSibling;
+      const openPanel = sib && sib.classList.contains('person-detail') ? sib : null;
+
+      const clearState = () =>
+        grid.querySelectorAll('.person[aria-expanded="true"]')
+            .forEach((c) => c.setAttribute('aria-expanded', 'false'));
+
+      // Clicking the already-open person closes the panel.
+      if (openPanel && openPanel.dataset.for === card.dataset.i) {
+        openPanel.remove();
+        clearState();
         return;
       }
+
+      // Otherwise close whatever was open and open this one.
+      if (openPanel) openPanel.remove();
+      clearState();
+
       const hasContent = p.email || p.research || p.involvement || p.major;
       if (!hasContent) return;
+
       const panel = document.createElement('div');
       panel.className = 'person-detail';
       panel.dataset.for = card.dataset.i;
       panel.innerHTML = buildDetail(p);
-      card.insertAdjacentElement('afterend', panel);
+      grid.insertAdjacentElement('afterend', panel);
+      card.setAttribute('aria-expanded', 'true');
     });
   });
 }

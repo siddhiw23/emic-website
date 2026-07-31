@@ -8,7 +8,322 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+/* ============================================================
+   EMIC — Emerging Markets Institute Club
+   Editorial system: Fraunces (display) · EB Garamond (body)
+   IBM Plex Mono (market data only)
+   ============================================================ */
+
+:root{
+  --red:#B41C1B;
+  --red-deep:#7E1312;
+  --ink:#16181B;
+  --paper:#FAF9F5;
+  --parchment:#EFECE4;
+  --hairline:#D9D6CC;
+  --secondary:#5B5A54;
+  --up:#7FBF7A;
+  --down:#E2807D;
+  --measure:62ch;
+  --wrap:1140px;
+  --pad:clamp(20px, 4vw, 48px);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'EB Garamond',serif;
+  font-size:17.5px;
+  line-height:1.6;
+}
+
+a{color:inherit;}
+a:focus-visible, button:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
+img{display:block;max-width:100%;}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+
+/* ---------- Masthead ---------- */
+.masthead{border-bottom:1.5px solid var(--ink);background:var(--paper);}
+.masthead-inner{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:24px;padding:18px 0 14px;flex-wrap:wrap;
+}
+.mark{
+  font-family:'Fraunces',serif;font-weight:600;font-size:clamp(22px,2.6vw,27px);
+  letter-spacing:.01em;text-decoration:none;color:var(--ink);
+  display:flex;align-items:baseline;gap:12px;
+}
+.mark .mark-red{color:var(--red);}
+.mark small{
+  font-family:'EB Garamond',serif;font-weight:400;font-size:13px;
+  color:var(--secondary);letter-spacing:.02em;
+}
+.nav{display:flex;gap:clamp(16px,2.5vw,30px);flex-wrap:wrap;}
+.nav a{
+  font-size:16.5px;text-decoration:none;color:var(--ink);
+  border-bottom:1px solid transparent;padding-bottom:2px;
+}
+.nav a:hover{border-bottom-color:var(--hairline);}
+.nav a[aria-current="page"]{border-bottom-color:var(--red);}
+
+/* ---------- Market band (EM Watch) ---------- */
+.market-band{
+  background:var(--ink);color:#EDEBE3;overflow:hidden;position:relative;
+  font-family:'IBM Plex Mono',monospace;
+}
+.market-tab{
+  position:absolute;left:0;top:0;bottom:0;z-index:2;
+  background:var(--red);color:#fff;display:flex;align-items:center;
+  padding:0 16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+}
+.market-track{
+  display:flex;gap:44px;white-space:nowrap;width:max-content;
+  padding:12px 0 12px 190px;font-size:12.5px;
+}
+.market-item{display:flex;align-items:center;gap:9px;}
+.market-item .m-label{color:#B8B6AE;}
+.market-item .m-price{color:#fff;font-weight:500;}
+@media (prefers-reduced-motion:reduce){ .market-track{animation:none !important;} }
+
+/* ---------- Index rule (signature section device) ---------- */
+.index-rule{
+  display:flex;align-items:baseline;gap:18px;
+  margin:0 0 clamp(24px,3.5vw,36px);
+}
+.index-rule .ir-label{
+  font-family:'Fraunces',serif;font-weight:500;font-size:14px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--red);
+  flex-shrink:0;
+}
+.index-rule .ir-line{flex:1;border-top:1px solid var(--hairline);transform:translateY(-4px);}
+.index-rule .ir-detail{
+  font-size:13.5px;color:var(--secondary);flex-shrink:0;letter-spacing:.02em;
+}
+
+/* ---------- Sections ---------- */
+.section{padding:clamp(48px,7vw,86px) 0;}
+.section + .section{border-top:1px solid var(--hairline);}
+.band-ink{background:var(--ink);color:var(--paper);}
+.band-ink .index-rule .ir-line{border-top-color:#3A3D42;}
+.band-ink .index-rule .ir-detail{color:#A7A49B;}
+.band-parchment{background:var(--parchment);}
+
+/* ---------- Cover hero ---------- */
+.cover{padding:clamp(56px,9vw,110px) 0 clamp(48px,7vw,90px);}
+.cover h1{
+  font-family:'Fraunces',serif;font-weight:480;
+  font-size:clamp(40px,7.2vw,84px);
+  line-height:1.04;letter-spacing:-.012em;
+  margin:0 0 clamp(22px,3vw,32px);max-width:15ch;
+  font-variation-settings:'opsz' 144;
+}
+.cover h1 em{font-style:italic;font-weight:420;color:var(--red);}
+.cover .cover-sub{
+  font-size:clamp(17px,2vw,20px);color:var(--ink);
+  max-width:52ch;margin:0 0 clamp(26px,3.5vw,36px);
+}
+.cover .cover-links{display:flex;gap:26px;flex-wrap:wrap;align-items:center;}
+
+/* ---------- Buttons & text links ---------- */
+.btn{
+  display:inline-block;font-family:'EB Garamond',serif;font-weight:500;
+  font-size:17px;padding:13px 26px;text-decoration:none;
+  background:var(--red);color:#fff;border:1.5px solid var(--red);
+}
+.btn:hover{background:var(--red-deep);border-color:var(--red-deep);}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);}
+.band-ink .btn-ghost{color:var(--paper);border-color:var(--paper);}
+.band-ink .btn-ghost:hover{background:var(--paper);color:var(--ink);}
+.textlink{
+  color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);
+  padding-bottom:1px;font-size:16.5px;
+}
+.textlink:hover{color:var(--red);border-bottom-color:var(--red);}
+
+/* ---------- Two-column editorial split ---------- */
+.split{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(40px,6vw,84px);align-items:start;}
+@media (max-width:900px){ .split{grid-template-columns:1fr;} }
+
+/* ---------- Ledger list (teams) ---------- */
+.ledger{margin:0;padding:0;list-style:none;}
+.ledger li{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:13px 0;border-bottom:1px solid var(--hairline);
+}
+.ledger li:first-child{padding-top:0;}
+.ledger .l-name{font-family:'Fraunces',serif;font-weight:500;font-size:18.5px;}
+.ledger .l-role{
+  font-size:13px;color:var(--secondary);letter-spacing:.1em;text-transform:uppercase;
+  flex-shrink:0;
+}
+
+/* ---------- Feed (Beating Sisyphus) ---------- */
+.feed a{
+  display:block;text-decoration:none;color:inherit;
+  padding:17px 0;border-bottom:1px solid var(--hairline);
+}
+.feed a:first-child{padding-top:0;}
+.feed .f-title{
+  font-family:'Fraunces',serif;font-weight:500;font-size:18.5px;
+  line-height:1.3;margin-bottom:5px;
+}
+.feed a:hover .f-title{color:var(--red);}
+.feed .f-date{font-size:13px;color:var(--secondary);margin-bottom:6px;}
+.feed .f-excerpt{font-size:15px;color:var(--secondary);line-height:1.5;}
+
+/* ---------- Research areas ---------- */
+.areas{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.5vw,40px);}
+@media (max-width:1000px){ .areas{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .areas{grid-template-columns:1fr;} }
+.area h3{
+  font-family:'Fraunces',serif;font-weight:500;font-size:16.5px;
+  text-transform:uppercase;letter-spacing:.03em;
+  margin:0 0 10px;padding-top:14px;border-top:2px solid var(--red);
+}
+.area p{font-size:15.5px;color:var(--secondary);margin:0;line-height:1.6;}
+
+/* ---------- Photo slots ---------- */
+.photo-slot{width:100%;background:var(--parchment);border:1px solid var(--hairline);}
+.photo-slot.r43{aspect-ratio:4/3;}
+.photo-slot.r219{aspect-ratio:21/9;}
+.photo-slot.filled{border:none;background-size:cover;background-position:center;}
+.band-ink .photo-slot{background:#22252A;border-color:#3A3D42;}
+
+/* ---------- Conference band ---------- */
+.conf-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px);align-items:center;}
+@media (max-width:820px){ .conf-grid{grid-template-columns:1fr;} }
+.conf-grid h2{
+  font-family:'Fraunces',serif;font-weight:480;font-size:clamp(24px,3.4vw,34px);
+  line-height:1.2;margin:0 0 18px;
+}
+.conf-grid p{color:#C9C6BD;max-width:48ch;margin:0 0 24px;}
+
+/* ---------- Page headers ---------- */
+.page-head{padding:clamp(48px,7vw,80px) 0 clamp(28px,4vw,44px);}
+.page-head h1{
+  font-family:'Fraunces',serif;font-weight:480;
+  font-size:clamp(34px,5.4vw,56px);line-height:1.08;margin:0 0 16px;
+  font-variation-settings:'opsz' 144;
+}
+.page-head .lede{font-size:clamp(17px,2vw,19.5px);color:var(--secondary);max-width:56ch;margin:0;}
+
+/* ---------- Prose ---------- */
+.prose{max-width:var(--measure);}
+.prose p{margin:0 0 16px;}
+h2.sec-title{
+  font-family:'Fraunces',serif;font-weight:500;
+  font-size:clamp(21px,2.6vw,25px);margin:0 0 20px;
+}
+
+/* ---------- Topic groups (NME) ---------- */
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:20px 48px;margin-top:26px;}
+@media (max-width:640px){ .topics{grid-template-columns:1fr;} }
+.topics .t-label{
+  font-family:'Fraunces',serif;font-size:13.5px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:8px;
+}
+.topics .t-body{font-size:16px;line-height:1.85;}
+
+/* ---------- Accordion (About teams) ---------- */
+.acc-item{border-bottom:1px solid var(--hairline);}
+.acc-item:last-child{border-bottom:none;}
+.acc-btn{
+  width:100%;background:none;border:none;cursor:pointer;text-align:left;
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:16px 0;font-family:'Fraunces',serif;font-weight:500;
+  font-size:19px;color:var(--ink);
+}
+.acc-btn .acc-tag{
+  font-family:'EB Garamond',serif;font-size:12.5px;color:var(--secondary);
+  letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;
+}
+.acc-panel{display:none;padding:0 0 20px;font-size:16px;color:var(--secondary);line-height:1.65;max-width:var(--measure);}
+.acc-item.open .acc-panel{display:block;}
+.acc-item.open .acc-btn{color:var(--red);}
+
+/* ---------- Timeline (Recruitment) ---------- */
+.timeline{position:relative;padding-left:32px;max-width:640px;}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1.5px;background:var(--hairline);}
+.t-item{position:relative;padding-bottom:clamp(28px,4vw,42px);}
+.t-item:last-child{padding-bottom:0;}
+.t-dot{
+  position:absolute;left:-32px;top:5px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--red);
+}
+.t-label{font-family:'Fraunces',serif;font-weight:500;font-size:19px;margin-bottom:3px;}
+.t-date{font-size:14px;color:var(--red);margin-bottom:5px;}
+.t-desc{font-size:15px;color:var(--secondary);line-height:1.5;max-width:50ch;}
+
+/* ---------- Guests ---------- */
+.guest{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--hairline);}
+.guest:first-child{padding-top:0;}
+.guest:last-child{border-bottom:none;}
+.guest .g-photo{width:84px;height:106px;flex-shrink:0;background:var(--parchment);overflow:hidden;}
+.guest .g-photo img{width:100%;height:100%;object-fit:cover;}
+.guest .g-name{font-family:'Fraunces',serif;font-weight:500;font-size:18.5px;margin-bottom:3px;}
+.guest .g-title{font-size:15px;color:var(--secondary);line-height:1.45;}
+
+/* ---------- People grids (BS team + Members) ---------- */
+.people{display:grid;grid-template-columns:repeat(auto-fill,132px);gap:26px 22px;justify-content:start;}
+.person{cursor:pointer;width:132px;background:none;border:none;padding:0;text-align:left;font-family:inherit;color:inherit;}
+.person .p-photo{display:block;width:132px;height:132px;background:var(--parchment);overflow:hidden;margin-bottom:9px;}
+.person .p-photo img{display:block;width:100%;height:100%;object-fit:cover;}
+.person .p-name{font-family:'Fraunces',serif;font-weight:500;font-size:16.5px;line-height:1.25;}
+.person .p-role{font-size:13.5px;color:var(--red);margin-top:2px;}
+.person .p-major{font-size:12.5px;color:var(--secondary);margin-top:2px;line-height:1.3;}
+
+.person[aria-expanded="true"] .p-photo{outline:2px solid var(--red);outline-offset:2px;}
+.person-detail{
+  background:#fff;border:1px solid var(--hairline);
+  padding:clamp(18px,3vw,28px);
+  margin:22px 0 4px;
+}
+.person-detail .pd-name{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin-bottom:4px;}
+.person-detail .pd-sub{font-size:14px;color:var(--red);margin-bottom:16px;}
+.pd-row{font-size:14.5px;line-height:1.5;margin-bottom:9px;max-width:70ch;}
+.pd-row:last-child{margin-bottom:0;}
+.pd-row .pd-label{color:var(--secondary);display:block;margin-bottom:1px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;}
+
+@media (max-width:560px){
+  .people{grid-template-columns:repeat(auto-fill,92px);gap:20px 14px;}
+  .person{width:92px;}
+  .person .p-photo{width:92px;height:92px;}
+  .person .p-name{font-size:14px;}
+  .person .p-role,.person .p-major{font-size:11.5px;}
+}
+
+/* ---------- Featured post ---------- */
+.featured{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:26px 0;margin-bottom:44px;}
+.featured img,.featured .f-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--parchment);margin-bottom:16px;}
+.featured .f-eyebrow{font-size:13px;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+.featured .f-big{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(19px,2.6vw,23px);line-height:1.3;margin-bottom:8px;}
+.featured a{text-decoration:none;color:inherit;}
+.featured a:hover .f-big{color:var(--red);}
+
+/* ---------- Platform links ---------- */
+.platforms{display:flex;gap:22px;flex-wrap:wrap;font-size:16.5px;margin-top:14px;}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink);color:#A7A49B;margin-top:clamp(56px,8vw,96px);}
+.foot-inner{
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  padding:34px 0;font-size:14px;
+}
+.foot-inner .f-mark{font-family:'Fraunces',serif;color:var(--paper);font-weight:500;font-size:17px;}
+.foot-inner nav{display:flex;gap:20px;flex-wrap:wrap;}
+.foot-inner a{color:#C9C6BD;text-decoration:none;}
+.foot-inner a:hover{color:#fff;}
+.foot-legal{border-top:1px solid #2C2F34;padding:16px 0 22px;font-size:12.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+</style>
 </head>
 <body>
 
@@ -81,8 +396,239 @@
   </div>
 </footer>
 
-<script src="members-data.js"></script>
-<script src="site.js"></script>
+<script>
+/* EMIC roster — edit this file to update people anywhere on the site.
+   photo: paste a Wix Media Manager URL (or any hosted image URL). Leave '' for a placeholder.
+   objectPosition / scale: optional per-photo crop controls, e.g. 'center 30%', 1.3 */
+
+const BOARD = [
+  { name: 'Matthew Jarek', role: 'Co-President', photo: 'https://static.wixstatic.com/media/8812e8_6ebc4f13a64f42f1abd161c002d79fb9~mv2.png', major: 'J.D. Candidate', year: 2029, email: 'mj638@cornell.edu', research: 'Demographics and Population Based Macro Trends', involvement: 'URF, IM Basketball and Soccer, Society of Polish Students', professional: 'M&A Law', favoriteEM: 'Mexico', funFact: 'I trained ITF Taekwondo for 15 years' },
+  { name: 'Thomas Riveros', role: 'Co-President', photo: 'https://static.wixstatic.com/media/8812e8_d4a838a5e437407a893b569378c91a02~mv2.jpg', major: 'Economics', year: 2027, email: 'tmr94@cornell.edu', research: "Bolivia's Economic Crisis: lessons on Resource Dependence and Fiscal Sustainability; Gasoline Shortages and the Return of Inflation in Bolivia", involvement: 'Cru Cornell', professional: 'Wealth Management, Economic Research', favoriteEM: 'Bolivia', funFact: 'I am an avid runner and have logged over 1000 miles on Strava' },
+  { name: 'Aashay Mody', role: 'Treasurer', photo: 'https://static.wixstatic.com/media/8812e8_894ef435baca4098acb216b6f510c997~mv2.png', major: 'Environment & Sustainability', year: 2028, email: 'am3497@cornell.edu', research: "Fiji's Blue Bond a Means of Sustainable Investment; Evaluating the Effectiveness of the Seychelles Blue Bond", involvement: 'Cornell Sustainability Consultants, Science Olympiad at Cornell, Cornell University Student Assembly, Cornell International Affairs Society', professional: 'Innovative Conservation and Sustainability Finance', favoriteEM: 'Costa Rica', funFact: 'I can play the viola, enjoy birding, and have been vegan for over 6 years.' },
+  { name: 'Sasha Kasher', role: 'Frontier Minute', photo: 'https://static.wixstatic.com/media/8812e8_58f803eaff15440f8052fa1a38c6d219~mv2.png', major: 'History & Government', year: 2029, email: 'abk239@cornell.edu', research: 'Physical infrastructure management and supply chain research', involvement: 'Russian Language Society, Lambda Chi Alpha Fraternity', professional: 'Foreign Trade Relations', favoriteEM: 'Caspian region (Kazakhstan, Kyrgyzstan, Uzbekistan)', funFact: 'Before college, I interned in Kazakhstan, where I translated and researched commodity markets' },
+  { name: 'Daniel Young Kim', role: 'Beating Sisyphus', photo: 'https://static.wixstatic.com/media/8812e8_c20c3d74dd604ce9b75260531d0ce5b7~mv2.jpg', objectPosition: 'center 30%', major: 'Applied Economics and Management', year: 2028, email: 'dyk36@cornell.edu', research: "Government's role in their local economies (or lack thereof)", involvement: 'EMC2, State Policy Advocacy Clinic, Project Hope, KKR Scholar', professional: 'Commercial Litigation (Distressed Situations) | Civil Rights Law', favoriteEM: 'Thailand', funFact: 'Talk to me about F1 or Pokemon and we will be great friends' },
+  { name: 'Anastasiia Ryshytiuk', role: 'Research', photo: 'https://static.wixstatic.com/media/8812e8_c3a02ca8ecfd4c0eaaf31f6fe37a3ac7~mv2.jpg', major: 'Urban and Regional Studies', year: 2028, email: 'ar2529@cornell.edu', research: 'International development and the ways policy, institutions, and foreign investment interact to foster more equitable and resilient societies in emerging economies and post-conflict settings. Previous research on digital governance, foreign aid, and sustainable finance.', involvement: 'International Students Association VP; Collegetown Magazine; Einaudi Global Scholar; Salsa; IIC', professional: 'Institution-building and social justice in international development and post-conflict recovery.', favoriteEM: 'Ghana', funFact: 'I once got stranded on a deserted island overnight with some friends.' },
+  { name: 'Erin Baek', role: 'Recruitment', photo: 'https://static.wixstatic.com/media/8812e8_3b94936ae56c4ad5b225be22be3f0b84~mv2.jpg', major: 'Biometry & Statistics and Global Development', year: 2028, email: 'eab378@cornell.edu', research: 'Agrochemical Regulation and Governance in the Global South', involvement: '—', professional: 'Health economics, development economics, pharma/biotech', favoriteEM: 'Vietnam, India, China', funFact: 'I once snorkeled with sharks (and stepped on one) in San Diego' },
+  { name: 'Jeremy Chen', role: 'Recruitment', photo: 'https://static.wixstatic.com/media/8812e8_9001a05321164f96be025c8b9bc9e1a0~mv2.jpg', major: 'Economics', year: 2029, email: 'yc2944@cornell.edu', research: 'Cross-border M&A', involvement: 'Impact Investing, Cornell Christian Business Club, Taiwanese American Student Association', professional: 'ESG Finance', favoriteEM: 'Malaysia', funFact: 'I grew up in Taiwan, build computers and Gunpla. My favorite artist is Lady Gaga' },
+  { name: 'William Earls', role: 'Social', photo: 'https://static.wixstatic.com/media/8812e8_bc6448f2d6ee4b8c958891003f41675d~mv2.png', major: 'Global Development', year: 2029, email: 'wge9@cornell.edu', research: 'Evaluating Indian Semiconductor Manufacturing: An Investment Pitch for CG Power; Renewable Resources in Bhutan', involvement: 'Cornell Commodity Trading Club, Cornell Beef Cattle Club, Club Water Polo, Humphrey Fellow PCAT', professional: 'Consulting in international economics/EM', favoriteEM: 'Kyrgyzstan', funFact: 'My interest in emerging markets stemmed from writing a letter to the Dentist turned former leader of Turkmenistan, Gurbanguly Berdimuhamedow.' },
+  { name: 'Matthew Lee', role: 'NME & Senior Chair', photo: 'https://static.wixstatic.com/media/8812e8_947e09f847224dacb091b3340ec171cc~mv2.png', major: 'Economics', year: 2027, email: 'mjl373@cornell.edu', research: 'Oil Money Digitized: The Role of Private Investment in Fintech Development in the United Arab Emirates, Through Time; The African Middle-Class and their Equities Market', involvement: 'Phi Alpha Delta Pre-law Frat, Alexander Hamilton Society, Cornell Rugby', professional: 'Investment banking, Geopolitics', favoriteEM: 'Brazil', funFact: 'I am studying abroad right now!' },
+  { name: 'Josh Feinburg', role: 'NME & Senior Chair', photo: 'https://static.wixstatic.com/media/8812e8_1de4950f2c4d40a8b747c54a2f445f71~mv2.png', major: 'Environmental Economics', year: 2027, email: 'jmf398@cornell.edu', research: 'Revamping Debt-for-Nature Swaps: A Holistic Assessment of Fiscal and Environmental Effectiveness in Latin America; Power and Infrastructure in South East Asia, Green and Blue Bonds in South America', involvement: 'Impact Investing at Cornell, Delta Phi', professional: 'Securitized Products, Project Finance, Impact Finance, Distressed Debt, Green Bonds', favoriteEM: 'Ecuador', funFact: 'I have visited 30+ countries!' },
+  { name: 'Vivian Lei', role: 'NME & Senior Chair', photo: 'https://static.wixstatic.com/media/8812e8_bbed7774f26d4fa19e9841a06ece03b6~mv2.png', major: 'Industrial and Labor Relations', year: 2027, email: 'vl338@cornell.edu', research: 'Outlook on Argentinian Sovereign Bonds; Chinese Securitized SMEs Loans as Alternative Funding Solutions; Private Markets', involvement: 'Global Cornell Connection, Cayuga Capital, Cornell Diplomat, Global Business Club', professional: 'Banking, Structured Products, Private Credit', favoriteEM: 'Russia', funFact: 'I like watching 3+ hour video essays' },
+  { name: 'Konrad Hartung', role: 'NME & Senior Chair', photo: 'https://static.wixstatic.com/media/8812e8_c7ee8321595d45e4a3497e2d5f0b5dbc~mv2.png', major: 'Economics & College Scholar', year: 2028, email: 'kfh37@cornell.edu', research: 'The Global Middle Class; The Social Costs of Serial Restructurings', involvement: 'Cornell Equity Research, Consult Your Community, International Student Association, Robert S. Harrison College Scholar', professional: 'Restructuring, Credit, Macroeconomic Policy', favoriteEM: 'India', funFact: 'I love tea!' },
+  { name: 'Siddhi Wakdikar', role: 'NME & Senior Chair', photo: 'https://static.wixstatic.com/media/8812e8_069fbf62ceb64536b0b0412db205ac54~mv2.jpg', major: '', year: null, email: '', research: '', involvement: '', professional: '', favoriteEM: '', funFact: '' },
+  { name: 'Sea Phongsphetrarat', role: 'Operations Chair', photo: 'https://static.wixstatic.com/media/8812e8_4b9fc8d483c7482d82968474feadac24~mv2.png', major: 'Hotel Administration', year: 2028, email: 'pp535@cornell.edu', research: 'Comparing the viability of private equity and private credit investments within India and Singapore', involvement: 'Cornell Fashion Collective, Cornell University Autonomous Underwater Vehicle, Cornell Thai Association', professional: 'Investment Banking', favoriteEM: 'Thailand', funFact: 'I like film and photography!' }
+];
+
+const MEMBERS = [
+  { name: 'Linh Le', major: 'Finance (VinUniversity)', year: 2027, photo: 'https://static.wixstatic.com/media/8812e8_077d91febb3942679d767897dd65a2cf~mv2.png', email: '23linh.ln@vinuni.edu.vn', research: 'AI Automation, Higher Education Development Strategy, Workplace Culture', involvement: '—', professional: 'Management Consulting, Real Estate Investment', favoriteEM: 'Vietnam, India, China', funFact: "I keep mental notes of all my friends' drink orders :)" },
+  { name: 'Amy Park', major: 'Applied Economics and Management', year: 2027, photo: 'https://static.wixstatic.com/media/8812e8_00ac075cb42c453899856ad9b2ce8eb8~mv2.jpg', email: 'yp489@cornell.edu', research: 'Comparing the viability of private equity and private credit investments within India and Singapore through 2017-2025', involvement: 'Delta Sigma Pi', professional: '—', favoriteEM: 'Indonesia', funFact: 'I have been to 10+ countries!' },
+  { name: 'Oleguer Marine', major: 'Finance', year: 2027, photo: 'https://static.wixstatic.com/media/8812e8_e9169e779b6b40798e7451d451e22056~mv2.png', email: 'om237@cornell.edu', research: 'SPAC', involvement: 'Cornell Latinos In Business, Scholars of Finance, Cornell Bitcoin Club, Cornell Commodity Trading Club', professional: 'Wealth Management', favoriteEM: 'China', funFact: "I've been to three different continents in just two weeks" },
+
+  { name: 'Amanda Palmer', major: 'Global Development', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_2df078ebfbb94b1fb279a17ef0a1fd6c~mv2.png', email: 'Aip36@cornell.edu', research: "Impact of geopolitics in EM's, ESG investing in EM's, Development Economics and Tech", involvement: 'The Advocacy Project, Spanish Speech and Debate', professional: 'Nonprofit Consulting, Impact Evaluations Analyst', favoriteEM: 'Indonesia', funFact: "I'm from Venezuela and Spanish is my first language!" },
+  { name: 'Kevyn Gunawan', major: 'Industrial and Labor Relations', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_6c45560f76c446aea2540185f062c89e~mv2.png', email: 'krg78@cornell.edu', research: 'Beyond the Final Whistle: The Post-Event Economics of World Cup Hosting in Emerging Markets; Geopolitics, Southeast Asia, Migrant Workers, Sports', involvement: 'International Students Association, Cornell Club Squash, Singapore Student Association, Indonesians at Cornell, ILR Global Affairs Club, Cornell International Affairs Review', professional: 'Emerging Market Strategy, Global Finance', favoriteEM: 'Indonesia', funFact: 'I can name every country in the world.' },
+  { name: 'Louis Philippe Jansen', major: 'Industrial and Labor Relations', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_7b8f37ffeca64d378571e623e4ac50c8~mv2.png', email: 'ljj43@cornell.edu', research: 'Belt and Road Initiative (BRI) and its regional economic impacts; cross-border investment flows in Asia; development trajectories in Asian regions; U.S. trade and investment engagement with Asia.', involvement: 'International Business Consulting', professional: 'Consulting, Financial Services, and Economic Development', favoriteEM: 'China', funFact: 'I transferred from Duke Kunshan University my sophomore year.' },
+  { name: 'Martin Revelo', major: 'Economics', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_2d8c78cef63d429abb15b545b1d3065a~mv2.png', email: 'mer329@cornell.edu', research: "Bolivia's lithium sector and the political economy constraints limiting EM growth", involvement: "Cornell Men's Polo Team, Emerging Markets Institute Club, BlackGen Capital, ALPFA Cornell", professional: 'Finance, Market Research, Banking', favoriteEM: 'Ecuador', funFact: "I walked into Cornell's Men's Polo Team this fall." },
+  { name: 'Maya Hamandi', major: 'Global Development', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_cdf8707dafa248cd9b2ddab1a56225b1~mv2.png', email: 'mzh9@cornell.edu', research: 'Examining Market Reactions to Petrobras-Related Events', involvement: 'Cornell Rowing Club, Cornell Media Guild, Cornell Speech and Debate', professional: 'International Finance, Banking', favoriteEM: 'Qatar', funFact: 'I love to scuba dive!' },
+  { name: 'Novi Chen', major: 'Economics', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_5d10b1b9947b44a2981d86660d08c2e5~mv2.jpg', email: 'nc573@cornell.edu', research: 'Development Economics, Macroeconomics; Corruption as an Urgent Development Constraint in Vietnam — Evidence from the Truong My Lan Case', involvement: 'Society of Women in Business', professional: 'Economic Consulting', favoriteEM: 'Vietnam', funFact: 'My name is Novi because I was born in November' },
+  { name: 'Logan Clappier', major: 'Economics and History', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_097c4041f71b439aa133c815d96a8c66~mv2.jpg', email: '', research: 'Statecraft and Frontier Tech Formation Indices', involvement: 'Commodities Trading Club, SAFC, Sprint Football', professional: 'Geopolitics and Tech', favoriteEM: '', funFact: 'You can find me sailing Cayuga Lake on the weekends' },
+  { name: 'Fiorina Siamir', major: 'Industrial and Labor Relations', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_c7f63834cda9495497177a073ffe1a42~mv2.jpg', email: '', research: "Indonesia's QRIS and the Architecture of Regional Payment Sovereignty", involvement: 'Rawlings Presidential Research Scholar, Cañizares Center for Emerging Markets, Society for Women in Business, Indonesian Association at Cornell', professional: '', favoriteEM: 'Indonesia', funFact: 'I can bake a fire blueberry muffin' },
+  { name: 'Rachel Bataille', major: 'Public Policy', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_15aaa9c6406c41789abea4a42723e94f~mv2.png', email: 'rlb423@cornell.edu', research: 'Examining Market Reactions to Petrobras-Related Events', involvement: 'Brooks School Ambassador & Peer Mentor, Society for Women in Business, Cornell Institute of Politics and Global Affairs, Cornell Class Councils, Cornell Panhellenic Council', professional: 'Economic Policy, Trade Policy', favoriteEM: 'Argentina', funFact: "I grew up learning three languages besides English — and somehow can't speak any of them." },
+  { name: "Jean D'Amour", major: 'Economics & Data Science', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_2134f4a5998a4f98a4b9a88a13903e1e~mv2.png', email: 'jm2876@cornell.edu', research: 'Financial access and credit constraints for micro and small enterprises in emerging markets, with a focus on credit guarantee schemes, microfinance impact evaluation, and firm-level growth in Sub-Saharan Africa and South Asia.', involvement: "Impact Investing at Cornell (IIC), Cornell Rotaract, CU Vita, Club Soccer, Salsa Pa'lante, Cornell Computer Reuse Association (CCRA), Empower Them (Founder)", professional: 'Capital markets and investment in emerging economies, development finance, and deploying capital toward sustainable economic growth in frontier markets.', favoriteEM: 'Rwanda', funFact: 'My first name is actually "Jean D\'Amour" — which translates to "John of Love" in French.' },
+  { name: 'Prajwal Reddy', major: 'Computer Science and Linguistics', year: 2028, photo: 'https://static.wixstatic.com/media/8812e8_12aaae15c27d4797bc06eb8ad2b12d75~mv2.png', email: 'pmr93@cornell.edu', research: 'Intersection between tech, culture, and socioeconomic development', involvement: 'Federal Reserve Club, UnderLings, Computational Imaging Lab @ Cornell, CU Sail, COE', professional: 'Technology, Finance, Research', favoriteEM: 'India', funFact: 'I have a business card collection with over 800 cards from all over the world.' },
+
+  { name: 'Annette Hoi Ching Jap', major: 'Applied Economics and Management', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_eee116d8682f4428a3c6db80ecd585a7~mv2.jpg', email: 'aj683@cornell.edu', research: 'Consumption trend in China, Generative AI and its implications on developing economies', involvement: 'SEGC, COGDOG', professional: 'Consulting, finance', favoriteEM: 'China', funFact: 'I can do a Mexican wave with my eyebrows' },
+  { name: 'Mario Antonaccio', major: 'Economics and Mathematics', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_b2bd93f4ba9c497da5c83930f99a2c46~mv2.png', email: 'mea258@cornell.edu', research: 'Foreign Direct Investments, Foreign Portfolio Investments', involvement: 'Banking at Cornell, Milstein Program, Business Club for Emerging Economies', professional: 'Finance, Banking', favoriteEM: 'China', funFact: 'I have broken my right arm three times' },
+  { name: 'William Glasser', major: 'Engineering', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_7b40d3076b3f483b8fed7a49c2ad5d8a~mv2.png', email: 'whg49@cornell.edu', research: 'Currency Restrictions', involvement: 'Steel Bridge Project Team (Construction, welding, design subteams), Big Red Sports Network (Softball announcer)', professional: 'Consulting, materials science and engineering', favoriteEM: 'Argentina', funFact: 'I caddied for two professional golfers at the 2025 Osprey Valley Open' },
+  { name: 'Calista Chang', major: 'Industrial and Labor Relations', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_88a957867d7e400590208a71eafd0b9a~mv2.png', email: 'cc2858@cornell.edu', research: "How India's Cashless Payment Ecosystem Built a Revenue Generating UPI Model, with a Focus on Credit and Subscription Based Cross-Selling", involvement: 'ASSAT, APPS, Club Tennis', professional: 'Equity Research', favoriteEM: 'Thailand', funFact: 'I love incline walking.' },
+  { name: 'Lisa Huynh', major: 'Applied Economics and Management', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_22f09a329cbf419cac13ed2ec7294cd4~mv2.png', email: 'hh822@cornell.edu', research: 'AI and Automation', involvement: 'A Seat At a Table, Cornell Marketing Club', professional: 'Consulting and Brand Management', favoriteEM: 'China and Thailand', funFact: 'China and Thailand' },
+  { name: 'Ava Murdock', major: 'Economics and Public Policy', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_5aa192b889f64e6da7698a0d74fe64ac~mv2.png', email: 'acm367@cornell.edu', research: 'FDI', involvement: 'Cornell Orchestras, Cornell Votes, and Language Corners (French)', professional: 'Municipal or international law.', favoriteEM: 'Kenya', funFact: 'I read 41 books in 2025' },
+  { name: 'Michael Chen', major: 'Economics', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_a06b1ecf03ec42f59799022ca4b61803~mv2.png', email: 'mc2986@cornell.edu', research: 'Semiconductors, tech, international trade', involvement: 'Cornell Wall Street Club, Cornell Business Review, Cornell Speech and Debate Society', professional: 'Basketball, Debate', favoriteEM: 'China', funFact: "I was present when LeBron broke Kareem's scoring record, and I bought the tickets for just 50 bucks 5 months prior to the game." },
+  { name: 'Kelly Huang', major: 'Human Biology, Health, and Society', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_f2454b417bb34b1ebe268fe7b8dd4be6~mv2.png', email: 'zh498@cornell.edu', research: 'Healthcare policy and global health economics', involvement: 'Social Enterprise Group at Cornell', professional: 'Strategy Consulting', favoriteEM: 'China', funFact: 'I genuinely like Okenshields, which I know may be a hot take.' },
+  { name: 'Victor Blanchard', major: 'Industrial and Labor Relations', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_37d19daa4d5641fa83de9c28c0ca2261~mv2.png', email: 'vab64@cornell.edu', research: 'AI in Southeast Asia', involvement: 'Cornell Financial Analysts, Cornell Alpha Fund, and Global Cornell Connection', professional: 'Investment Banking, Venture Capital', favoriteEM: 'Vietnam', funFact: 'I was a foreign exchange student in Hangzhou, China' },
+  { name: 'Camille Parisot', major: 'Economics and Government', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_b0e2642d5afe4b68801067f4c7c8d780~mv2.png', email: 'cap364@cornell.edu', research: "Chinese Foreign Direct Investment in Zambia's Energy and Mining Sectors; FDI Impact on Economic Growth and Development in Angola", involvement: 'Zambia Community Education Initiative, Cornell Undergraduate Research Board, International Students Association, Einhorn Center POST Leader, Cornell Daily Sun Photographer', professional: 'Development Economics, Macroeconomic Policy', favoriteEM: 'Saudi Arabia', funFact: 'I am a photographer and love to travel' }
+];
+
+/* Beating Sisyphus page team (subset with circular treatment handled by page) */
+const BS_TEAM = [
+  { name: 'Anastasiia Ryshytiuk', major: 'Urban and Regional Studies, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c3a02ca8ecfd4c0eaaf31f6fe37a3ac7~mv2.jpg' },
+  { name: 'Thomas Riveros', major: 'Economics, Class of 2027', photo: 'https://static.wixstatic.com/media/8812e8_d4a838a5e437407a893b569378c91a02~mv2.jpg' },
+  { name: 'Daniel Young Kim', major: 'Applied Economics and Management, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c20c3d74dd604ce9b75260531d0ce5b7~mv2.jpg', objectPosition: 'center 40%' },
+  { name: 'Konrad Hartung', major: 'Economics & College Scholar, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c7ee8321595d45e4a3497e2d5f0b5dbc~mv2.png' },
+  { name: 'Lourdes Casanova', major: 'Director of the Cañizares Center for Emerging Markets', photo: 'https://static.wixstatic.com/media/8812e8_1dcc99a80dbd4ef896bbdcd64cfb0918~mv2.jpg' },
+  { name: 'Linh Le', major: 'Finance, Class of 2027, VinUniversity', photo: 'https://static.wixstatic.com/media/8812e8_077d91febb3942679d767897dd65a2cf~mv2.png', scale: 1.4 }
+];
+
+</script>
+<script>
+/* EMIC shared behavior: live market band, live feed, accordions, people grids */
+
+const API = 'https://websiteemic.wixsite.com/emiccornell/_functions';
+
+/* ---------- EM Watch market band ---------- */
+async function loadMarketBand() {
+  const track = document.getElementById('market-track');
+  const band = document.getElementById('market-band');
+  if (!track || !band) return;
+  try {
+    const res = await fetch(`${API}/emWatch`);
+    const data = await res.json();
+    const renderItem = (i) => {
+      const up = i.changePercent >= 0;
+      const arrow = up ? '▲' : '▼';
+      const cls = up ? 'var(--up)' : 'var(--down)';
+      const price = i.price != null ? i.price.toFixed(2) : '—';
+      const pct = i.changePercent != null ? Math.abs(i.changePercent).toFixed(2) : '—';
+      return `<div class="market-item">
+        <span class="m-label">${i.label}</span>
+        <span class="m-price">${price}</span>
+        <span style="color:${cls};">${arrow} ${pct}%</span>
+      </div>`;
+    };
+    const oneSet = data.items.map(renderItem).join('');
+    track.style.animation = 'none';
+    track.innerHTML = oneSet;
+    const setWidth = track.scrollWidth;
+    const copies = Math.max(2, Math.ceil((band.clientWidth * 2) / setWidth) + 1);
+    track.innerHTML = oneSet.repeat(copies);
+    const fullWidth = track.scrollWidth / copies;
+    const duration = fullWidth / 40; /* 40px per second */
+    let styleTag = document.getElementById('market-keyframes');
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'market-keyframes';
+      document.head.appendChild(styleTag);
+    }
+    styleTag.textContent = `@keyframes market-scroll { from { transform: translateX(0); } to { transform: translateX(-${fullWidth}px); } }`;
+    track.style.animation = `market-scroll ${duration}s linear infinite`;
+  } catch (e) {
+    track.textContent = 'Market data unavailable';
+  }
+}
+loadMarketBand();
+setInterval(loadMarketBand, 3 * 60 * 1000);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    const band = document.getElementById('market-band');
+    if (band) { band.style.display = 'none'; void band.offsetHeight; band.style.display = 'block'; }
+  }
+});
+
+/* ---------- Beating Sisyphus feed (homepage teasers) ---------- */
+async function loadFeedTeasers() {
+  const el = document.getElementById('bs-feed');
+  if (!el) return;
+  try {
+    const res = await fetch(`${API}/beatingSisyphus`);
+    const data = await res.json();
+    el.innerHTML = data.posts.slice(0, 3).map((p) => `
+      <a href="${p.link}" target="_blank" rel="noopener">
+        <div class="f-title">${p.title}</div>
+        <div class="f-date">${p.date}</div>
+        <div class="f-excerpt">${p.excerpt}</div>
+      </a>
+    `).join('');
+  } catch (e) {
+    el.innerHTML = '<p style="color:var(--secondary);">Latest posts are at <a class="textlink" href="https://beatingsisyphus.substack.com" target="_blank" rel="noopener">beatingsisyphus.substack.com</a>.</p>';
+  }
+}
+loadFeedTeasers();
+
+/* ---------- Featured post (Beating Sisyphus page) ---------- */
+async function loadFeatured() {
+  const el = document.getElementById('bs-featured');
+  if (!el) return;
+  try {
+    const res = await fetch(`${API}/beatingSisyphus`);
+    const data = await res.json();
+    const p = data.posts[0];
+    el.innerHTML = `
+      <a href="${p.link}" target="_blank" rel="noopener">
+        ${p.thumbnail ? `<img src="${p.thumbnail}" alt="">` : `<div class="f-thumb"></div>`}
+        <div class="f-eyebrow">Featured — ${p.isPodcast ? 'Podcast' : 'Article'}</div>
+        <div class="f-big">${p.title}</div>
+        <div class="f-date" style="font-size:14px;color:var(--secondary);">${p.date}</div>
+      </a>
+    `;
+  } catch (e) {
+    el.innerHTML = '<p style="color:var(--secondary);">Visit <a class="textlink" href="https://beatingsisyphus.substack.com" target="_blank" rel="noopener">our Substack</a> for the latest.</p>';
+  }
+}
+loadFeatured();
+
+/* ---------- Accordions ---------- */
+document.querySelectorAll('.acc-btn').forEach((btn) => {
+  btn.addEventListener('click', () => btn.closest('.acc-item').classList.toggle('open'));
+});
+
+/* ---------- People grids (expand-below detail) ---------- */
+function buildDetail(p) {
+  const subline = [p.major, p.year ? `Class of ${p.year}` : ''].filter(Boolean).join(' · ');
+  const row = (label, val) => val ? `<div class="pd-row"><span class="pd-label">${label}</span>${val}</div>` : '';
+  return `
+    <div class="pd-name">${p.name}</div>
+    ${subline ? `<div class="pd-sub">${subline}</div>` : ''}
+    ${row('Email', p.email)}
+    ${row('Research interest', p.research)}
+    ${row('Other involvement', p.involvement)}
+    ${row('Professional interest', p.professional)}
+    ${row('Favorite EM', p.favoriteEM)}
+    ${row('Fun fact', p.funFact)}
+  `;
+}
+
+function renderPeople(gridId, list, opts = {}) {
+  const grid = document.getElementById(gridId);
+  if (!grid || !list) return;
+  grid.innerHTML = list.map((p, i) => `
+    <button class="person" data-i="${i}" type="button" aria-expanded="false">
+      <span class="p-photo">${p.photo ? `<img src="${p.photo}" alt="" style="object-position:${p.objectPosition || 'center'};transform:scale(${p.scale || 1});">` : ''}</span>
+      <span class="p-name" style="display:block;">${p.name}</span>
+      ${opts.showRole && p.role ? `<span class="p-role" style="display:block;">${p.role}</span>` : ''}
+      ${p.major ? `<span class="p-major" style="display:block;">${p.major}</span>` : ''}
+    </button>
+  `).join('');
+
+  grid.querySelectorAll('.person').forEach((card) => {
+    card.addEventListener('click', () => {
+      const p = list[Number(card.dataset.i)];
+
+      // The detail panel lives AFTER the whole grid as a normal block, so the
+      // grid's auto-flow can never reshuffle it on top of the cards.
+      const sib = grid.nextElementSibling;
+      const openPanel = sib && sib.classList.contains('person-detail') ? sib : null;
+
+      const clearState = () =>
+        grid.querySelectorAll('.person[aria-expanded="true"]')
+            .forEach((c) => c.setAttribute('aria-expanded', 'false'));
+
+      // Clicking the already-open person closes the panel.
+      if (openPanel && openPanel.dataset.for === card.dataset.i) {
+        openPanel.remove();
+        clearState();
+        return;
+      }
+
+      // Otherwise close whatever was open and open this one.
+      if (openPanel) openPanel.remove();
+      clearState();
+
+      const hasContent = p.email || p.research || p.involvement || p.major;
+      if (!hasContent) return;
+
+      const panel = document.createElement('div');
+      panel.className = 'person-detail';
+      panel.dataset.for = card.dataset.i;
+      panel.innerHTML = buildDetail(p);
+      grid.insertAdjacentElement('afterend', panel);
+      card.setAttribute('aria-expanded', 'true');
+    });
+  });
+}
+
+/* Pages call renderPeople with their own data (see members-data.js). */
+window.EMIC = { renderPeople };
+
+</script>
 <script>
   EMIC.renderPeople('board-grid', BOARD, { showRole: true });
   document.getElementById('board-count').textContent = `${BOARD.length} officers`;
