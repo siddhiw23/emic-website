@@ -261,19 +261,19 @@
   .guest .g-title{font-size:15px;color:var(--secondary);line-height:1.45;}
   
   /* ---------- People grids (BS team + Members) ---------- */
-  .people{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(auto-fill,132px);gap:26px 22px;justify-content:start;}
+  .people{display:grid;grid-template-columns:repeat(auto-fill,132px);gap:26px 22px;justify-content:start;align-items:start;}
   .person{cursor:pointer;width:132px;background:none;border:none;padding:0;text-align:left;font-family:inherit;color:inherit;}
-  .person .p-photo{width:132px;aspect-ratio:1/1;background:var(--parchment);overflow:hidden;margin-bottom:9px;}
-  .person .p-photo img{width:100%;height:100%;object-fit:cover;}
+  .person .p-photo{display:block;width:132px;height:132px;background:var(--parchment);overflow:hidden;margin-bottom:9px;}
+  .person .p-photo img{display:block;width:100%;height:100%;object-fit:cover;}
   .person .p-name{font-family:'Fraunces',serif;font-weight:500;font-size:16.5px;line-height:1.25;}
   .person .p-role{font-size:13.5px;color:var(--red);margin-top:2px;}
   .person .p-major{font-size:12.5px;color:var(--secondary);margin-top:2px;line-height:1.3;}
   
   .person[aria-expanded="true"] .p-photo{outline:2px solid var(--red);outline-offset:2px;}
   .person-detail{
+    grid-column:1 / -1;
     background:#fff;border:1px solid var(--hairline);
     padding:clamp(18px,3vw,28px);
-    margin:22px 0 4px;
   }
   .person-detail .pd-name{font-family:'Fraunces',serif;font-weight:500;font-size:20px;margin-bottom:4px;}
   .person-detail .pd-sub{font-size:14px;color:var(--red);margin-bottom:16px;}
@@ -283,7 +283,8 @@
   
   @media (max-width:560px){
     .people{grid-template-columns:repeat(auto-fill,92px);gap:20px 14px;}
-    .person, .person .p-photo{width:92px;}
+    .person{width:92px;}
+    .person .p-photo{width:92px;height:92px;}
     .person .p-name{font-size:14px;}
     .person .p-role,.person .p-major{font-size:11.5px;}
   }

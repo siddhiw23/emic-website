@@ -126,29 +126,31 @@ function renderPeople(gridId, list, opts = {}) {
     </button>
   `).join('');
 
+  // Insert the full-width detail panel directly after the last card in the
+  // clicked card's visual row, so it opens right beneath that row.
+  const placeAfterRow = (card, panel) => {
+    const cards = Array.from(grid.querySelectorAll('.person'));
+    const top = card.offsetTop;               // measured against a grid with no panel in it
+    let lastInRow = card;
+    cards.forEach((c) => { if (Math.abs(c.offsetTop - top) < 2) lastInRow = c; });
+    lastInRow.insertAdjacentElement('afterend', panel);
+  };
+
   grid.querySelectorAll('.person').forEach((card) => {
     card.addEventListener('click', () => {
       const p = list[Number(card.dataset.i)];
 
-      // The detail panel lives AFTER the whole grid as a normal block, so the
-      // grid's auto-flow can never reshuffle it on top of the cards.
-      const sib = grid.nextElementSibling;
-      const openPanel = sib && sib.classList.contains('person-detail') ? sib : null;
+      const openPanel = grid.querySelector('.person-detail');
+      const wasThisOpen = openPanel && openPanel.dataset.for === card.dataset.i;
 
-      const clearState = () =>
-        grid.querySelectorAll('.person[aria-expanded="true"]')
-            .forEach((c) => c.setAttribute('aria-expanded', 'false'));
-
-      // Clicking the already-open person closes the panel.
-      if (openPanel && openPanel.dataset.for === card.dataset.i) {
-        openPanel.remove();
-        clearState();
-        return;
-      }
-
-      // Otherwise close whatever was open and open this one.
+      // Clear any open panel and reset expanded states first, so the row math
+      // below runs against a clean grid.
       if (openPanel) openPanel.remove();
-      clearState();
+      grid.querySelectorAll('.person[aria-expanded="true"]')
+          .forEach((c) => c.setAttribute('aria-expanded', 'false'));
+
+      // Clicking the already-open person just closes it.
+      if (wasThisOpen) return;
 
       const hasContent = p.email || p.research || p.involvement || p.major;
       if (!hasContent) return;
@@ -157,11 +159,30 @@ function renderPeople(gridId, list, opts = {}) {
       panel.className = 'person-detail';
       panel.dataset.for = card.dataset.i;
       panel.innerHTML = buildDetail(p);
-      grid.insertAdjacentElement('afterend', panel);
+      placeAfterRow(card, panel);
       card.setAttribute('aria-expanded', 'true');
     });
   });
+
+  // Keep an open panel under the correct row if the column count changes.
+  grid._reposition = () => {
+    const panel = grid.querySelector('.person-detail');
+    if (!panel) return;
+    const forI = panel.dataset.for;
+    panel.remove();
+    const card = grid.querySelector(`.person[data-i="${forI}"]`);
+    if (card) placeAfterRow(card, panel);
+  };
 }
+
+/* Reflow open detail panels on resize (debounced). */
+let _peopleResizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(_peopleResizeTimer);
+  _peopleResizeTimer = setTimeout(() => {
+    document.querySelectorAll('.people').forEach((g) => g._reposition && g._reposition());
+  }, 150);
+});
 
 /* Pages call renderPeople with their own data (see members-data.js). */
 window.EMIC = { renderPeople };
