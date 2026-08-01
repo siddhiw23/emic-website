@@ -98,7 +98,7 @@
   
   /* ---------- Sections ---------- */
   .section{padding:clamp(48px,7vw,86px) 0;}
-  .section + .section{border-top:1px solid var(--hairline);}
+  /* .section + .section{border-top:1px solid var(--hairline);} */
   .band-ink{background:var(--ink);color:var(--paper);}
   .band-ink .index-rule .ir-line{border-top-color:#3A3D42;}
   .band-ink .index-rule .ir-detail{color:#A7A49B;}
