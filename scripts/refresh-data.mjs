@@ -49,12 +49,16 @@ async function refreshPosts() {
   const response = await fetch(substackFeed);
   if (!response.ok) throw new Error(`Substack returned ${response.status}`);
   const xml = await response.text();
+  const channelHeader = xml.split(/<item>/i)[0];
+  const channelImage = tag(tag(channelHeader, 'image'), 'url');
   const posts = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, 10).map((match) => {
     const item = match[1];
     const description = tag(item, 'description');
     const content = tag(item, 'content:encoded') || description;
     const image = content.match(/<img[^>]+src=["']([^"']+)["']/i)?.[1]
       || item.match(/<media:(?:content|thumbnail)[^>]+url=["']([^"']+)["']/i)?.[1]
+      || item.match(/<enclosure[^>]+url=["']([^"']+)["'][^>]*type=["']image\//i)?.[1]
+      || channelImage
       || '';
     const enclosure = item.match(/<enclosure[^>]+url=["']([^"']+)["'][^>]*type=["']audio\//i)?.[1];
     const date = new Date(tag(item, 'pubDate'));
