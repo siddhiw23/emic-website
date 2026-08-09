@@ -1,0 +1,65 @@
+{
+  "updatedAt": "2026-08-09T15:44:29.627Z",
+  "source": "https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv",
+  "upstreamSource": "https://bcrdgdcprod.blob.core.windows.net/documents/entorno-internacional/documents/Serie_Historica_Spread_del_EMBI.xlsx",
+  "publisher": "Central Bank of the Dominican Republic",
+  "unit": "basis points over U.S. Treasuries",
+  "items": [
+    {
+      "label": "EMBI Latin America",
+      "region": "LATINO",
+      "date": "2026-08-06",
+      "spreadBps": 251.09,
+      "changeBps": -1.34
+    },
+    {
+      "label": "EMBI Argentina",
+      "region": "Argentina",
+      "date": "2026-08-06",
+      "spreadBps": 437.31,
+      "changeBps": 10.31
+    },
+    {
+      "label": "EMBI Brazil",
+      "region": "Brasil",
+      "date": "2026-08-06",
+      "spreadBps": 175.13,
+      "changeBps": -0.17
+    },
+    {
+      "label": "EMBI Colombia",
+      "region": "Colombia",
+      "date": "2026-08-06",
+      "spreadBps": 188.56,
+      "changeBps": -0.45
+    },
+    {
+      "label": "EMBI Ecuador",
+      "region": "Ecuador",
+      "date": "2026-08-06",
+      "spreadBps": 424.95,
+      "changeBps": -2.9
+    },
+    {
+      "label": "EMBI Mexico",
+      "region": "México",
+      "date": "2026-08-06",
+      "spreadBps": 195.41,
+      "changeBps": -4.06
+    },
+    {
+      "label": "EMBI Peru",
+      "region": "Perú",
+      "date": "2026-08-06",
+      "spreadBps": 103.87,
+      "changeBps": -6.53
+    },
+    {
+      "label": "EMBI Venezuela",
+      "region": "Venezuela",
+      "date": "2026-08-06",
+      "spreadBps": 6422.65,
+      "changeBps": 69.05
+    }
+  ]
+}
