@@ -36,7 +36,7 @@ metadata for each selected indicator should be reviewed for third-party
 exceptions before production publication. Preserve source attribution in the
 site or accompanying methodology page.
 
-The current EMBI CSV is maintained in a third-party GitHub repository that does
-not state a license or primary-source methodology. It is suitable for internal
-testing, but its provenance and redistribution permission must be confirmed
-before production publication.
+The EMBI CSV is the machine-readable mirror used for automation. Its upstream
+source is the Central Bank of the Dominican Republic's `Serie_Historica_Spread_del_EMBI.xlsx`
+workbook. Preserve both the central-bank attribution and the mirror URL in the
+published methodology.

@@ -143,8 +143,9 @@ async function refreshCredit() {
   await writeFile(new URL('credit.json', dataDir), `${JSON.stringify({
     updatedAt: new Date().toISOString(),
     source: embiCsv,
+    upstreamSource: 'https://bcrdgdcprod.blob.core.windows.net/documents/entorno-internacional/documents/Serie_Historica_Spread_del_EMBI.xlsx',
+    publisher: 'Central Bank of the Dominican Republic',
     unit: 'basis points over U.S. Treasuries',
-    provenanceNotice: 'Upstream repository does not currently state a license or primary-source methodology; verify before production publication.',
     items
   }, null, 2)}\n`);
 }

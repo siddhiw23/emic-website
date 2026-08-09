@@ -1,8 +1,9 @@
 {
   "updatedAt": "2026-08-09T15:44:29.627Z",
   "source": "https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv",
+  "upstreamSource": "https://bcrdgdcprod.blob.core.windows.net/documents/entorno-internacional/documents/Serie_Historica_Spread_del_EMBI.xlsx",
+  "publisher": "Central Bank of the Dominican Republic",
   "unit": "basis points over U.S. Treasuries",
-  "provenanceNotice": "Upstream repository does not currently state a license or primary-source methodology; verify before production publication.",
   "items": [
     {
       "label": "EMBI Latin America",
