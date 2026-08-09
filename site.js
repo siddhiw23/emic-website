@@ -23,9 +23,10 @@ async function loadMarketBand() {
   const band = document.getElementById('market-band');
   if (!track || !band) return;
   try {
-    const [market, development] = await Promise.all([
+    const [market, development, credit] = await Promise.all([
       loadJson('market.json').catch(() => ({ items: [] })),
-      loadJson('development.json').catch(() => ({ items: [] }))
+      loadJson('development.json').catch(() => ({ items: [] })),
+      loadJson('credit.json').catch(() => ({ items: [] }))
     ]);
     const items = [];
     market.items.forEach((item) => {
@@ -45,6 +46,16 @@ async function loadMarketBand() {
         value: Number.isFinite(value) ? `${value.toFixed(1)}${item.unit || ''}` : '—',
         detail: item.period ? `${item.area} · ${item.period}` : item.area,
         tone: '#B8B6AE'
+      });
+    });
+    credit.items.forEach((item) => {
+      const spread = Number(item.spreadBps);
+      const change = Number(item.changeBps);
+      items.push({
+        label: item.label,
+        value: Number.isFinite(spread) ? `${spread.toFixed(0)}bp` : '—',
+        detail: Number.isFinite(change) ? `${change >= 0 ? '▲' : '▼'} ${Math.abs(change).toFixed(0)}bp · ${item.date}` : item.date,
+        tone: Number.isFinite(change) ? (change <= 0 ? 'var(--up)' : 'var(--down)') : '#B8B6AE'
       });
     });
     if (!items.length) throw new Error('No market or development data');

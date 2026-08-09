@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 const dataDir = new URL('../data/', import.meta.url);
 const substackFeed = 'https://beatingsisyphus.substack.com/feed';
 const data360Root = 'https://data360api.worldbank.org/data360/data';
+const embiCsv = 'https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv';
 
 const indicators = [
   { id: 'WB_WDI_NY_GDP_MKTP_KD_ZG', name: 'GDP growth', unit: '%' },
@@ -108,5 +109,45 @@ async function refreshMarkets() {
   await writeFile(new URL('market.json', dataDir), `${JSON.stringify({ updatedAt: new Date().toISOString(), source: 'Twelve Data', delayed: true, items }, null, 2)}\n`);
 }
 
+async function refreshCredit() {
+  const response = await fetch(embiCsv);
+  if (!response.ok) throw new Error(`EMBI dataset returned ${response.status}`);
+  const rows = (await response.text()).trim().split(/\r?\n/).slice(1).map((line) => {
+    const [date, region, rawValue] = line.split(',');
+    const value = Number(rawValue);
+    return { date, region, value };
+  }).filter((row) => row.date && row.region && Number.isFinite(row.value));
+
+  const included = new Set(['LATINO', 'Argentina', 'Brasil', 'Colombia', 'Ecuador', 'México', 'Perú', 'Venezuela']);
+  const labels = { LATINO: 'EMBI Latin America', Brasil: 'EMBI Brazil', México: 'EMBI Mexico', Perú: 'EMBI Peru' };
+  const grouped = new Map();
+  rows.forEach((row) => {
+    if (!included.has(row.region)) return;
+    if (!grouped.has(row.region)) grouped.set(row.region, []);
+    grouped.get(row.region).push(row);
+  });
+  const items = [...grouped.entries()].map(([region, observations]) => {
+    observations.sort((a, b) => b.date.localeCompare(a.date));
+    const latest = observations[0];
+    const previous = observations[1];
+    const spreadBps = Math.round(latest.value * 10000) / 100;
+    return {
+      label: labels[region] || `EMBI ${region}`,
+      region,
+      date: latest.date,
+      spreadBps,
+      changeBps: previous ? Math.round((latest.value - previous.value) * 10000) / 100 : null
+    };
+  }).sort((a, b) => (a.region === 'LATINO' ? -1 : b.region === 'LATINO' ? 1 : a.region.localeCompare(b.region)));
+
+  await writeFile(new URL('credit.json', dataDir), `${JSON.stringify({
+    updatedAt: new Date().toISOString(),
+    source: embiCsv,
+    unit: 'basis points over U.S. Treasuries',
+    provenanceNotice: 'Upstream repository does not currently state a license or primary-source methodology; verify before production publication.',
+    items
+  }, null, 2)}\n`);
+}
+
 await mkdir(dataDir, { recursive: true });
-await Promise.all([refreshPosts(), refreshDevelopment(), refreshMarkets()]);
+await Promise.all([refreshPosts(), refreshDevelopment(), refreshMarkets(), refreshCredit()]);

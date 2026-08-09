@@ -13,6 +13,8 @@ credentialed third-party API directly.
   investment inflows.
 - `data/market.json`: a delayed ETF snapshot. This remains empty until a market
   data provider is configured.
+- `data/credit.json`: latest Latin American EMBI sovereign spreads and their
+  daily changes, converted from percentage-point values to basis points.
 
 The `Refresh public data` GitHub Actions workflow updates these files every six
 hours and can also be run manually.
@@ -33,3 +35,8 @@ World Bank Data360 material is generally available under CC BY 4.0, but the
 metadata for each selected indicator should be reviewed for third-party
 exceptions before production publication. Preserve source attribution in the
 site or accompanying methodology page.
+
+The current EMBI CSV is maintained in a third-party GitHub repository that does
+not state a license or primary-source methodology. It is suitable for internal
+testing, but its provenance and redistribution permission must be confirmed
+before production publication.
