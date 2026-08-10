@@ -4,6 +4,8 @@ const dataDir = new URL('../data/', import.meta.url);
 const substackFeed = 'https://beatingsisyphus.substack.com/feed';
 const data360Root = 'https://data360api.worldbank.org/data360/data';
 const embiCsv = 'https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv';
+const marketSheetId = '1nUTapvGq4GlB7WaH42eKMJc_AClJx95Lm7aUMz8HBoY';
+const marketSheetUrl = `https://docs.google.com/spreadsheets/d/${marketSheetId}/edit`;
 
 const indicators = [
   { id: 'WB_WDI_NY_GDP_MKTP_KD_ZG', name: 'GDP growth', unit: '%' },
@@ -14,16 +16,22 @@ const areas = [
   { id: 'LMC', name: 'Lower middle income' },
   { id: 'UMC', name: 'Upper middle income' }
 ];
-const marketSymbols = [
-  { symbol: 'EEM', label: 'Emerging markets ETF' },
-  { symbol: 'VWO', label: 'Vanguard EM ETF' },
-  { symbol: 'INDA', label: 'India ETF' },
-  { symbol: 'EWZ', label: 'Brazil ETF' },
-  { symbol: 'MCHI', label: 'China ETF' }
+const marketSheets = [
+  { sheet: 'XC', symbol: 'XC', label: 'Emerging Markets ex-SOE', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'ILF', symbol: 'ILF', label: 'Latin America 40', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'EEMA', symbol: 'EEMA', label: 'Emerging Markets Asia', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'AFK', symbol: 'AFK', label: 'Africa', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'DBC', symbol: 'DBC', label: 'Commodity Index', category: 'Commodity ETF', currency: 'USD' },
+  { sheet: 'MXN', symbol: 'USDMXN', label: 'USD / Mexican peso', category: 'Currency', currency: 'MXN' },
+  { sheet: 'CNY', symbol: 'USDCNY', label: 'USD / Chinese yuan', category: 'Currency', currency: 'CNY' },
+  { sheet: 'INR', symbol: 'USDINR', label: 'USD / Indian rupee', category: 'Currency', currency: 'INR' }
 ];
 
 async function fetchJson(url) {
-  const response = await fetch(url, { headers: { Accept: 'application/json' } });
+  const response = await fetch(url, {
+    headers: { Accept: 'application/json' },
+    signal: AbortSignal.timeout(25000)
+  });
   if (!response.ok) throw new Error(`${url} returned ${response.status}`);
   return response.json();
 }
@@ -76,9 +84,7 @@ async function refreshPosts() {
 
 async function refreshDevelopment() {
   const year = new Date().getUTCFullYear();
-  const items = [];
-  for (const indicator of indicators) {
-    for (const area of areas) {
+  const items = (await Promise.all(indicators.flatMap((indicator) => areas.map(async (area) => {
       const params = new URLSearchParams({
         DATABASE_ID: 'WB_WDI',
         INDICATOR: indicator.id,
@@ -90,27 +96,53 @@ async function refreshDevelopment() {
       const observations = (data.value || []).filter((row) => Number.isFinite(Number(row.OBS_VALUE)));
       observations.sort((a, b) => Number(b.TIME_PERIOD) - Number(a.TIME_PERIOD));
       const latest = observations[0];
-      if (latest) items.push({ label: indicator.name, area: area.name, value: Number(latest.OBS_VALUE), unit: indicator.unit, period: latest.TIME_PERIOD, indicator: indicator.id });
-    }
+      return latest
+        ? { label: indicator.name, area: area.name, value: Number(latest.OBS_VALUE), unit: indicator.unit, period: latest.TIME_PERIOD, indicator: indicator.id }
+        : null;
+    })))).filter(Boolean);
+  if (items.length !== indicators.length * areas.length) {
+    throw new Error(`World Bank returned ${items.length} of ${indicators.length * areas.length} expected observations`);
   }
   await writeFile(new URL('development.json', dataDir), `${JSON.stringify({ updatedAt: new Date().toISOString(), source: 'World Bank Data360 / WDI', license: 'CC BY 4.0; verify indicator metadata for exceptions', items }, null, 2)}\n`);
 }
 
 async function refreshMarkets() {
-  const key = process.env.TWELVE_DATA_API_KEY;
-  if (!key) {
-    console.log('TWELVE_DATA_API_KEY is not configured; retaining the current market snapshot.');
-    return;
-  }
   const items = [];
-  for (const asset of marketSymbols) {
-    const params = new URLSearchParams({ symbol: asset.symbol, apikey: key });
-    const quote = await fetchJson(`https://api.twelvedata.com/quote?${params}`);
-    const price = Number(quote.close);
-    const changePercent = Number(quote.percent_change);
-    if (Number.isFinite(price)) items.push({ ...asset, price, changePercent: Number.isFinite(changePercent) ? changePercent : null, timestamp: quote.datetime || null });
+  for (const asset of marketSheets) {
+    const params = new URLSearchParams({ tqx: 'out:csv', sheet: asset.sheet });
+    const response = await fetch(`https://docs.google.com/spreadsheets/d/${marketSheetId}/gviz/tq?${params}`);
+    if (!response.ok) throw new Error(`${asset.sheet} market sheet returned ${response.status}`);
+    const lines = (await response.text()).trim().split(/\r?\n/).slice(1);
+    const series = lines.map((line) => {
+      const fields = [...line.matchAll(/(?:^|,)(?:"((?:[^"]|"")*)"|([^,]*))/g)]
+        .map((match) => (match[1] ?? match[2] ?? '').replace(/""/g, '"').trim());
+      const dateMatch = fields[0]?.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+      const value = Number(fields[1]);
+      return dateMatch && Number.isFinite(value)
+        ? { date: `${dateMatch[3]}-${dateMatch[1].padStart(2, '0')}-${dateMatch[2].padStart(2, '0')}`, value }
+        : null;
+    }).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date));
+    const latest = series.at(-1);
+    const previous = series.at(-2);
+    if (!latest) continue;
+    const changePercent = previous?.value
+      ? ((latest.value - previous.value) / previous.value) * 100
+      : null;
+    items.push({
+      ...asset,
+      price: latest.value,
+      changePercent: Number.isFinite(changePercent) ? Math.round(changePercent * 100) / 100 : null,
+      timestamp: latest.date,
+      series
+    });
   }
-  await writeFile(new URL('market.json', dataDir), `${JSON.stringify({ updatedAt: new Date().toISOString(), source: 'Twelve Data', delayed: true, items }, null, 2)}\n`);
+  await writeFile(new URL('market.json', dataDir), `${JSON.stringify({
+    updatedAt: new Date().toISOString(),
+    source: marketSheetUrl,
+    sourceLabel: 'Public EMIC Google Sheet / Google Finance',
+    delayed: true,
+    items
+  }, null, 2)}\n`);
 }
 
 async function refreshCredit() {
@@ -131,16 +163,21 @@ async function refreshCredit() {
     grouped.get(row.region).push(row);
   });
   const items = [...grouped.entries()].map(([region, observations]) => {
-    observations.sort((a, b) => b.date.localeCompare(a.date));
-    const latest = observations[0];
-    const previous = observations[1];
+    observations.sort((a, b) => a.date.localeCompare(b.date));
+    const series = observations.map((observation) => ({
+      date: observation.date,
+      value: Math.round(observation.value * 10000) / 100
+    }));
+    const latest = observations.at(-1);
+    const previous = observations.at(-2);
     const spreadBps = Math.round(latest.value * 10000) / 100;
     return {
       label: labels[region] || `EMBI ${region}`,
       region,
       date: latest.date,
       spreadBps,
-      changeBps: previous ? Math.round((latest.value - previous.value) * 10000) / 100 : null
+      changeBps: previous ? Math.round((latest.value - previous.value) * 10000) / 100 : null,
+      series
     };
   }).sort((a, b) => (a.region === 'LATINO' ? -1 : b.region === 'LATINO' ? 1 : a.region.localeCompare(b.region)));
 
@@ -155,4 +192,20 @@ async function refreshCredit() {
 }
 
 await mkdir(dataDir, { recursive: true });
-await Promise.all([refreshPosts(), refreshDevelopment(), refreshMarkets(), refreshCredit()]);
+if (process.argv.includes('--market-only')) {
+  await refreshMarkets();
+} else {
+  const refreshes = [
+    ['publication', refreshPosts],
+    ['development', refreshDevelopment],
+    ['market', refreshMarkets],
+    ['credit', refreshCredit]
+  ];
+  const results = await Promise.allSettled(refreshes.map(([, refresh]) => refresh()));
+  results.forEach((result, index) => {
+    if (result.status === 'rejected') console.warn(`${refreshes[index][0]} refresh failed; retaining its stored snapshot: ${result.reason?.message || result.reason}`);
+  });
+  if (results.every((result) => result.status === 'rejected')) {
+    throw new Error('All public data refreshes failed');
+  }
+}
