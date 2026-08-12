@@ -11,23 +11,20 @@ credentialed third-party API directly.
   Bank Data360 API. The current pulse compares lower-middle-income and
   upper-middle-income economies on GDP growth, inflation, and foreign direct
   investment inflows.
-- `data/market.json`: a delayed ETF snapshot. This remains empty until a market
-  data provider is configured.
+- `data/market.json`: delayed ETF and currency histories read from EMIC's
+  published Google Sheet CSV endpoints.
 - `data/credit.json`: latest Latin American EMBI sovereign spreads and their
   daily changes, converted from percentage-point values to basis points.
 
 The `Refresh public data` GitHub Actions workflow updates these files every six
 hours and can also be run manually.
 
-## Optional market quotes
+## Market quotes
 
-The current adapter supports Twelve Data. Add a repository Actions secret named
-`TWELVE_DATA_API_KEY` only after confirming that the selected plan permits the
-intended public display. The key is used by GitHub Actions and is never included
-in the published site.
-
-The configured symbols are EEM, VWO, INDA, EWZ, and MCHI. They are labeled as a
-delayed snapshot rather than real-time exchange data.
+The market adapter reads only the sheet's published-web identifier and public
+CSV tab endpoints. It does not use or expose the editable spreadsheet URL or a
+Google account identity. The observations are labeled as delayed rather than
+real-time exchange data.
 
 ## Attribution and review
 

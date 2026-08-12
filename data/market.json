@@ -1,11 +1,12 @@
 {
-  "updatedAt": "2026-08-12T13:00:45.427Z",
-  "source": "https://docs.google.com/spreadsheets/d/1nUTapvGq4GlB7WaH42eKMJc_AClJx95Lm7aUMz8HBoY/edit",
+  "updatedAt": "2026-08-12T13:25:06.217Z",
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml",
   "sourceLabel": "Public EMIC Google Sheet / Google Finance",
   "delayed": true,
   "items": [
     {
       "sheet": "XC",
+      "gid": 0,
       "symbol": "XC",
       "label": "Emerging Markets ex-SOE",
       "category": "Equity ETF",
@@ -262,6 +263,7 @@
     },
     {
       "sheet": "ILF",
+      "gid": 774533258,
       "symbol": "ILF",
       "label": "Latin America 40",
       "category": "Equity ETF",
@@ -518,6 +520,7 @@
     },
     {
       "sheet": "EEMA",
+      "gid": 930096993,
       "symbol": "EEMA",
       "label": "Emerging Markets Asia",
       "category": "Equity ETF",
@@ -774,6 +777,7 @@
     },
     {
       "sheet": "AFK",
+      "gid": 188143981,
       "symbol": "AFK",
       "label": "Africa",
       "category": "Equity ETF",
@@ -1030,6 +1034,7 @@
     },
     {
       "sheet": "DBC",
+      "gid": 1126363068,
       "symbol": "DBC",
       "label": "Commodity Index",
       "category": "Commodity ETF",
@@ -1286,6 +1291,7 @@
     },
     {
       "sheet": "MXN",
+      "gid": 204912502,
       "symbol": "USDMXN",
       "label": "USD / Mexican peso",
       "category": "Currency",
@@ -1658,6 +1664,7 @@
     },
     {
       "sheet": "CNY",
+      "gid": 1222037955,
       "symbol": "USDCNY",
       "label": "USD / Chinese yuan",
       "category": "Currency",
@@ -1926,6 +1933,7 @@
     },
     {
       "sheet": "INR",
+      "gid": 2144002910,
       "symbol": "USDINR",
       "label": "USD / Indian rupee",
       "category": "Currency",

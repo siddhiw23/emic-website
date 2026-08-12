@@ -4,8 +4,9 @@ const dataDir = new URL('../data/', import.meta.url);
 const substackFeed = 'https://beatingsisyphus.substack.com/feed';
 const data360Root = 'https://data360api.worldbank.org/data360/data';
 const embiCsv = 'https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv';
-const marketSheetId = '1nUTapvGq4GlB7WaH42eKMJc_AClJx95Lm7aUMz8HBoY';
-const marketSheetUrl = `https://docs.google.com/spreadsheets/d/${marketSheetId}/edit`;
+const marketPublicationId = '2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr';
+const marketPublicationRoot = `https://docs.google.com/spreadsheets/d/e/${marketPublicationId}`;
+const marketSheetUrl = `${marketPublicationRoot}/pubhtml`;
 
 const indicators = [
   { id: 'WB_WDI_NY_GDP_MKTP_KD_ZG', name: 'GDP growth', unit: '%' },
@@ -17,14 +18,14 @@ const areas = [
   { id: 'UMC', name: 'Upper middle income' }
 ];
 const marketSheets = [
-  { sheet: 'XC', symbol: 'XC', label: 'Emerging Markets ex-SOE', category: 'Equity ETF', currency: 'USD' },
-  { sheet: 'ILF', symbol: 'ILF', label: 'Latin America 40', category: 'Equity ETF', currency: 'USD' },
-  { sheet: 'EEMA', symbol: 'EEMA', label: 'Emerging Markets Asia', category: 'Equity ETF', currency: 'USD' },
-  { sheet: 'AFK', symbol: 'AFK', label: 'Africa', category: 'Equity ETF', currency: 'USD' },
-  { sheet: 'DBC', symbol: 'DBC', label: 'Commodity Index', category: 'Commodity ETF', currency: 'USD' },
-  { sheet: 'MXN', symbol: 'USDMXN', label: 'USD / Mexican peso', category: 'Currency', currency: 'MXN' },
-  { sheet: 'CNY', symbol: 'USDCNY', label: 'USD / Chinese yuan', category: 'Currency', currency: 'CNY' },
-  { sheet: 'INR', symbol: 'USDINR', label: 'USD / Indian rupee', category: 'Currency', currency: 'INR' }
+  { sheet: 'XC', gid: 0, symbol: 'XC', label: 'Emerging Markets ex-SOE', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'ILF', gid: 774533258, symbol: 'ILF', label: 'Latin America 40', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'EEMA', gid: 930096993, symbol: 'EEMA', label: 'Emerging Markets Asia', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'AFK', gid: 188143981, symbol: 'AFK', label: 'Africa', category: 'Equity ETF', currency: 'USD' },
+  { sheet: 'DBC', gid: 1126363068, symbol: 'DBC', label: 'Commodity Index', category: 'Commodity ETF', currency: 'USD' },
+  { sheet: 'MXN', gid: 204912502, symbol: 'USDMXN', label: 'USD / Mexican peso', category: 'Currency', currency: 'MXN' },
+  { sheet: 'CNY', gid: 1222037955, symbol: 'USDCNY', label: 'USD / Chinese yuan', category: 'Currency', currency: 'CNY' },
+  { sheet: 'INR', gid: 2144002910, symbol: 'USDINR', label: 'USD / Indian rupee', category: 'Currency', currency: 'INR' }
 ];
 
 async function fetchJson(url) {
@@ -109,8 +110,8 @@ async function refreshDevelopment() {
 async function refreshMarkets() {
   const items = [];
   for (const asset of marketSheets) {
-    const params = new URLSearchParams({ tqx: 'out:csv', sheet: asset.sheet });
-    const response = await fetch(`https://docs.google.com/spreadsheets/d/${marketSheetId}/gviz/tq?${params}`);
+    const params = new URLSearchParams({ output: 'csv', single: 'true', gid: String(asset.gid) });
+    const response = await fetch(`${marketPublicationRoot}/pub?${params}`);
     if (!response.ok) throw new Error(`${asset.sheet} market sheet returned ${response.status}`);
     const lines = (await response.text()).trim().split(/\r?\n/).slice(1);
     const series = lines.map((line) => {
