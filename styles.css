@@ -403,7 +403,7 @@ body{
 .cover::after{
   content:"";position:absolute;right:max(5vw,34px);top:16%;
   width:clamp(150px,18vw,238px);aspect-ratio:1;
-  background:url('assets/emic-logo.png') center/contain no-repeat;
+  background:url('assets/emic-logo.png?v=20260812-2') center/contain no-repeat;
   border-radius:50%;box-shadow:0 20px 55px rgba(31,24,17,.12);
 }
 .cover .wrap{position:relative;z-index:1;}
