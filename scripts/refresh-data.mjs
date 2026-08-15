@@ -137,6 +137,9 @@ async function refreshMarkets() {
       series
     });
   }
+  if (items.length !== marketSheets.length) {
+    throw new Error(`Market sheets returned ${items.length} of ${marketSheets.length} expected asset histories`);
+  }
   await writeFile(new URL('market.json', dataDir), `${JSON.stringify({
     updatedAt: new Date().toISOString(),
     source: marketSheetUrl,
