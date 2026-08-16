@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T18:48:00.499Z",
+  "updatedAt": "2026-08-16T01:57:55.146Z",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml",
   "sourceLabel": "Public EMIC Google Sheet / Google Finance",
   "delayed": true,
@@ -1690,7 +1690,7 @@
       "category": "Currency",
       "currency": "CNY",
       "price": 6.74320201,
-      "changePercent": 0,
+      "changePercent": 0.01,
       "timestamp": "2026-08-14",
       "series": [
         {
@@ -1947,7 +1947,7 @@
         },
         {
           "date": "2026-08-13",
-          "value": 6.74320201
+          "value": 6.7428
         },
         {
           "date": "2026-08-14",
