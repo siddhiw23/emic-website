@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — EMIC</title>
 <meta name="description" content="EMIC's history, New Member Education, and teams.">
-<link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260812-1">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="masthead">
   <div class="wrap masthead-inner">
-    <a class="mark" href="index.html"><span class="mark-copy"><strong>EMIC</strong><small>Emerging Markets Institute Club · Cornell University</small></span></a>
+    <a class="mark" href="index.html"><span><span class="mark-red">EMIC</span></span><small>Emerging Markets Institute Club · Cornell University</small></a>
     <nav class="nav" aria-label="Primary">
       <a href="about.html" aria-current="page">About</a>
       <a href="beating-sisyphus.html">Beating Sisyphus</a>
@@ -26,7 +25,7 @@
 </header>
 
 <div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
-  <a class="market-tab" href="em-watch.html">EM Watch</a>
+  <div class="market-tab">EM Watch</div>
   <div class="market-track" id="market-track">Loading market data…</div>
 </div>
 
@@ -50,9 +49,10 @@
         <p>EMIC began as "The Little Brother of EMI," the former name of the Cañizares Center for Emerging Markets. A shared commitment to research has since grown that relationship into something larger — EMIC is now the Center's primary research arm, while building independent projects of our own and growing rapidly along the way.</p>
       </div>
 
-      <figure class="photo-slot with-image club-photo">
-        <img src="assets/emic-group.jpg" alt="Members of the Emerging Markets Institute Club at Cornell University" loading="lazy" decoding="async">
-      </figure>
+      <div class="photo-slot r219" style="margin:clamp(36px,5vw,56px) 0;" aria-hidden="true">
+        <!-- TODO: Swap classes for "photo-slot r219 filled" and add
+             style="background-image:url('YOUR_PHOTO_URL');" -->
+      </div>
 
       <div class="index-rule">
         <span class="ir-label">New Member Education</span>
@@ -105,10 +105,7 @@
       </div>
       <div class="acc-item">
         <button class="acc-btn" type="button"><span>Conference Team</span><span class="acc-tag">Conference</span></button>
-        <div class="acc-panel">
-          Works closely with the Cañizares Center to produce a multi-day conference in New York City, bringing together financiers, economists, policymakers, and members of multinational organizations to discuss emerging markets.
-          <div class="acc-action"><a class="textlink" href="https://youtu.be/Oxj2NnOA1H8?si=b4OrqfzM-C55_x6N" target="_blank" rel="noopener">Watch President Iván Duque at the conference ↗</a></div>
-        </div>
+        <div class="acc-panel">Works closely with the Cañizares Center to produce a multi-day conference in New York City, bringing together financiers, economists, policymakers, and members of multinational organizations to discuss emerging markets.</div>
       </div>
 
       <p style="margin:clamp(32px,5vw,48px) 0 0;">
@@ -122,7 +119,7 @@
 <footer>
   <div class="wrap foot-inner">
     <div>
-      <div class="f-brand"><img src="assets/emic-logo.png?v=20260812-2" alt="" width="54" height="54"><div class="f-mark">EMIC</div></div>
+      <div class="f-mark">EMIC</div>
       <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
     </div>
     <nav aria-label="Footer">
