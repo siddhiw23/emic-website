@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=20260812-1">
 <style>
   .bs-team{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 18px;}
@@ -179,7 +179,7 @@
     btn.addEventListener('click', () => {
       const m = BS_TEAM[Number(btn.dataset.i)];
       bioPanel.style.display = 'block';
-      bioPanel.innerHTML = `<strong style="font-family:'Fraunces',serif;font-weight:500;">${m.name}</strong><br>${m.major}`;
+      bioPanel.innerHTML = `<strong style="font-family:'Newsreader',serif;font-weight:500;">${m.name}</strong><br>${m.major}`;
     });
   });
 </script>
