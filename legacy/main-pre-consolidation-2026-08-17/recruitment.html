@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recruitment — EMIC</title>
 <meta name="description" content="How to join EMIC — timeline, applications, and coffee chats.">
-<link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260812-1">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="masthead">
   <div class="wrap masthead-inner">
-    <a class="mark" href="index.html"><span class="mark-copy"><strong>EMIC</strong><small>Emerging Markets Institute Club · Cornell University</small></span></a>
+    <a class="mark" href="index.html"><span><span class="mark-red">EMIC</span></span><small>Emerging Markets Institute Club · Cornell University</small></a>
     <nav class="nav" aria-label="Primary">
       <a href="about.html">About</a>
       <a href="beating-sisyphus.html">Beating Sisyphus</a>
@@ -26,7 +25,7 @@
 </header>
 
 <div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
-  <a class="market-tab" href="em-watch.html">EM Watch</a>
+  <div class="market-tab">EM Watch</div>
   <div class="market-track" id="market-track">Loading market data…</div>
 </div>
 
@@ -43,7 +42,7 @@
     <div class="wrap">
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:clamp(44px,7vw,72px);">
         <a class="btn" href="PASTE_APPLICATION_FORM_URL_HERE" target="_blank" rel="noopener">Apply now</a>
-        <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSd0vvo48X44ZlPYS2yXWodZN5jSoF0PpaHUcrElY61ojFA5Cw/viewform" target="_blank" rel="noopener">Sign up for a coffee chat</a>
+        <a class="btn btn-ghost" href="PASTE_COFFEE_CHAT_FORM_URL_HERE" target="_blank" rel="noopener">Sign up for a coffee chat</a>
       </div>
 
       <div class="index-rule">
@@ -61,7 +60,7 @@
 <footer>
   <div class="wrap foot-inner">
     <div>
-      <div class="f-brand"><img src="assets/emic-logo.png?v=20260812-2" alt="" width="54" height="54"><div class="f-mark">EMIC</div></div>
+      <div class="f-mark">EMIC</div>
       <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
     </div>
     <nav aria-label="Footer">
@@ -82,13 +81,14 @@
   /* Edit this list to update the timeline — order here is display order.
      Leave date '' to hide the date line; leave desc '' to hide the description. */
   const TIMELINE = [
-    { label: 'Coffee chats with members', date: 'Aug. 17 – Sept. 12', desc: '' },
-    { label: 'Info session 1', date: 'Sept. 1, 7:15 PM', desc: '' },
-    { label: 'Mixer', date: 'Sept. 8', desc: 'More details to come.' },
-    { label: 'Info session 2', date: 'Week of Sept. 7', desc: '' },
-    { label: 'Club Fest', date: 'Sept. 5', desc: '' },
-    { label: 'Applications open', date: 'Sept. 8', desc: '' },
-    { label: 'Applications close', date: 'Sept. 16', desc: '' }
+    { label: 'Coffee chats with members', date: '[Date]', desc: '' },
+    { label: 'Club fest', date: '[Date]', desc: '' },
+    { label: 'Info session 1', date: '[Date]', desc: '' },
+    { label: 'Info session 2', date: '[Date]', desc: '' },
+    { label: 'Coffee chats close', date: '[Date]', desc: '' },
+    { label: 'Applications open', date: '[Date]', desc: '' },
+    { label: 'Applications close', date: '[Date]', desc: '' },
+    { label: 'Interviews', date: '[Date]', desc: '' }
   ];
 
   document.getElementById('rec-timeline').innerHTML = TIMELINE.map((t) => `

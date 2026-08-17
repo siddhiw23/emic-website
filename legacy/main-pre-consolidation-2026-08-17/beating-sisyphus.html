@@ -5,17 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beating Sisyphus — EMIC</title>
 <meta name="description" content="EMIC's media production division — podcasts, blogs, and videos on the emerging world.">
-<link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260812-1">
+<link rel="stylesheet" href="styles.css">
 <style>
   .bs-team{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 18px;}
   @media (max-width:520px){ .bs-team{grid-template-columns:repeat(2,1fr);} }
   .bs-member{background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:inherit;color:inherit;}
-  .bs-member .bsm-photo{display:block;width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--parchment);margin-bottom:9px;}
-  .bs-member img{display:block;width:100%;height:100%;object-fit:cover;}
+  .bs-member .bsm-photo{width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--parchment);margin-bottom:9px;}
+  .bs-member img{width:100%;height:100%;object-fit:cover;}
   .bs-member .bsm-name{
     font-size:16px;text-decoration:underline;text-decoration-color:var(--hairline);
     text-underline-offset:3px;
@@ -28,7 +27,7 @@
 
 <header class="masthead">
   <div class="wrap masthead-inner">
-    <a class="mark" href="index.html"><span class="mark-copy"><strong>EMIC</strong><small>Emerging Markets Institute Club · Cornell University</small></span></a>
+    <a class="mark" href="index.html"><span><span class="mark-red">EMIC</span></span><small>Emerging Markets Institute Club · Cornell University</small></a>
     <nav class="nav" aria-label="Primary">
       <a href="about.html">About</a>
       <a href="beating-sisyphus.html" aria-current="page">Beating Sisyphus</a>
@@ -39,7 +38,7 @@
 </header>
 
 <div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
-  <a class="market-tab" href="em-watch.html">EM Watch</a>
+  <div class="market-tab">EM Watch</div>
   <div class="market-track" id="market-track">Loading market data…</div>
 </div>
 
@@ -75,34 +74,34 @@
             <span class="ir-detail">On the record</span>
           </div>
 
-          <a class="guest" href="https://youtu.be/5OIX8_YjROA?si=c61X1etX-B3ox3aU" target="_blank" rel="noopener" aria-label="Watch the Christopher Barrett interview on YouTube">
+          <div class="guest">
             <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_a8e27b92d38b4cf7947245a3ce55850a~mv2.jpg" alt="Christopher Barrett"></div>
             <div>
               <div class="g-name">Christopher Barrett</div>
               <div class="g-title">Professor, Cornell SC Johnson College of Business</div>
             </div>
-          </a>
-          <a class="guest" href="https://youtu.be/983qdYvxPDg?si=CuYfZTGdBVhoKsG2" target="_blank" rel="noopener" aria-label="Watch the Iván Duque interview on YouTube">
+          </div>
+          <div class="guest">
             <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_48cddd5eb4384dc3824b105b765d1adc~mv2.jpg" alt="Iván Duque"></div>
             <div>
               <div class="g-name">Iván Duque</div>
               <div class="g-title">Former President of Colombia</div>
             </div>
-          </a>
-          <a class="guest" href="https://youtu.be/GX1C9gx3Mpk?si=j1OGN9jIBSgO6ZgS" target="_blank" rel="noopener" aria-label="Watch the Laura Chinchilla interview on YouTube">
+          </div>
+          <div class="guest">
             <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_d6cd173e42ea46109682d8eaa478609f~mv2.jpg" alt="Laura Chinchilla"></div>
             <div>
               <div class="g-name">Laura Chinchilla</div>
               <div class="g-title">Former President of Costa Rica</div>
             </div>
-          </a>
-          <a class="guest" href="https://youtu.be/9tEhN0WLkW8?si=KRLMyMUZL1KfaeD0" target="_blank" rel="noopener" aria-label="Watch the Lord O'Neill interview on YouTube">
+          </div>
+          <div class="guest">
             <div class="g-photo"><img src="https://static.wixstatic.com/media/8812e8_9eb4b56c50514b1883446e64cda8b7a8~mv2.jpg" alt="The Lord O'Neill of Gatley"></div>
             <div>
               <div class="g-name">The Lord O'Neill of Gatley</div>
               <div class="g-title">Economist who coined BRICS</div>
             </div>
-          </a>
+          </div>
 
           <div class="index-rule" style="margin-top:44px;">
             <span class="ir-label">Find us on</span>
@@ -110,38 +109,12 @@
           </div>
           <div class="platforms">
             <a class="textlink" href="https://beatingsisyphus.substack.com/" target="_blank" rel="noopener">Substack</a>
-            <a class="textlink" href="https://open.spotify.com/show/7DOx0zfgbVNiluDSoQJCmI" target="_blank" rel="noopener">Spotify</a>
-            <a class="textlink" href="https://podcasts.apple.com/us/podcast/id1855339237" target="_blank" rel="noopener">Apple Podcasts</a>
-            <a class="textlink" href="https://www.youtube.com/playlist?list=PLsusrzm7-OaTbS2kVoUfYs78COGlG85wf" target="_blank" rel="noopener">YouTube</a>
+            <a class="textlink" href="#" target="_blank" rel="noopener">Spotify</a>
+            <a class="textlink" href="#" target="_blank" rel="noopener">Apple Podcasts</a>
+            <a class="textlink" href="#" target="_blank" rel="noopener">YouTube</a>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <section class="section media-platforms-section">
-    <div class="wrap">
-      <div class="index-rule">
-        <span class="ir-label">Latest Episodes</span>
-        <span class="ir-line"></span>
-        <span class="ir-detail">Watch or listen</span>
-      </div>
-      <div class="media-embeds">
-        <article class="media-embed media-embed-youtube">
-          <div class="media-embed-head"><span>YouTube</span><a href="https://www.youtube.com/playlist?list=PLsusrzm7-OaTbS2kVoUfYs78COGlG85wf" target="_blank" rel="noopener">Open playlist ↗</a></div>
-          <div class="video-frame">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=PLsusrzm7-OaTbS2kVoUfYs78COGlG85wf" title="Latest Beating Sisyphus videos on YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
-          </div>
-        </article>
-        <article class="media-embed">
-          <div class="media-embed-head"><span>Spotify</span><a href="https://open.spotify.com/show/7DOx0zfgbVNiluDSoQJCmI" target="_blank" rel="noopener">Open show ↗</a></div>
-          <iframe class="podcast-frame spotify-frame" src="https://open.spotify.com/embed/show/7DOx0zfgbVNiluDSoQJCmI/video?utm_source=generator&amp;theme=0" title="Latest Beating Sisyphus episodes on Spotify" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" allowfullscreen></iframe>
-        </article>
-        <article class="media-embed">
-          <div class="media-embed-head"><span>Apple Podcasts</span><a href="https://podcasts.apple.com/us/podcast/id1855339237" target="_blank" rel="noopener">Open show ↗</a></div>
-          <iframe class="podcast-frame apple-frame" src="https://embed.podcasts.apple.com/us/podcast/beating-sisyphus-how-emerging-markets-overcome-the/id1855339237?theme=auto" title="Latest Beating Sisyphus episodes on Apple Podcasts" allow="autoplay; encrypted-media" loading="lazy"></iframe>
-        </article>
       </div>
     </div>
   </section>
@@ -151,7 +124,7 @@
 <footer>
   <div class="wrap foot-inner">
     <div>
-      <div class="f-brand"><img src="assets/emic-logo.png?v=20260812-2" alt="" width="54" height="54"><div class="f-mark">EMIC</div></div>
+      <div class="f-mark">EMIC</div>
       <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
     </div>
     <nav aria-label="Footer">

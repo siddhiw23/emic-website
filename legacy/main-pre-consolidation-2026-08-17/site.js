@@ -1,21 +1,6 @@
-/* EMIC shared behavior: local data snapshots, accordions, people grids */
+/* EMIC shared behavior: live market band, live feed, accordions, people grids */
 
-const DATA_ROOT = 'data';
-
-async function loadJson(path) {
-  const response = await fetch(`${DATA_ROOT}/${path}`, { cache: 'no-cache' });
-  if (!response.ok) throw new Error(`Could not load ${path}`);
-  return response.json();
-}
-
-function safeExternalUrl(value) {
-  try {
-    const url = new URL(value);
-    return ['https:', 'http:'].includes(url.protocol) ? url.href : null;
-  } catch {
-    return null;
-  }
-}
+const API = 'https://websiteemic.wixsite.com/emiccornell/_functions';
 
 /* ---------- EM Watch market band ---------- */
 async function loadMarketBand() {
@@ -23,67 +8,26 @@ async function loadMarketBand() {
   const band = document.getElementById('market-band');
   if (!track || !band) return;
   try {
-    const [market, development, credit] = await Promise.all([
-      loadJson('market.json').catch(() => ({ items: [] })),
-      loadJson('development.json').catch(() => ({ items: [] })),
-      loadJson('credit.json').catch(() => ({ items: [] }))
-    ]);
-    const items = [];
-    market.items.forEach((item) => {
-      const change = Number(item.changePercent);
-      const price = Number(item.price);
-      items.push({
-        label: item.label,
-        value: Number.isFinite(price) ? price.toFixed(2) : '—',
-        detail: Number.isFinite(change) ? `${change >= 0 ? '▲' : '▼'} ${Math.abs(change).toFixed(2)}%` : 'Delayed',
-        tone: Number.isFinite(change) ? (change >= 0 ? 'var(--up)' : 'var(--down)') : 'inherit'
-      });
-    });
-    development.items.forEach((item) => {
-      const value = Number(item.value);
-      items.push({
-        label: item.label,
-        value: Number.isFinite(value) ? `${value.toFixed(1)}${item.unit || ''}` : '—',
-        detail: item.period ? `${item.area} · ${item.period}` : item.area,
-        tone: '#B8B6AE'
-      });
-    });
-    credit.items.forEach((item) => {
-      const spread = Number(item.spreadBps);
-      const change = Number(item.changeBps);
-      items.push({
-        label: item.label,
-        value: Number.isFinite(spread) ? `${spread.toFixed(0)}bp` : '—',
-        detail: Number.isFinite(change) ? `${change >= 0 ? '▲' : '▼'} ${Math.abs(change).toFixed(0)}bp · ${item.date}` : item.date,
-        tone: Number.isFinite(change) ? (change <= 0 ? 'var(--up)' : 'var(--down)') : '#B8B6AE'
-      });
-    });
-    if (!items.length) throw new Error('No market or development data');
-
-    const fragment = document.createDocumentFragment();
-    items.forEach((item) => {
-      const row = document.createElement('div');
-      row.className = 'market-item';
-      const label = document.createElement('span');
-      label.className = 'm-label';
-      label.textContent = item.label;
-      const value = document.createElement('span');
-      value.className = 'm-price';
-      value.textContent = item.value;
-      const detail = document.createElement('span');
-      detail.style.color = item.tone;
-      detail.textContent = item.detail;
-      row.append(label, value, detail);
-      fragment.append(row);
-    });
+    const res = await fetch(`${API}/emWatch`);
+    const data = await res.json();
+    const renderItem = (i) => {
+      const up = i.changePercent >= 0;
+      const arrow = up ? '▲' : '▼';
+      const cls = up ? 'var(--up)' : 'var(--down)';
+      const price = i.price != null ? i.price.toFixed(2) : '—';
+      const pct = i.changePercent != null ? Math.abs(i.changePercent).toFixed(2) : '—';
+      return `<div class="market-item">
+        <span class="m-label">${i.label}</span>
+        <span class="m-price">${price}</span>
+        <span style="color:${cls};">${arrow} ${pct}%</span>
+      </div>`;
+    };
+    const oneSet = data.items.map(renderItem).join('');
     track.style.animation = 'none';
-    track.replaceChildren(fragment);
+    track.innerHTML = oneSet;
     const setWidth = track.scrollWidth;
     const copies = Math.max(2, Math.ceil((band.clientWidth * 2) / setWidth) + 1);
-    const original = Array.from(track.children).map((node) => node.cloneNode(true));
-    for (let copy = 1; copy < copies; copy += 1) {
-      original.forEach((node) => track.append(node.cloneNode(true)));
-    }
+    track.innerHTML = oneSet.repeat(copies);
     const fullWidth = track.scrollWidth / copies;
     const duration = fullWidth / 40; /* 40px per second */
     let styleTag = document.getElementById('market-keyframes');
@@ -112,21 +56,15 @@ async function loadFeedTeasers() {
   const el = document.getElementById('bs-feed');
   if (!el) return;
   try {
-    const data = await loadJson('posts.json');
-    const cards = data.posts.slice(0, 3).map((post) => {
-      const link = document.createElement('a');
-      link.href = safeExternalUrl(post.link) || 'https://beatingsisyphus.substack.com/';
-      link.target = '_blank';
-      link.rel = 'noopener';
-      [['f-title', post.title], ['f-date', post.date], ['f-excerpt', post.excerpt]].forEach(([className, text]) => {
-        const field = document.createElement('div');
-        field.className = className;
-        field.textContent = text || '';
-        link.append(field);
-      });
-      return link;
-    });
-    el.replaceChildren(...cards);
+    const res = await fetch(`${API}/beatingSisyphus`);
+    const data = await res.json();
+    el.innerHTML = data.posts.slice(0, 3).map((p) => `
+      <a href="${p.link}" target="_blank" rel="noopener">
+        <div class="f-title">${p.title}</div>
+        <div class="f-date">${p.date}</div>
+        <div class="f-excerpt">${p.excerpt}</div>
+      </a>
+    `).join('');
   } catch (e) {
     el.innerHTML = '<p style="color:var(--secondary);">Latest posts are at <a class="textlink" href="https://beatingsisyphus.substack.com" target="_blank" rel="noopener">beatingsisyphus.substack.com</a>.</p>';
   }
@@ -138,31 +76,17 @@ async function loadFeatured() {
   const el = document.getElementById('bs-featured');
   if (!el) return;
   try {
-    const data = await loadJson('posts.json');
+    const res = await fetch(`${API}/beatingSisyphus`);
+    const data = await res.json();
     const p = data.posts[0];
-    if (!p) throw new Error('No featured post');
-    const link = document.createElement('a');
-    link.href = safeExternalUrl(p.link) || 'https://beatingsisyphus.substack.com/';
-    link.target = '_blank';
-    link.rel = 'noopener';
-    const thumbnail = safeExternalUrl(p.thumbnail);
-    if (thumbnail) {
-      const image = document.createElement('img');
-      image.src = thumbnail;
-      image.alt = '';
-      link.append(image);
-    } else {
-      const blank = document.createElement('div');
-      blank.className = 'f-thumb';
-      link.append(blank);
-    }
-    [['f-eyebrow', `Featured — ${p.isPodcast ? 'Podcast' : 'Article'}`], ['f-big', p.title], ['f-date', p.date]].forEach(([className, text]) => {
-      const field = document.createElement('div');
-      field.className = className;
-      field.textContent = text || '';
-      link.append(field);
-    });
-    el.replaceChildren(link);
+    el.innerHTML = `
+      <a href="${p.link}" target="_blank" rel="noopener">
+        ${p.thumbnail ? `<img src="${p.thumbnail}" alt="">` : `<div class="f-thumb"></div>`}
+        <div class="f-eyebrow">Featured — ${p.isPodcast ? 'Podcast' : 'Article'}</div>
+        <div class="f-big">${p.title}</div>
+        <div class="f-date" style="font-size:14px;color:var(--secondary);">${p.date}</div>
+      </a>
+    `;
   } catch (e) {
     el.innerHTML = '<p style="color:var(--secondary);">Visit <a class="textlink" href="https://beatingsisyphus.substack.com" target="_blank" rel="noopener">our Substack</a> for the latest.</p>';
   }

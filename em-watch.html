@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EM Watch — EMIC</title>
+<meta name="description" content="EMIC's dashboard for emerging-market development indicators, asset prices, and sovereign credit spreads.">
+<link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260812-1">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="mark" href="index.html"><span class="mark-copy"><strong>EMIC</strong><small>Emerging Markets Institute Club · Cornell University</small></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+</header>
+
+<div class="market-band" id="market-band" aria-label="Emerging market data ticker">
+  <a class="market-tab market-tab-active" href="em-watch.html" aria-current="page">EM Watch</a>
+  <div class="market-track" id="market-track">Loading market data…</div>
+</div>
+
+<main>
+  <div class="page-head watch-head">
+    <div class="wrap">
+      <p class="cover-kicker">Data dashboard · Updated snapshots</p>
+      <h1>EM Watch</h1>
+      <p class="lede">A visual read on growth, inflation, investment, and sovereign risk across emerging-market economies.</p>
+    </div>
+  </div>
+
+  <section class="section watch-section" style="padding-top:0;border-top:none;">
+    <div class="wrap">
+      <div class="watch-meta" id="watch-meta" aria-live="polite">Loading data snapshots…</div>
+
+      <div class="index-rule">
+        <span class="ir-label">Development indicators</span>
+        <span class="ir-line"></span>
+        <span class="ir-detail">World Bank Data360 / WDI</span>
+      </div>
+      <div class="watch-grid" id="development-charts"></div>
+    </div>
+  </section>
+
+  <section class="section band-parchment watch-section">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Sovereign credit</span>
+        <span class="ir-line"></span>
+        <span class="ir-detail">Interactive country history</span>
+      </div>
+      <div class="watch-chart-wide" id="credit-chart"></div>
+    </div>
+  </section>
+
+  <section class="section watch-section">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Asset prices</span>
+        <span class="ir-line"></span>
+        <span class="ir-detail">Up to 90 daily observations</span>
+      </div>
+      <div class="watch-chart-wide" id="market-chart"></div>
+    </div>
+  </section>
+
+  <section class="section watch-methodology">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Sources &amp; methodology</span>
+        <span class="ir-line"></span>
+      </div>
+      <div class="watch-sources">
+        <p>Development indicators come from <a class="textlink" href="https://data360.worldbank.org/en/api" target="_blank" rel="noopener">World Bank Data360 / WDI</a>.</p>
+        <p>Credit spreads use the machine-readable EMBI mirror sourced from the <a class="textlink" href="https://bcrdgdcprod.blob.core.windows.net/documents/entorno-internacional/documents/Serie_Historica_Spread_del_EMBI.xlsx" target="_blank" rel="noopener">Central Bank of the Dominican Republic</a>.</p>
+        <p>Asset and currency histories come from the club's <a class="textlink" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml" target="_blank" rel="noopener">published Google Sheet</a>, populated with delayed Google Finance observations. Charts are informational and are not investment advice.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="f-brand"><img src="assets/emic-logo.png?v=20260812-2" alt="" width="54" height="54"><div class="f-mark">EMIC</div></div>
+      <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="em-watch.html">EM Watch</a>
+      <a href="about.html">About</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <span>This organization is a registered student organization of Cornell University.</span>
+    <span>Equal Education and Employment</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="em-watch.js?v=20260810-5"></script>
+</body>
+</html>
