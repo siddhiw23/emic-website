@@ -44,7 +44,6 @@
       <div class="index-rule">
         <span class="ir-label">Executive Board</span>
         <span class="ir-line"></span>
-        <span class="ir-detail" id="board-count"></span>
       </div>
       <div class="people" id="board-grid"></div>
     </div>
@@ -55,7 +54,6 @@
       <div class="index-rule">
         <span class="ir-label">General Members</span>
         <span class="ir-line"></span>
-        <span class="ir-detail" id="member-count"></span>
       </div>
       <div id="general-container"></div>
     </div>
@@ -86,9 +84,6 @@
 <script src="site.js"></script>
 <script>
   EMIC.renderPeople('board-grid', BOARD, { showRole: true });
-  document.getElementById('board-count').textContent = `${BOARD.length} officers`;
-  document.getElementById('member-count').textContent = `${MEMBERS.length} members`;
-
   const container = document.getElementById('general-container');
   const years = [...new Set(MEMBERS.map(m => m.year))].sort((a, b) => a - b);
   years.forEach((year, idx) => {

@@ -374,10 +374,9 @@ body{
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
 }
-.masthead::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--red) 0 34%,var(--ink) 34% 100%);}
 .masthead-inner{min-height:74px;padding-top:13px;padding-bottom:13px;}
 .mark{gap:12px;letter-spacing:-.015em;align-items:center;}
-.mark-copy{display:flex;align-items:baseline;gap:12px;}
+.mark-copy{display:flex;align-items:flex-start;gap:12px;}
 .mark-copy strong{font-family:'Fraunces',serif;font-size:24px;line-height:1;color:var(--red);letter-spacing:.02em;}
 .mark small{font-size:12px;max-width:29ch;line-height:1.25;}
 .nav{gap:8px;}
