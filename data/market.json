@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-18T01:50:08.899Z",
+  "updatedAt": "2026-08-18T18:55:58.199Z",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml",
   "sourceLabel": "Public EMIC Google Sheet / Google Finance",
   "delayed": true,
@@ -15,10 +15,6 @@
       "changePercent": -0.19,
       "timestamp": "2026-08-17",
       "series": [
-        {
-          "date": "2026-05-19",
-          "value": 31
-        },
         {
           "date": "2026-05-20",
           "value": 31.52
@@ -277,10 +273,6 @@
       "timestamp": "2026-08-17",
       "series": [
         {
-          "date": "2026-05-19",
-          "value": 34.36
-        },
-        {
           "date": "2026-05-20",
           "value": 35.03
         },
@@ -537,10 +529,6 @@
       "changePercent": 0.9,
       "timestamp": "2026-08-17",
       "series": [
-        {
-          "date": "2026-05-19",
-          "value": 110.06
-        },
         {
           "date": "2026-05-20",
           "value": 111.95
@@ -799,10 +787,6 @@
       "timestamp": "2026-08-17",
       "series": [
         {
-          "date": "2026-05-19",
-          "value": 26.32
-        },
-        {
           "date": "2026-05-20",
           "value": 26.81
         },
@@ -1060,10 +1044,6 @@
       "timestamp": "2026-08-17",
       "series": [
         {
-          "date": "2026-05-19",
-          "value": 31.61
-        },
-        {
           "date": "2026-05-20",
           "value": 30.88
         },
@@ -1316,14 +1296,10 @@
       "label": "USD / Mexican peso",
       "category": "Currency",
       "currency": "MXN",
-      "price": 17.02254,
-      "changePercent": 0.08,
-      "timestamp": "2026-08-16",
+      "price": 17.0329,
+      "changePercent": 0.06,
+      "timestamp": "2026-08-17",
       "series": [
-        {
-          "date": "2026-05-19",
-          "value": 17.4028
-        },
         {
           "date": "2026-05-20",
           "value": 17.3048
@@ -1679,6 +1655,10 @@
         {
           "date": "2026-08-16",
           "value": 17.02254
+        },
+        {
+          "date": "2026-08-17",
+          "value": 17.0329
         }
       ]
     },
@@ -1689,14 +1669,10 @@
       "label": "USD / Chinese yuan",
       "category": "Currency",
       "currency": "CNY",
-      "price": 6.74320201,
-      "changePercent": 0,
-      "timestamp": "2026-08-16",
+      "price": 6.74065206,
+      "changePercent": -0.04,
+      "timestamp": "2026-08-17",
       "series": [
-        {
-          "date": "2026-05-19",
-          "value": 6.8145
-        },
         {
           "date": "2026-05-20",
           "value": 6.8005
@@ -1956,6 +1932,10 @@
         {
           "date": "2026-08-16",
           "value": 6.74320201
+        },
+        {
+          "date": "2026-08-17",
+          "value": 6.74065206
         }
       ]
     },
@@ -1966,14 +1946,10 @@
       "label": "USD / Indian rupee",
       "category": "Currency",
       "currency": "INR",
-      "price": 95.45055,
-      "changePercent": 0,
-      "timestamp": "2026-08-16",
+      "price": 95.6941,
+      "changePercent": 0.26,
+      "timestamp": "2026-08-17",
       "series": [
-        {
-          "date": "2026-05-19",
-          "value": 96.5658
-        },
         {
           "date": "2026-05-20",
           "value": 96.5283
@@ -2320,11 +2296,15 @@
         },
         {
           "date": "2026-08-15",
-          "value": 95.4505
+          "value": 95.443
         },
         {
           "date": "2026-08-16",
-          "value": 95.45055
+          "value": 95.4503
+        },
+        {
+          "date": "2026-08-17",
+          "value": 95.6941
         }
       ]
     }
