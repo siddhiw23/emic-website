@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T11:12:58.523Z",
+  "updatedAt": "2026-09-03T16:24:52.084Z",
   "source": "https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv",
   "upstreamSource": "https://bcrdgdcprod.blob.core.windows.net/documents/entorno-internacional/documents/Serie_Historica_Spread_del_EMBI.xlsx",
   "publisher": "Central Bank of the Dominican Republic",
@@ -8,9 +8,9 @@
     {
       "label": "EMBI Latin America",
       "region": "LATINO",
-      "date": "2026-09-01",
-      "spreadBps": 252.2,
-      "changeBps": 0.73,
+      "date": "2026-09-02",
+      "spreadBps": 252.5,
+      "changeBps": 0.3,
       "series": [
         {
           "date": "2007-10-29",
@@ -18851,15 +18851,19 @@
         {
           "date": "2026-09-01",
           "value": 252.2
+        },
+        {
+          "date": "2026-09-02",
+          "value": 252.5
         }
       ]
     },
     {
       "label": "EMBI Argentina",
       "region": "Argentina",
-      "date": "2026-09-01",
-      "spreadBps": 503.97,
-      "changeBps": -10.05,
+      "date": "2026-09-02",
+      "spreadBps": 502.65,
+      "changeBps": -1.32,
       "series": [
         {
           "date": "2007-10-29",
@@ -37700,15 +37704,19 @@
         {
           "date": "2026-09-01",
           "value": 503.97
+        },
+        {
+          "date": "2026-09-02",
+          "value": 502.65
         }
       ]
     },
     {
       "label": "EMBI Brazil",
       "region": "Brasil",
-      "date": "2026-09-01",
-      "spreadBps": 174.03,
-      "changeBps": -0.44,
+      "date": "2026-09-02",
+      "spreadBps": 174.95,
+      "changeBps": 0.92,
       "series": [
         {
           "date": "2007-10-29",
@@ -56549,15 +56557,19 @@
         {
           "date": "2026-09-01",
           "value": 174.03
+        },
+        {
+          "date": "2026-09-02",
+          "value": 174.95
         }
       ]
     },
     {
       "label": "EMBI Colombia",
       "region": "Colombia",
-      "date": "2026-09-01",
-      "spreadBps": 198.86,
-      "changeBps": 9.74,
+      "date": "2026-09-02",
+      "spreadBps": 200.34,
+      "changeBps": 1.47,
       "series": [
         {
           "date": "2007-10-29",
@@ -75398,15 +75410,19 @@
         {
           "date": "2026-09-01",
           "value": 198.86
+        },
+        {
+          "date": "2026-09-02",
+          "value": 200.34
         }
       ]
     },
     {
       "label": "EMBI Ecuador",
       "region": "Ecuador",
-      "date": "2026-09-01",
-      "spreadBps": 410.1,
-      "changeBps": 0.41,
+      "date": "2026-09-02",
+      "spreadBps": 417.95,
+      "changeBps": 7.85,
       "series": [
         {
           "date": "2007-10-29",
@@ -94247,15 +94263,19 @@
         {
           "date": "2026-09-01",
           "value": 410.1
+        },
+        {
+          "date": "2026-09-02",
+          "value": 417.95
         }
       ]
     },
     {
       "label": "EMBI Mexico",
       "region": "México",
-      "date": "2026-09-01",
-      "spreadBps": 198.22,
-      "changeBps": 1.83,
+      "date": "2026-09-02",
+      "spreadBps": 199.57,
+      "changeBps": 1.36,
       "series": [
         {
           "date": "2007-10-29",
@@ -113096,15 +113116,19 @@
         {
           "date": "2026-09-01",
           "value": 198.22
+        },
+        {
+          "date": "2026-09-02",
+          "value": 199.57
         }
       ]
     },
     {
       "label": "EMBI Peru",
       "region": "Perú",
-      "date": "2026-09-01",
-      "spreadBps": 106.7,
-      "changeBps": 1.09,
+      "date": "2026-09-02",
+      "spreadBps": 108.7,
+      "changeBps": 2,
       "series": [
         {
           "date": "2007-10-29",
@@ -131945,15 +131969,19 @@
         {
           "date": "2026-09-01",
           "value": 106.7
+        },
+        {
+          "date": "2026-09-02",
+          "value": 108.7
         }
       ]
     },
     {
       "label": "EMBI Venezuela",
       "region": "Venezuela",
-      "date": "2026-09-01",
-      "spreadBps": 6363.12,
-      "changeBps": -26.35,
+      "date": "2026-09-02",
+      "spreadBps": 6145.81,
+      "changeBps": -217.31,
       "series": [
         {
           "date": "2007-10-29",
@@ -150794,6 +150822,10 @@
         {
           "date": "2026-09-01",
           "value": 6363.12
+        },
+        {
+          "date": "2026-09-02",
+          "value": 6145.81
         }
       ]
     }
