@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T11:18:10.116Z",
+  "updatedAt": "2026-09-10T16:23:46.018Z",
   "source": "https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv",
   "upstreamSource": "https://bcrdgdcprod.blob.core.windows.net/documents/entorno-internacional/documents/Serie_Historica_Spread_del_EMBI.xlsx",
   "publisher": "Central Bank of the Dominican Republic",
@@ -8,7 +8,7 @@
     {
       "label": "EMBI Latin America",
       "region": "LATINO",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 250.42,
       "changeBps": 0,
       "series": [
@@ -18867,13 +18867,17 @@
         {
           "date": "2026-09-08",
           "value": 250.42
+        },
+        {
+          "date": "2026-09-09",
+          "value": 250.42
         }
       ]
     },
     {
       "label": "EMBI Argentina",
       "region": "Argentina",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 495.67,
       "changeBps": 0,
       "series": [
@@ -37732,13 +37736,17 @@
         {
           "date": "2026-09-08",
           "value": 495.67
+        },
+        {
+          "date": "2026-09-09",
+          "value": 495.67
         }
       ]
     },
     {
       "label": "EMBI Brazil",
       "region": "Brasil",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 171.97,
       "changeBps": 0,
       "series": [
@@ -56597,13 +56605,17 @@
         {
           "date": "2026-09-08",
           "value": 171.97
+        },
+        {
+          "date": "2026-09-09",
+          "value": 171.97
         }
       ]
     },
     {
       "label": "EMBI Colombia",
       "region": "Colombia",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 197.86,
       "changeBps": 0,
       "series": [
@@ -75462,13 +75474,17 @@
         {
           "date": "2026-09-08",
           "value": 197.86
+        },
+        {
+          "date": "2026-09-09",
+          "value": 197.86
         }
       ]
     },
     {
       "label": "EMBI Ecuador",
       "region": "Ecuador",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 419.07,
       "changeBps": 0,
       "series": [
@@ -94327,13 +94343,17 @@
         {
           "date": "2026-09-08",
           "value": 419.07
+        },
+        {
+          "date": "2026-09-09",
+          "value": 419.07
         }
       ]
     },
     {
       "label": "EMBI Mexico",
       "region": "México",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 198.57,
       "changeBps": 0,
       "series": [
@@ -113192,13 +113212,17 @@
         {
           "date": "2026-09-08",
           "value": 198.57
+        },
+        {
+          "date": "2026-09-09",
+          "value": 198.57
         }
       ]
     },
     {
       "label": "EMBI Peru",
       "region": "Perú",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 107.37,
       "changeBps": 0,
       "series": [
@@ -132057,13 +132081,17 @@
         {
           "date": "2026-09-08",
           "value": 107.37
+        },
+        {
+          "date": "2026-09-09",
+          "value": 107.37
         }
       ]
     },
     {
       "label": "EMBI Venezuela",
       "region": "Venezuela",
-      "date": "2026-09-08",
+      "date": "2026-09-09",
       "spreadBps": 6054.53,
       "changeBps": 0,
       "series": [
@@ -150921,6 +150949,10 @@
         },
         {
           "date": "2026-09-08",
+          "value": 6054.53
+        },
+        {
+          "date": "2026-09-09",
           "value": 6054.53
         }
       ]
