@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T20:48:21.013Z",
+  "updatedAt": "2026-09-21T21:58:22.496Z",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml",
   "sourceLabel": "Public EMIC Google Sheet / Google Finance",
   "delayed": true,
@@ -11,14 +11,10 @@
       "label": "Emerging Markets ex-SOE",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 31.74,
-      "changePercent": -0.35,
-      "timestamp": "2026-09-18",
+      "price": 32.03,
+      "changePercent": 0.91,
+      "timestamp": "2026-09-21",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 32.11
-        },
         {
           "date": "2026-06-23",
           "value": 31.7
@@ -266,6 +262,10 @@
         {
           "date": "2026-09-18",
           "value": 31.74
+        },
+        {
+          "date": "2026-09-21",
+          "value": 32.03
         }
       ]
     },
@@ -276,14 +276,10 @@
       "label": "Latin America 40",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 35.04,
-      "changePercent": -1.16,
-      "timestamp": "2026-09-18",
+      "price": 35.49,
+      "changePercent": 1.28,
+      "timestamp": "2026-09-21",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 33.99
-        },
         {
           "date": "2026-06-23",
           "value": 33.52
@@ -531,6 +527,10 @@
         {
           "date": "2026-09-18",
           "value": 35.04
+        },
+        {
+          "date": "2026-09-21",
+          "value": 35.49
         }
       ]
     },
@@ -541,14 +541,10 @@
       "label": "Emerging Markets Asia",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 116.61,
-      "changePercent": 0.41,
-      "timestamp": "2026-09-18",
+      "price": 119.27,
+      "changePercent": 2.28,
+      "timestamp": "2026-09-21",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 121.51
-        },
         {
           "date": "2026-06-23",
           "value": 115.36
@@ -796,6 +792,10 @@
         {
           "date": "2026-09-18",
           "value": 116.61
+        },
+        {
+          "date": "2026-09-21",
+          "value": 119.27
         }
       ]
     },
@@ -806,14 +806,10 @@
       "label": "Africa",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 28.98,
-      "changePercent": -0.1,
-      "timestamp": "2026-09-18",
+      "price": 29.12,
+      "changePercent": 0.48,
+      "timestamp": "2026-09-21",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 26.79
-        },
         {
           "date": "2026-06-23",
           "value": 26.15
@@ -1061,6 +1057,10 @@
         {
           "date": "2026-09-18",
           "value": 28.98
+        },
+        {
+          "date": "2026-09-21",
+          "value": 29.12
         }
       ]
     },
@@ -1071,14 +1071,10 @@
       "label": "Commodity Index",
       "category": "Commodity ETF",
       "currency": "USD",
-      "price": 32.93,
-      "changePercent": -0.36,
-      "timestamp": "2026-09-18",
+      "price": 32.58,
+      "changePercent": -1.06,
+      "timestamp": "2026-09-21",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 27.41
-        },
         {
           "date": "2026-06-23",
           "value": 27.12
@@ -1326,6 +1322,10 @@
         {
           "date": "2026-09-18",
           "value": 32.93
+        },
+        {
+          "date": "2026-09-21",
+          "value": 32.58
         }
       ]
     },
@@ -1336,14 +1336,10 @@
       "label": "USD / Mexican peso",
       "category": "Currency",
       "currency": "MXN",
-      "price": 17.2288,
-      "changePercent": 0,
-      "timestamp": "2026-09-19",
+      "price": 17.2305,
+      "changePercent": 0.01,
+      "timestamp": "2026-09-20",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 17.3639
-        },
         {
           "date": "2026-06-23",
           "value": 17.5536
@@ -1694,11 +1690,15 @@
         },
         {
           "date": "2026-09-18",
-          "value": 17.22895
+          "value": 17.2138
         },
         {
           "date": "2026-09-19",
           "value": 17.2288
+        },
+        {
+          "date": "2026-09-20",
+          "value": 17.2305
         }
       ]
     },
@@ -1711,12 +1711,8 @@
       "currency": "CNY",
       "price": 6.69765,
       "changePercent": 0,
-      "timestamp": "2026-09-19",
+      "timestamp": "2026-09-20",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 6.7745
-        },
         {
           "date": "2026-06-23",
           "value": 6.79
@@ -1976,6 +1972,10 @@
         {
           "date": "2026-09-19",
           "value": 6.69765
+        },
+        {
+          "date": "2026-09-20",
+          "value": 6.69765
         }
       ]
     },
@@ -1986,14 +1986,10 @@
       "label": "USD / Indian rupee",
       "category": "Currency",
       "currency": "INR",
-      "price": 95.9355,
-      "changePercent": -0.05,
-      "timestamp": "2026-09-19",
+      "price": 96.01335,
+      "changePercent": 0.08,
+      "timestamp": "2026-09-20",
       "series": [
-        {
-          "date": "2026-06-22",
-          "value": 94.7006
-        },
         {
           "date": "2026-06-23",
           "value": 95.1837
@@ -2340,11 +2336,15 @@
         },
         {
           "date": "2026-09-18",
-          "value": 95.98635
+          "value": 95.9861
         },
         {
           "date": "2026-09-19",
           "value": 95.9355
+        },
+        {
+          "date": "2026-09-20",
+          "value": 96.01335
         }
       ]
     }
