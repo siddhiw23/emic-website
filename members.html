@@ -59,6 +59,16 @@
     </div>
   </section>
 
+  <section class="section">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">New Members</span>
+        <span class="ir-line"></span>
+      </div>
+      <div class="people" id="new-grid"></div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -84,6 +94,7 @@
 <script src="site.js"></script>
 <script>
   EMIC.renderPeople('board-grid', BOARD, { showRole: true });
+  EMIC.renderPeople('new-grid', NEW_MEMBERS); 
   const container = document.getElementById('general-container');
   const years = [...new Set(MEMBERS.map(m => m.year))].sort((a, b) => a - b);
   years.forEach((year, idx) => {
