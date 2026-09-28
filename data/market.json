@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T13:52:44.338Z",
+  "updatedAt": "2026-09-28T23:15:34.079Z",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml",
   "sourceLabel": "Public EMIC Google Sheet / Google Finance",
   "delayed": true,
@@ -11,9 +11,9 @@
       "label": "Emerging Markets ex-SOE",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 31.34,
-      "changePercent": 0.13,
-      "timestamp": "2026-09-25",
+      "price": 30.9,
+      "changePercent": -1.4,
+      "timestamp": "2026-09-28",
       "series": [
         {
           "date": "2026-06-30",
@@ -262,6 +262,10 @@
         {
           "date": "2026-09-25",
           "value": 31.34
+        },
+        {
+          "date": "2026-09-28",
+          "value": 30.9
         }
       ]
     },
@@ -272,9 +276,9 @@
       "label": "Latin America 40",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 34.75,
-      "changePercent": 0.29,
-      "timestamp": "2026-09-25",
+      "price": 34.18,
+      "changePercent": -1.64,
+      "timestamp": "2026-09-28",
       "series": [
         {
           "date": "2026-06-30",
@@ -523,6 +527,10 @@
         {
           "date": "2026-09-25",
           "value": 34.75
+        },
+        {
+          "date": "2026-09-28",
+          "value": 34.18
         }
       ]
     },
@@ -533,9 +541,9 @@
       "label": "Emerging Markets Asia",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 118.36,
-      "changePercent": 0.81,
-      "timestamp": "2026-09-25",
+      "price": 117.13,
+      "changePercent": -1.04,
+      "timestamp": "2026-09-28",
       "series": [
         {
           "date": "2026-06-30",
@@ -784,6 +792,10 @@
         {
           "date": "2026-09-25",
           "value": 118.36
+        },
+        {
+          "date": "2026-09-28",
+          "value": 117.13
         }
       ]
     },
@@ -794,9 +806,9 @@
       "label": "Africa",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 28.66,
-      "changePercent": 0.46,
-      "timestamp": "2026-09-25",
+      "price": 28.03,
+      "changePercent": -2.2,
+      "timestamp": "2026-09-28",
       "series": [
         {
           "date": "2026-06-30",
@@ -1045,6 +1057,10 @@
         {
           "date": "2026-09-25",
           "value": 28.66
+        },
+        {
+          "date": "2026-09-28",
+          "value": 28.03
         }
       ]
     },
@@ -1055,9 +1071,9 @@
       "label": "Commodity Index",
       "category": "Commodity ETF",
       "currency": "USD",
-      "price": 32.62,
-      "changePercent": -1.69,
-      "timestamp": "2026-09-25",
+      "price": 32.49,
+      "changePercent": -0.4,
+      "timestamp": "2026-09-28",
       "series": [
         {
           "date": "2026-06-30",
@@ -1306,6 +1322,10 @@
         {
           "date": "2026-09-25",
           "value": 32.62
+        },
+        {
+          "date": "2026-09-28",
+          "value": 32.49
         }
       ]
     },
