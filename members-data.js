@@ -50,6 +50,11 @@ const MEMBERS = [
   { name: 'Camille Parisot', major: 'Economics and Government', year: 2029, photo: 'https://static.wixstatic.com/media/8812e8_b0e2642d5afe4b68801067f4c7c8d780~mv2.png', email: 'cap364@cornell.edu', research: "Chinese Foreign Direct Investment in Zambia's Energy and Mining Sectors; FDI Impact on Economic Growth and Development in Angola", involvement: 'Zambia Community Education Initiative, Cornell Undergraduate Research Board, International Students Association, Einhorn Center POST Leader, Cornell Daily Sun Photographer', professional: 'Development Economics, Macroeconomic Policy', favoriteEM: 'Saudi Arabia', funFact: 'I am a photographer and love to travel' }
 ];
 
+const NEW_MEMBERS = [
+  { name: 'Jonathan Li', major: 'Computer Science and Economics', year: 2028, photo: 'assets/Jonathan_Li_Headshot.png', email: 'jyl86@cornell.edu', research: "How digital assets like cryptocurrency are changing policies in emerging economies", involvement: 'Global Cornell Connection, Cornell Poker Club, Cornell Capital Club, and Business Club of Emerging Economies', professional: 'Consulting, Consumer Banking', favoriteEM: 'Rwanda', funFact: 'My end-of-semester goal is to bench press 315 lbs.' }
+  
+];
+
 /* Beating Sisyphus page team (subset with circular treatment handled by page) */
 const BS_TEAM = [
   { name: 'Anastasiia Ryshytiuk', major: 'Urban and Regional Studies, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c3a02ca8ecfd4c0eaaf31f6fe37a3ac7~mv2.jpg' },
