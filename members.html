@@ -35,7 +35,6 @@
   <div class="page-head">
     <div class="wrap">
       <h1>Members</h1>
-      <!-- <p class="lede">Select anyone to see their full profile.</p> -->
     </div>
   </div>
 
@@ -43,7 +42,6 @@
     <div class="wrap">
       <div class="index-rule">
         <span class="ir-label">Executive Board</span>
-        <!-- <span class="ir-line"></span> -->
       </div>
       <div class="people" id="board-grid"></div>
     </div>
@@ -53,7 +51,6 @@
     <div class="wrap">
       <div class="index-rule">
         <span class="ir-label">General Members</span>
-        <!-- <span class="ir-line"></span> -->
       </div>
       <div id="general-container"></div>
     </div>
@@ -63,7 +60,6 @@
     <div class="wrap">
       <div class="index-rule">
         <span class="ir-label">New Members</span>
-        <!-- <span class="ir-line"></span> -->
       </div>
       <div class="people" id="new-grid"></div>
     </div>
@@ -100,8 +96,8 @@
   years.forEach((year, idx) => {
     const label = document.createElement('div');
     label.className = 'index-rule';
-    label.style.marginTop = idx === 0 ? '0' : '40px';
-    label.innerHTML = `<span class="ir-label" style="color:var(--ink);">Class of ${year}</span><span class="ir-line"></span>`;
+    label.style.marginTop = idx === 0 ? '0' : '70px';
+    label.innerHTML = `<span class="ir-label" style="color:var(--ink);">Class of ${year}</span>`;
     container.appendChild(label);
 
     const grid = document.createElement('div');

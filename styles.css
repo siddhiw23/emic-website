@@ -326,7 +326,7 @@
 .video-frame iframe,.podcast-frame{display:block;width:100%;border:0;}
 .video-frame iframe{position:absolute;inset:0;height:100%;}
 .spotify-frame{height:352px;}
-.apple-frame{height:450px;}
+.apple-frame{height:303px;}
 @media (max-width:760px){.media-embeds{grid-template-columns:1fr;}.media-embed-youtube{grid-column:auto;}}
   
   /* ---------- Footer ---------- */
