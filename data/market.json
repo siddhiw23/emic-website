@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T22:13:16.614Z",
+  "updatedAt": "2026-10-03T16:17:02.729Z",
   "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbh54AH-bn739vOKMiXQSKff3VM_7I8PFEQN3lNgKuElnbr6NW5hf8dDgW_BTFnENn6qhkHjrVDImr/pubhtml",
   "sourceLabel": "Public EMIC Google Sheet / Google Finance",
   "delayed": true,
@@ -1087,9 +1087,9 @@
       "label": "Commodity Index",
       "category": "Commodity ETF",
       "currency": "USD",
-      "price": 32.75,
-      "changePercent": 1.33,
-      "timestamp": "2026-10-01",
+      "price": 32.54,
+      "changePercent": -0.64,
+      "timestamp": "2026-10-02",
       "series": [
         {
           "date": "2026-07-06",
@@ -1342,6 +1342,10 @@
         {
           "date": "2026-10-01",
           "value": 32.75
+        },
+        {
+          "date": "2026-10-02",
+          "value": 32.54
         }
       ]
     },
@@ -1352,14 +1356,10 @@
       "label": "USD / Mexican peso",
       "category": "Currency",
       "currency": "MXN",
-      "price": 18.31634,
-      "changePercent": 1.32,
-      "timestamp": "2026-10-01",
+      "price": 18.1612,
+      "changePercent": -0.85,
+      "timestamp": "2026-10-02",
       "series": [
-        {
-          "date": "2026-07-04",
-          "value": 17.4546
-        },
         {
           "date": "2026-07-05",
           "value": 17.47668
@@ -1715,6 +1715,10 @@
         {
           "date": "2026-10-01",
           "value": 18.31634
+        },
+        {
+          "date": "2026-10-02",
+          "value": 18.1612
         }
       ]
     },
@@ -1725,9 +1729,9 @@
       "label": "USD / Chinese yuan",
       "category": "Currency",
       "currency": "CNY",
-      "price": 6.7046013,
+      "price": 6.70455185,
       "changePercent": 0,
-      "timestamp": "2026-10-01",
+      "timestamp": "2026-10-02",
       "series": [
         {
           "date": "2026-07-06",
@@ -1984,6 +1988,10 @@
         {
           "date": "2026-10-01",
           "value": 6.7046013
+        },
+        {
+          "date": "2026-10-02",
+          "value": 6.70455185
         }
       ]
     },
@@ -1994,14 +2002,10 @@
       "label": "USD / Indian rupee",
       "category": "Currency",
       "currency": "INR",
-      "price": 96.22505,
-      "changePercent": 0.31,
-      "timestamp": "2026-10-01",
+      "price": 96.14625,
+      "changePercent": -0.08,
+      "timestamp": "2026-10-02",
       "series": [
-        {
-          "date": "2026-07-04",
-          "value": 95.208
-        },
         {
           "date": "2026-07-05",
           "value": 95.2148
@@ -2353,6 +2357,10 @@
         {
           "date": "2026-10-01",
           "value": 96.22505
+        },
+        {
+          "date": "2026-10-02",
+          "value": 96.14625
         }
       ]
     }
