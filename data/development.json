@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T21:21:42.862Z",
+  "updatedAt": "2026-10-16T04:30:34.935Z",
   "source": "World Bank Data360 / WDI",
   "license": "CC BY 4.0; verify indicator metadata for exceptions",
   "items": [
@@ -22,7 +22,7 @@
     {
       "label": "Inflation",
       "area": "Lower middle income",
-      "value": 3.546302,
+      "value": 3.555137,
       "unit": "%",
       "period": "2025",
       "indicator": "WB_WDI_FP_CPI_TOTL_ZG"
@@ -30,7 +30,7 @@
     {
       "label": "Inflation",
       "area": "Upper middle income",
-      "value": 3.205505,
+      "value": 3.256219,
       "unit": "%",
       "period": "2025",
       "indicator": "WB_WDI_FP_CPI_TOTL_ZG"
@@ -38,17 +38,17 @@
     {
       "label": "FDI inflows",
       "area": "Lower middle income",
-      "value": 1.688979,
+      "value": 1.465154,
       "unit": "% GDP",
-      "period": "2024",
+      "period": "2025",
       "indicator": "WB_WDI_BX_KLT_DINV_WD_GD_ZS"
     },
     {
       "label": "FDI inflows",
       "area": "Upper middle income",
-      "value": 1.033265,
+      "value": 1.093175,
       "unit": "% GDP",
-      "period": "2024",
+      "period": "2025",
       "indicator": "WB_WDI_BX_KLT_DINV_WD_GD_ZS"
     }
   ]
