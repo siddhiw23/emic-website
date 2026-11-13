@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — EMIC</title>
+<meta name="description" content="Explore research by members of Cornell’s Emerging Markets Institute Club.">
+<link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260812-1">
+<link rel="stylesheet" href="research.css?v=20261113-kavuma">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="mark" href="index.html"><span class="mark-copy"><strong>EMIC</strong><small>Emerging Markets Institute Club · Cornell University</small></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+</header>
+
+<div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
+  <a class="market-tab" href="em-watch.html">EM Watch</a>
+  <div class="market-track" id="market-track">Loading market data…</div>
+</div>
+
+<main id="main-content" class="research-page">
+  <section class="research-intro wrap" aria-labelledby="research-title">
+    <p class="research-kicker">The EMIC research collection</p>
+    <div class="research-heading"><h1 id="research-title">Research</h1><p>Member perspectives.<br><em>Emerging possibilities.</em></p></div>
+    <p class="research-lede">Exploring the economies, institutions, and ideas shaping the emerging world. Discover research from our community at Cornell.</p>
+  </section>
+
+  <section class="wrap research-library" id="research-library" aria-labelledby="library-title">
+    <div class="library-heading"><div><p class="research-kicker">Ideas, in depth</p><h2 id="library-title">The research library</h2></div><p>Member papers and the EMIC Research Journal.</p></div>
+    <form id="research-filters" role="search" aria-label="Search member research">
+      <div class="research-controls"><label class="research-search"><span>Search the collection</span><input id="research-search" type="search" placeholder="Search by title, author, or keyword…"></label><label><span>Format</span><select id="research-format"><option value="">All formats</option></select></label><label><span>Year</span><select id="research-year"><option value="">All years</option></select></label><label><span>Sort by</span><select id="research-sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label></div>
+      <div class="research-topics" id="research-topics" role="group" aria-label="Filter by topic"></div>
+    </form>
+    <div class="research-results-meta"><span id="research-count" role="status" aria-live="polite"></span><button id="research-clear" type="button">Reset filters <span aria-hidden="true">↺</span></button></div>
+    <div id="research-results" class="research-results"></div>
+    <noscript><p>Please enable JavaScript to explore the research library. <a href="assets/reports/Real%20Time%20Inflation.pdf">Read the Bolivia inflation paper</a> or <a href="assets/reports/emic_journal.pdf">read the EMIC Research Journal</a>.</p></noscript>
+  </section>
+  <aside class="research-closing wrap"><span class="research-closing-mark" aria-hidden="true">↗</span><div><h2>Research starts with a question.</h2><p>Meet the members exploring what comes next for emerging markets.</p></div><a class="textlink" href="members.html">Meet our members →</a></aside>
+</main>
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="f-brand"><img src="assets/emic-logo.png?v=20260812-2" alt="" width="54" height="54"><div class="f-mark">EMIC</div></div>
+      <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <span>This organization is a registered student organization of Cornell University.</span>
+    <span>Equal Education and Employment</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+<script src="research-data.js?v=20261113-kavuma"></script>
+<script src="research.js?v=20261113-kavuma"></script>
+</body>
+</html>
