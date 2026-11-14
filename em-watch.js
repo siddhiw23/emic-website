@@ -144,7 +144,7 @@ function renderMarket(data) {
   title.textContent = 'Market history';
   const subtitle = document.createElement('p');
   subtitle.className = 'watch-chart-note';
-  subtitle.textContent = 'Daily closes · delayed Google Finance observations';
+  subtitle.textContent = `Daily closes · ${data.sourceLabel || 'Google Finance'} · delayed observations`;
   const rows = document.createElement('div');
   rows.className = 'watch-market-grid';
   data.items.forEach((item) => {
@@ -168,7 +168,9 @@ function renderMarket(data) {
     latest.className = 'watch-quote-latest';
     latest.append(price, change);
     header.append(identity, latest);
-    quote.append(header, interactiveLineChart(item));
+    const provenance = document.createElement('small');
+    provenance.textContent = `${item.sourceLabel || 'Google Finance'} · as of ${watchDate(item.timestamp)}`;
+    quote.append(header, interactiveLineChart(item), provenance);
     rows.append(quote);
   });
   root.replaceChildren(title, subtitle, rows);

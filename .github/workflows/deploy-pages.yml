@@ -11,15 +11,15 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   deploy:
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    timeout-minutes: 15
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url || steps.deployment_final.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out site
@@ -30,6 +30,24 @@ jobs:
         uses: actions/upload-pages-artifact@v5
         with:
           path: .
+      # Artifact discovery can lag a successful upload. Retry the official
+      # deployment action with backoff; the final attempt still fails the job.
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+      - name: Wait before deployment retry
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 10
+      - name: Retry GitHub Pages deployment
+        if: steps.deployment.outcome == 'failure'
+        id: deployment_retry
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+      - name: Wait before final deployment attempt
+        if: steps.deployment_retry.outcome == 'failure'
+        run: sleep 30
+      - name: Final GitHub Pages deployment attempt
+        if: steps.deployment_retry.outcome == 'failure'
+        id: deployment_final
         uses: actions/deploy-pages@v5

@@ -1,6 +1,11 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { fetchText, parseMarketCsv, parseYahooChart } from './feed-utils.mjs';
 
-const dataDir = new URL('../data/', import.meta.url);
+const dataDir = process.env.EMIC_DATA_DIR
+  ? pathToFileURL(`${resolve(process.env.EMIC_DATA_DIR)}/`)
+  : new URL('../data/', import.meta.url);
 const substackFeed = 'https://beatingsisyphus.substack.com/feed';
 const data360Root = 'https://data360api.worldbank.org/data360/data';
 const embiCsv = 'https://raw.githubusercontent.com/mauforonda/credit_ratings/refs/heads/main/data/embi.csv';
@@ -29,12 +34,7 @@ const marketSheets = [
 ];
 
 async function fetchJson(url) {
-  const response = await fetch(url, {
-    headers: { Accept: 'application/json' },
-    signal: AbortSignal.timeout(25000)
-  });
-  if (!response.ok) throw new Error(`${url} returned ${response.status}`);
-  return response.json();
+  return JSON.parse(await fetchText(url, 'application/json'));
 }
 
 function decodeEntities(value = '') {
@@ -55,9 +55,8 @@ function textOnly(html = '') {
 }
 
 async function refreshPosts() {
-  const response = await fetch(substackFeed);
-  if (!response.ok) throw new Error(`Substack returned ${response.status}`);
-  const xml = await response.text();
+  const xml = await fetchText(substackFeed, 'application/rss+xml, application/xml, text/xml;q=0.9');
+  if (!/<rss[\s>]/i.test(xml) || !/<channel[\s>]/i.test(xml)) throw new Error('Substack response is not an RSS feed');
   const channelHeader = xml.split(/<item>/i)[0];
   const channelImage = tag(tag(channelHeader, 'image'), 'url');
   const posts = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, 10).map((match) => {
@@ -80,6 +79,7 @@ async function refreshPosts() {
       isPodcast: Boolean(enclosure)
     };
   }).filter((post) => post.title && /^https?:\/\//.test(post.link));
+  if (!posts.length) throw new Error('Substack RSS contained no valid posts');
   await writeFile(new URL('posts.json', dataDir), `${JSON.stringify({ updatedAt: new Date().toISOString(), source: substackFeed, posts }, null, 2)}\n`);
 }
 
@@ -111,48 +111,45 @@ async function refreshMarkets() {
   const items = [];
   for (const asset of marketSheets) {
     const params = new URLSearchParams({ output: 'csv', single: 'true', gid: String(asset.gid) });
-    const response = await fetch(`${marketPublicationRoot}/pub?${params}`);
-    if (!response.ok) throw new Error(`${asset.sheet} market sheet returned ${response.status}`);
-    const lines = (await response.text()).trim().split(/\r?\n/).slice(1);
-    const series = lines.map((line) => {
-      const fields = [...line.matchAll(/(?:^|,)(?:"((?:[^"]|"")*)"|([^,]*))/g)]
-        .map((match) => (match[1] ?? match[2] ?? '').replace(/""/g, '"').trim());
-      const dateMatch = fields[0]?.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
-      const value = Number(fields[1]);
-      return dateMatch && Number.isFinite(value)
-        ? { date: `${dateMatch[3]}-${dateMatch[1].padStart(2, '0')}-${dateMatch[2].padStart(2, '0')}`, value }
-        : null;
-    }).filter(Boolean).sort((a, b) => a.date.localeCompare(b.date));
+    let source = `${marketPublicationRoot}/pub?${params}`;
+    let sourceLabel = 'Google Finance via EMIC Google Sheet';
+    let series;
+    try {
+      series = parseMarketCsv(await fetchText(source, 'text/csv'));
+    } catch (error) {
+      console.warn(`${asset.sheet}: ${error.message}; trying Yahoo Finance daily history`);
+      const yahooSymbol = asset.category === 'Currency' ? `${asset.sheet}=X` : asset.symbol;
+      source = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol)}?range=3mo&interval=1d`;
+      sourceLabel = 'Yahoo Finance';
+      series = parseYahooChart(await fetchJson(source), { ...asset, yahooSymbol });
+    }
     const latest = series.at(-1);
     const previous = series.at(-2);
-    if (!latest) continue;
-    const changePercent = previous?.value
-      ? ((latest.value - previous.value) / previous.value) * 100
-      : null;
+    const changePercent = ((latest.value - previous.value) / previous.value) * 100;
     items.push({
       ...asset,
       price: latest.value,
-      changePercent: Number.isFinite(changePercent) ? Math.round(changePercent * 100) / 100 : null,
+      changePercent: Math.round(changePercent * 100) / 100,
       timestamp: latest.date,
+      source,
+      sourceLabel,
       series
     });
   }
-  if (items.length !== marketSheets.length) {
-    throw new Error(`Market sheets returned ${items.length} of ${marketSheets.length} expected asset histories`);
-  }
+  const providers = [...new Set(items.map(item => item.sourceLabel))];
+  // Write only after every asset validates. Never splice different providers into one history.
   await writeFile(new URL('market.json', dataDir), `${JSON.stringify({
     updatedAt: new Date().toISOString(),
-    source: marketSheetUrl,
-    sourceLabel: 'Public EMIC Google Sheet / Google Finance',
+    source: providers.length === 1 && providers[0] === 'Yahoo Finance' ? 'https://finance.yahoo.com/' : marketSheetUrl,
+    sourceLabel: providers.join(' / '),
     delayed: true,
     items
   }, null, 2)}\n`);
 }
 
 async function refreshCredit() {
-  const response = await fetch(embiCsv);
-  if (!response.ok) throw new Error(`EMBI dataset returned ${response.status}`);
-  const rows = (await response.text()).trim().split(/\r?\n/).slice(1).map((line) => {
+  const csv = await fetchText(embiCsv, 'text/csv, text/plain;q=0.9');
+  const rows = csv.trim().split(/\r?\n/).slice(1).map((line) => {
     const [date, region, rawValue] = line.split(',');
     const value = Number(rawValue);
     return { date, region, value };
@@ -198,6 +195,8 @@ async function refreshCredit() {
 await mkdir(dataDir, { recursive: true });
 if (process.argv.includes('--market-only')) {
   await refreshMarkets();
+} else if (process.argv.includes('--posts-only')) {
+  await refreshPosts();
 } else {
   const refreshes = [
     ['publication', refreshPosts],
