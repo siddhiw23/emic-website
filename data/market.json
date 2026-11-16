@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T18:50:03.263Z",
+  "updatedAt": "2026-11-16T06:26:27.088Z",
   "source": "https://finance.yahoo.com/",
   "sourceLabel": "Yahoo Finance",
   "delayed": true,
@@ -1393,10 +1393,6 @@
       "sourceLabel": "Yahoo Finance",
       "series": [
         {
-          "date": "2026-08-14",
-          "value": 17.030000686645508
-        },
-        {
           "date": "2026-08-17",
           "value": 17.019060134887695
         },
@@ -1672,10 +1668,6 @@
       "sourceLabel": "Yahoo Finance",
       "series": [
         {
-          "date": "2026-08-14",
-          "value": 6.742800235748291
-        },
-        {
           "date": "2026-08-17",
           "value": 6.742800235748291
         },
@@ -1950,10 +1942,6 @@
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/INR%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-14",
-          "value": 95.40119934082031
-        },
         {
           "date": "2026-08-17",
           "value": 95.45030212402344
