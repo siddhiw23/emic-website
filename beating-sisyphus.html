@@ -4,27 +4,197 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beating Sisyphus — EMIC</title>
-<meta name="description" content="EMIC's media production division — podcasts, blogs, and videos on the emerging world.">
+<meta name="description" content="Beating Sisyphus is EMIC's podcast on the emerging world — dialogue that is candid, open, and rigorous.">
 <link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260812-1">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261116-1">
 <style>
-  .bs-team{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 18px;}
+  :root{
+    --umber:#15110D;
+    --umber-soft:rgba(21,17,13,0);
+    --gold:#C8A96B;
+    --gold-dim:rgba(200,169,107,.38);
+    --cream:#F0E8D8;
+    --cream-dim:#CFC5B2;
+    --muted:#9A8F7B;
+  }
+
+  /* ---------- Hero: the painting ---------- */
+  .bs-hero{background:var(--umber);color:var(--cream);position:relative;overflow:hidden;}
+  .bs-hero::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(110% 90% at 72% 45%,rgba(0,0,0,0) 45%,rgba(0,0,0,.5) 100%);
+  }
+  .hero-grid{
+    position:relative;z-index:1;
+    display:flex;align-items:center;
+    min-height:clamp(540px,72vh,780px);
+  }
+  .hero-copy{padding:clamp(56px,8vw,96px) 0;max-width:46%;}
+  .hero-kicker{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gold);margin:0 0 20px;
+  }
+  .hero-kicker sup{font-size:.72em;line-height:0;vertical-align:baseline;position:relative;top:-.55em;letter-spacing:0;margin-right:.2em;}
+  .hero-copy h1{
+    font-family:'Newsreader',serif;font-weight:500;color:var(--cream);
+    font-size:clamp(50px,7.6vw,98px);line-height:.96;letter-spacing:-.018em;
+    margin:0 0 24px;font-variation-settings:'opsz' 144;
+  }
+  .hero-copy h1 em{font-style:italic;font-weight:420;color:var(--gold);}
+  .hero-copy p{font-size:clamp(17px,1.9vw,20px);color:var(--cream-dim);max-width:30ch;margin:0 0 30px;line-height:1.5;}
+  .hero-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .hero-links a{
+    color:var(--cream);text-decoration:none;font-size:15.5px;
+    border-bottom:1px solid var(--gold-dim);padding-bottom:1px;
+  }
+  .hero-links a:hover{color:var(--gold);border-bottom-color:var(--gold);}
+
+  .hero-art{position:absolute;top:0;bottom:0;right:0;width:56%;margin:0;}
+  .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 18%;}
+  .hero-art::before{
+    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(to right,var(--umber) 0,var(--umber-soft) 34%),
+      linear-gradient(to left,rgba(21,17,13,.55) 0,var(--umber-soft) 18%),
+      linear-gradient(to top,var(--umber) 0,var(--umber-soft) 26%),
+      linear-gradient(to bottom,var(--umber) 0,var(--umber-soft) 16%);
+  }
+  .hero-credit{
+    position:absolute;right:var(--pad);bottom:18px;z-index:2;
+    font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ---------- Greek key rule ---------- */
+  .meander{
+    background:var(--umber);
+    border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);
+    padding:7px 0;
+  }
+  .meander span{
+    display:block;height:16px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20'%3E%3Cpath d='M0 1H20M19 1V19H7V7H13V13H10' fill='none' stroke='%23C8A96B' stroke-width='2'/%3E%3C/svg%3E") repeat-x center;
+    background-size:auto 16px;opacity:.85;
+  }
+
+  /* ---------- The three standards ---------- */
+  .bs-creed{background:var(--umber);color:var(--cream);padding:clamp(52px,7vw,88px) 0 clamp(64px,8vw,104px);}
+  .creed-title{
+    font-family:'Newsreader',serif;font-weight:500;color:var(--cream);
+    font-size:clamp(26px,3.6vw,40px);line-height:1.12;letter-spacing:-.01em;
+    margin:0 0 clamp(36px,5vw,56px);max-width:24ch;font-variation-settings:'opsz' 144;
+  }
+  .creed-title em{font-style:italic;font-weight:420;color:var(--gold);}
+  .creed{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px);}
+  .creed li{border-top:1px solid var(--gold-dim);padding-top:22px;}
+  .creed .c-greek{
+    display:flex;align-items:baseline;gap:14px;margin-bottom:18px;
+    font-family:'EB Garamond',serif;font-style:italic;font-size:27px;color:var(--gold);
+  }
+  .creed .c-greek small{
+    font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  }
+  .creed h3{
+    font-family:'Newsreader',serif;font-weight:500;color:var(--cream);
+    font-size:clamp(34px,4vw,50px);line-height:1;letter-spacing:-.012em;
+    margin:0 0 16px;font-variation-settings:'opsz' 144;
+  }
+  .creed h3::after{content:'.';color:var(--gold);}
+  .creed p{margin:0;font-size:17.5px;line-height:1.55;color:var(--cream-dim);max-width:28ch;}
+
+  @media (max-width:860px){
+    .hero-grid{flex-direction:column;align-items:stretch;min-height:0;}
+    .hero-copy{max-width:none;}
+    .hero-art{position:relative;order:-1;width:auto;height:min(84vw,540px);margin:0 calc(-1 * var(--pad));}
+    .hero-art img{object-position:55% 15%;}
+    .hero-art::before{
+      background:
+        linear-gradient(to top,var(--umber) 0,var(--umber-soft) 42%),
+        linear-gradient(to bottom,var(--umber) 0,var(--umber-soft) 10%),
+        linear-gradient(to left,rgba(21,17,13,0) 0,rgba(21,17,13,0) 100%);
+    }
+    .hero-copy{padding:0 0 clamp(44px,7vw,64px);margin-top:-36px;position:relative;z-index:2;}
+    .hero-credit{top:14px;bottom:auto;right:var(--pad);}
+    .creed{grid-template-columns:1fr;gap:0;}
+    .creed li{padding:26px 0;border-top:none;border-bottom:1px solid var(--gold-dim);}
+    .creed li:first-child{border-top:1px solid var(--gold-dim);}
+  }
+
+  /* ---------- Episodes ---------- */
+  .bs-episodes{padding-top:clamp(48px,7vw,86px);}
+  .episode-list .f-kind{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--red);margin-bottom:6px;
+  }
+  .episode-list .f-date{margin-bottom:0;}
+  .episode-more{margin-top:22px;}
+
+  /* ---------- Team ---------- */
+  .bs-team{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:26px 18px;}
   @media (max-width:520px){ .bs-team{grid-template-columns:repeat(2,1fr);} }
   .bs-member{background:none;border:none;padding:0;cursor:pointer;text-align:left;font-family:inherit;color:inherit;}
   .bs-member .bsm-photo{display:block;width:72px;height:72px;border-radius:50%;overflow:hidden;background:var(--parchment);margin-bottom:9px;}
   .bs-member img{display:block;width:100%;height:100%;object-fit:cover;}
-  .bs-member .bsm-name{
-    font-size:16px;text-decoration:underline;text-decoration-color:var(--hairline);
-    text-underline-offset:3px;
-  }
-  .bs-member:hover .bsm-name{text-decoration-color:var(--red);}
+  .bs-member .bsm-name{font-size:16px;text-decoration:underline;text-decoration-color:var(--hairline);text-underline-offset:3px;}
+  .bs-member:hover .bsm-name,.bs-member[aria-expanded="true"] .bsm-name{text-decoration-color:var(--red);}
   #bs-bio{display:none;margin-top:26px;padding-top:22px;border-top:1px solid var(--hairline);font-size:16px;line-height:1.6;}
+
+  /* ---------- Page-wide dark theme: the painting's umber carries through ---------- */
+  body.bs-dark{
+    --raised:#211B16;
+    --line:rgba(200,169,107,.16);
+    --text-dim:#A79C88;
+    color:var(--cream);
+    background:linear-gradient(180deg,var(--umber) 0,var(--umber) 55%,#1E1813 100%);
+  }
+  body.bs-dark ::selection{background:rgba(200,169,107,.28);}
+  body.bs-dark .bs-episodes{border-top:1px solid var(--line);}
+  body.bs-dark .index-rule .ir-label{color:var(--gold);}
+  body.bs-dark .index-rule .ir-line{border-top-color:var(--line);}
+  body.bs-dark .textlink{color:var(--cream);border-bottom-color:var(--gold-dim);}
+  body.bs-dark .textlink:hover{color:var(--gold);border-bottom-color:var(--gold);}
+
+  body.bs-dark .featured{background:var(--raised);box-shadow:0 18px 50px rgba(0,0,0,.35);border:1px solid var(--line);}
+  body.bs-dark .featured .f-eyebrow{color:var(--gold);}
+  body.bs-dark .featured .f-big{color:var(--cream);}
+  body.bs-dark .featured .f-date{color:var(--text-dim);}
+  body.bs-dark .featured a:hover .f-big{color:var(--gold);}
+
+  body.bs-dark .feed{background:var(--raised);border-color:var(--line);box-shadow:0 10px 34px rgba(0,0,0,.3);}
+  body.bs-dark .feed a{border-bottom-color:var(--line);}
+  body.bs-dark .feed .f-title{color:var(--cream);}
+  body.bs-dark .feed a:hover .f-title{color:var(--gold);}
+  body.bs-dark .feed .f-date{color:var(--text-dim);}
+  body.bs-dark .episode-list .f-kind{color:var(--gold);}
+
+  body.bs-dark .guest{background:var(--raised);border-color:var(--line);color:var(--cream);}
+  body.bs-dark .guest:hover{border-color:var(--gold-dim);box-shadow:0 8px 24px rgba(0,0,0,.35);}
+  body.bs-dark .guest::after{color:var(--gold);}
+  body.bs-dark .guest .g-photo{background:#2A231C;}
+  body.bs-dark .guest .g-title{color:var(--text-dim);}
+
+  body.bs-dark .bs-member .bsm-photo{background:#2A231C;box-shadow:0 0 0 1px var(--line);}
+  body.bs-dark .bs-member .bsm-name{color:var(--cream);}
+  body.bs-dark .bs-member:hover .bsm-name,body.bs-dark .bs-member[aria-expanded="true"] .bsm-name{color:var(--gold);}
+  body.bs-dark .bs-member[aria-expanded="true"] .bsm-photo{box-shadow:0 0 0 2px var(--gold);}
+  body.bs-dark #bs-bio{border-top-color:var(--line);color:var(--text-dim);}
+  body.bs-dark #bs-bio strong{color:var(--cream);}
+
+  body.bs-dark .media-platforms-section{background:linear-gradient(180deg,#1E1813,#241D17);border-top:1px solid var(--line);}
+  body.bs-dark .media-embed{background:var(--raised);border-color:var(--line);box-shadow:0 12px 36px rgba(0,0,0,.35);}
+  body.bs-dark .media-embed-head{border-bottom-color:var(--line);}
+  body.bs-dark .media-embed-head span{color:var(--cream);}
+  body.bs-dark .media-embed-head a{color:var(--gold);}
+
+  body.bs-dark footer{background:#110E0B;border-top:1px solid var(--line);}
+  body.bs-dark .foot-legal{border-top-color:rgba(200,169,107,.12);}
 </style>
 </head>
-<body>
+<body class="bs-dark">
 
 <header class="masthead">
   <div class="wrap masthead-inner">
@@ -46,31 +216,71 @@
 
 <main>
 
-  <div class="page-head">
-    <div class="wrap">
-      <h1>Beating Sisyphus</h1>
-      <p class="lede">EMIC's media production division, producing podcasts, blogs, and videos.</p>
+  <section class="bs-hero" aria-labelledby="bs-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker">The EMIC and EMC<sup>2</sup> podcast</p>
+        <h1 id="bs-title">Beating <em>Sisyphus</em></h1>
+        <p>How emerging markets stop pushing the same boulder up the same hill.</p>
+        <div class="hero-links">
+          <a href="https://open.spotify.com/show/7DOx0zfgbVNiluDSoQJCmI" target="_blank" rel="noopener">Spotify</a>
+          <a href="https://podcasts.apple.com/us/podcast/id1855339237" target="_blank" rel="noopener">Apple Podcasts</a>
+          <a href="https://www.youtube.com/playlist?list=PLsusrzm7-OaTbS2kVoUfYs78COGlG85wf" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://beatingsisyphus.substack.com/" target="_blank" rel="noopener">Substack</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/sisyphus-titian.jpg" alt="Titian's painting of Sisyphus carrying a boulder up a dark hillside" decoding="sync" fetchpriority="high">
+        <figcaption class="hero-credit">Titian, Sisyphus, 1548–49 · Museo del Prado</figcaption>
+      </figure>
     </div>
-  </div>
+  </section>
 
-  <section class="section" style="padding-top:0;border-top:none;">
+  <div class="meander" role="presentation"><div class="wrap"><span></span></div></div>
+
+  <section class="bs-creed" aria-labelledby="creed-title">
+    <div class="wrap">
+      <h2 class="creed-title" id="creed-title">Every conversation we publish is <em>candid</em>, <em>open</em>, and <em>rigorous</em>.</h2>
+      <ol class="creed">
+        <li>
+          <span class="c-greek">Παρρησία <small>Parrhesia · I</small></span>
+          <h3>Candid</h3>
+          <p>We must be willing to confront our failures, not just celebrate our successes.</p>
+        </li>
+        <li>
+          <span class="c-greek">Ξενία <small>Xenia · II</small></span>
+          <h3>Open</h3>
+          <p>We must invite perspectives that challenge our own.</p>
+        </li>
+        <li>
+          <span class="c-greek">Ἔλεγχος <small>Elenchus · III</small></span>
+          <h3>Rigorous</h3>
+          <p>Every idea, no matter how compelling, must withstand the test of theory and evidence.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section bs-episodes">
     <div class="wrap">
       <div class="split">
 
         <div>
+          <div class="index-rule">
+            <span class="ir-label">Latest</span>
+          </div>
           <div class="featured" id="bs-featured">Loading…</div>
 
           <div class="index-rule">
-            <span class="ir-label">The Team</span>
+            <span class="ir-label">Recent episodes</span>
           </div>
-          <div class="bs-team" id="bs-team"></div>
-          <div id="bs-bio"></div>
+          <div class="feed episode-list" id="bs-episodes">Loading…</div>
+          <p class="episode-more"><a class="textlink" href="https://beatingsisyphus.substack.com/" target="_blank" rel="noopener">Full archive ↗</a></p>
         </div>
 
         <div>
           <div class="index-rule">
-            <span class="ir-label">Notable Guests</span>
-
+            <span class="ir-label">Across the table</span>
           </div>
 
           <a class="guest" href="https://youtu.be/983qdYvxPDg?si=CuYfZTGdBVhoKsG2" target="_blank" rel="noopener" aria-label="Watch the Christopher Barrett interview on YouTube">
@@ -101,26 +311,26 @@
               <div class="g-title">Economist who coined BRICS</div>
             </div>
           </a>
-
-          <div class="index-rule" style="margin-top:95px;">
-            <span class="ir-label">Find us on</span>
-          </div>
-          <div class="platforms">
-            <a class="textlink" href="https://beatingsisyphus.substack.com/" target="_blank" rel="noopener">Substack</a>
-            <a class="textlink" href="https://open.spotify.com/show/7DOx0zfgbVNiluDSoQJCmI" target="_blank" rel="noopener">Spotify</a>
-            <a class="textlink" href="https://podcasts.apple.com/us/podcast/id1855339237" target="_blank" rel="noopener">Apple Podcasts</a>
-            <a class="textlink" href="https://www.youtube.com/playlist?list=PLsusrzm7-OaTbS2kVoUfYs78COGlG85wf" target="_blank" rel="noopener">YouTube</a>
-          </div>
         </div>
 
       </div>
     </div>
   </section>
 
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">The team</span>
+      </div>
+      <div class="bs-team" id="bs-team"></div>
+      <div id="bs-bio"></div>
+    </div>
+  </section>
+
   <section class="section media-platforms-section">
     <div class="wrap">
       <div class="index-rule">
-        <span class="ir-label">Latest Episodes</span>
+        <span class="ir-label">Listen and watch</span>
       </div>
       <div class="media-embeds">
         <article class="media-embed media-embed-youtube">
@@ -163,13 +373,42 @@
   </div>
 </footer>
 
-<script src="members-data.js"></script>
+<script src="members-data.js?v=20261116-1"></script>
 <script src="site.js"></script>
 <script>
+  /* Recent episodes: everything after the featured post, titles and dates only. */
+  (async () => {
+    const el = document.getElementById('bs-episodes');
+    if (!el) return;
+    try {
+      const data = await loadJson('posts.json');
+      const posts = data.posts.slice(1, 6);
+      if (!posts.length) throw new Error('No posts');
+      const cards = posts.map((post) => {
+        const link = document.createElement('a');
+        link.href = safeExternalUrl(post.link) || 'https://beatingsisyphus.substack.com/';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        [['f-kind', post.isPodcast ? 'Podcast' : 'Article'], ['f-title', post.title], ['f-date', post.date]].forEach(([className, text]) => {
+          if (!text) return;
+          const field = document.createElement('div');
+          field.className = className;
+          field.textContent = text;
+          link.append(field);
+        });
+        return link;
+      });
+      el.replaceChildren(...cards);
+    } catch (e) {
+      el.innerHTML = '<p style="color:var(--secondary);margin:0;">Recent episodes are at <a class="textlink" href="https://beatingsisyphus.substack.com" target="_blank" rel="noopener">beatingsisyphus.substack.com</a>.</p>';
+    }
+  })();
+
+  /* Team grid with expand-below bio. */
   const teamGrid = document.getElementById('bs-team');
   const bioPanel = document.getElementById('bs-bio');
   teamGrid.innerHTML = BS_TEAM.map((m, i) => `
-    <button class="bs-member" data-i="${i}" type="button">
+    <button class="bs-member" data-i="${i}" type="button" aria-expanded="false">
       <span class="bsm-photo"><img src="${m.photo}" alt="" style="object-position:${m.objectPosition || 'center'};transform:scale(${m.scale || 1});"></span>
       <span class="bsm-name">${m.name}</span>
     </button>
@@ -177,6 +416,10 @@
   teamGrid.querySelectorAll('.bs-member').forEach((btn) => {
     btn.addEventListener('click', () => {
       const m = BS_TEAM[Number(btn.dataset.i)];
+      const wasOpen = btn.getAttribute('aria-expanded') === 'true';
+      teamGrid.querySelectorAll('.bs-member').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+      if (wasOpen) { bioPanel.style.display = 'none'; return; }
+      btn.setAttribute('aria-expanded', 'true');
       bioPanel.style.display = 'block';
       bioPanel.innerHTML = `<strong style="font-family:'Newsreader',serif;font-weight:500;">${m.name}</strong><br>${m.major}`;
     });

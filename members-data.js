@@ -96,6 +96,7 @@ const BS_TEAM = [
   { name: 'Daniel Young Kim', major: 'Applied Economics and Management, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c20c3d74dd604ce9b75260531d0ce5b7~mv2.jpg', objectPosition: 'center 40%' },
   { name: 'Anastasiia Ryshytiuk', major: 'Urban and Regional Studies, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c3a02ca8ecfd4c0eaaf31f6fe37a3ac7~mv2.jpg' },
   { name: 'Konrad Hartung', major: 'Economics & College Scholar, Class of 2028', photo: 'https://static.wixstatic.com/media/8812e8_c7ee8321595d45e4a3497e2d5f0b5dbc~mv2.png' },
+  { name: 'Pratyush Singh', major: 'Industrial and Labor Relations, Class of 2029', photo: 'assets/ps2326.png' },
   { name: 'Lourdes Casanova', major: 'Director of the Cañizares Center for Emerging Markets', photo: 'https://static.wixstatic.com/media/8812e8_1dcc99a80dbd4ef896bbdcd64cfb0918~mv2.jpg' },
   { name: 'Linh Le', major: 'Finance, Class of 2027, VinUniversity', photo: 'https://static.wixstatic.com/media/8812e8_077d91febb3942679d767897dd65a2cf~mv2.png', scale: 1.4 }
 ];

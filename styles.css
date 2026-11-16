@@ -467,14 +467,14 @@ body{
 .acc-item:first-of-type{border-top:1px solid var(--hairline);}
 .acc-btn{padding:20px 0;}
 .acc-btn::after{content:"+";font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--red);margin-left:auto;}
-.acc-item.open .acc-btn::after{content:"−";}
+.acc-item.open .acc-btn::after{content:"\2212";}
 
 .timeline{padding:26px 28px 26px 52px;background:var(--paper-raised);border:1px solid var(--hairline);box-shadow:0 10px 34px rgba(31,24,17,.035);}
 .timeline::before{left:25px;top:34px;bottom:34px;}
 .t-dot{left:-32px;}
 
 .guest{padding:18px;background:var(--paper-raised);border:1px solid var(--hairline);margin-bottom:10px;text-decoration:none;color:inherit;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
-.guest::after{content:"↗";align-self:center;margin-left:auto;padding-left:12px;font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--red);}
+.guest::after{content:"\2197";align-self:center;margin-left:auto;padding-left:12px;font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--red);}
 .guest:hover{transform:translateX(3px);border-color:rgba(179,27,27,.38);box-shadow:0 8px 24px rgba(31,24,17,.06);}
 .guest .g-photo{border-radius:2px;}
 
@@ -558,7 +558,7 @@ footer{margin-top:0;background:linear-gradient(135deg,#15171A,#24272C);}
 .watch-credit-head .watch-chart-note{margin-bottom:0;}
 .watch-select-label{display:flex;flex-direction:column;gap:6px;min-width:210px;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--secondary);}
 .watch-select-wrap{position:relative;display:block;}
-.watch-select-wrap::after{content:'⌄';position:absolute;right:13px;top:50%;color:var(--red);font:18px/1 'IBM Plex Mono',monospace;pointer-events:none;transform:translateY(-58%);}
+.watch-select-wrap::after{content:'\2304';position:absolute;right:13px;top:50%;color:var(--red);font:18px/1 'IBM Plex Mono',monospace;pointer-events:none;transform:translateY(-58%);}
 .watch-select{appearance:none;width:100%;padding:11px 40px 11px 13px;border:1px solid var(--hairline);border-radius:2px;background:var(--paper);box-shadow:0 4px 14px rgba(31,24,17,.045);color:var(--ink);font:500 15px 'EB Garamond',serif;cursor:pointer;}
 .watch-select:hover{border-color:#b9b3a8;}
 .watch-select:focus{outline:2px solid var(--red);outline-offset:2px;}
