@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T21:59:50.881Z",
+  "updatedAt": "2026-11-17T07:53:28.455Z",
   "source": "https://finance.yahoo.com/",
   "sourceLabel": "Yahoo Finance",
   "delayed": true,
@@ -1386,9 +1386,9 @@
       "label": "USD / Mexican peso",
       "category": "Currency",
       "currency": "MXN",
-      "price": 18.590999603271484,
-      "changePercent": -0.14,
-      "timestamp": "2026-11-13",
+      "price": 18.525829315185547,
+      "changePercent": -0.35,
+      "timestamp": "2026-11-16",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/MXN%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
@@ -1651,6 +1651,10 @@
         {
           "date": "2026-11-13",
           "value": 18.590999603271484
+        },
+        {
+          "date": "2026-11-16",
+          "value": 18.525829315185547
         }
       ]
     },
@@ -1661,9 +1665,9 @@
       "label": "USD / Chinese yuan",
       "category": "Currency",
       "currency": "CNY",
-      "price": 6.670400142669678,
-      "changePercent": 0,
-      "timestamp": "2026-11-13",
+      "price": 6.671000003814697,
+      "changePercent": 0.01,
+      "timestamp": "2026-11-16",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
@@ -1926,6 +1930,10 @@
         {
           "date": "2026-11-13",
           "value": 6.670400142669678
+        },
+        {
+          "date": "2026-11-16",
+          "value": 6.671000003814697
         }
       ]
     },
@@ -1936,9 +1944,9 @@
       "label": "USD / Indian rupee",
       "category": "Currency",
       "currency": "INR",
-      "price": 94.03379821777344,
-      "changePercent": 0.36,
-      "timestamp": "2026-11-13",
+      "price": 94.23799896240234,
+      "changePercent": 0.22,
+      "timestamp": "2026-11-16",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/INR%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
@@ -2201,6 +2209,10 @@
         {
           "date": "2026-11-13",
           "value": 94.03379821777344
+        },
+        {
+          "date": "2026-11-16",
+          "value": 94.23799896240234
         }
       ]
     }
