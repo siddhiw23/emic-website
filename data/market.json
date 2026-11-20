@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T20:35:02.314Z",
+  "updatedAt": "2026-11-20T07:12:22.064Z",
   "source": "https://finance.yahoo.com/",
   "sourceLabel": "Yahoo Finance",
   "delayed": true,
@@ -11,16 +11,12 @@
       "label": "Emerging Markets ex-SOE",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 30.323999404907227,
-      "changePercent": -1.81,
-      "timestamp": "2026-11-18",
+      "price": 30.047000885009766,
+      "changePercent": -0.91,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/XC?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 32.33000183105469
-        },
         {
           "date": "2026-08-20",
           "value": 32.290000915527344
@@ -276,6 +272,10 @@
         {
           "date": "2026-11-18",
           "value": 30.323999404907227
+        },
+        {
+          "date": "2026-11-19",
+          "value": 30.047000885009766
         }
       ]
     },
@@ -286,16 +286,12 @@
       "label": "Latin America 40",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 30.239999771118164,
-      "changePercent": -3.45,
-      "timestamp": "2026-11-18",
+      "price": 29.65999984741211,
+      "changePercent": -1.92,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/ILF?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 33.66999816894531
-        },
         {
           "date": "2026-08-20",
           "value": 33.720001220703125
@@ -551,6 +547,10 @@
         {
           "date": "2026-11-18",
           "value": 30.239999771118164
+        },
+        {
+          "date": "2026-11-19",
+          "value": 29.65999984741211
         }
       ]
     },
@@ -561,16 +561,12 @@
       "label": "Emerging Markets Asia",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 100.73999786376953,
-      "changePercent": -0.2,
-      "timestamp": "2026-11-18",
+      "price": 98.4800033569336,
+      "changePercent": -2.24,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/EEMA?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 115.26000213623047
-        },
         {
           "date": "2026-08-20",
           "value": 115.73999786376953
@@ -826,6 +822,10 @@
         {
           "date": "2026-11-18",
           "value": 100.73999786376953
+        },
+        {
+          "date": "2026-11-19",
+          "value": 98.4800033569336
         }
       ]
     },
@@ -836,16 +836,12 @@
       "label": "Africa",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 24.399999618530273,
-      "changePercent": -3.71,
-      "timestamp": "2026-11-18",
+      "price": 23.920000076293945,
+      "changePercent": -1.97,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/AFK?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 28.850000381469727
-        },
         {
           "date": "2026-08-20",
           "value": 29.18000030517578
@@ -1101,6 +1097,10 @@
         {
           "date": "2026-11-18",
           "value": 24.399999618530273
+        },
+        {
+          "date": "2026-11-19",
+          "value": 23.920000076293945
         }
       ]
     },
@@ -1111,16 +1111,12 @@
       "label": "Commodity Index",
       "category": "Commodity ETF",
       "currency": "USD",
-      "price": 29.510000228881836,
-      "changePercent": -2.25,
-      "timestamp": "2026-11-18",
+      "price": 29.6200008392334,
+      "changePercent": 0.37,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/DBC?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 30.760000228881836
-        },
         {
           "date": "2026-08-20",
           "value": 31.110000610351562
@@ -1376,6 +1372,10 @@
         {
           "date": "2026-11-18",
           "value": 29.510000228881836
+        },
+        {
+          "date": "2026-11-19",
+          "value": 29.6200008392334
         }
       ]
     },
@@ -1386,16 +1386,12 @@
       "label": "USD / Mexican peso",
       "category": "Currency",
       "currency": "MXN",
-      "price": 18.415019989013672,
-      "changePercent": -0.56,
-      "timestamp": "2026-11-18",
+      "price": 18.851200103759766,
+      "changePercent": 2.37,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/MXN%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 17.059829711914062
-        },
         {
           "date": "2026-08-20",
           "value": 16.951000213623047
@@ -1655,6 +1651,10 @@
         {
           "date": "2026-11-18",
           "value": 18.415019989013672
+        },
+        {
+          "date": "2026-11-19",
+          "value": 18.851200103759766
         }
       ]
     },
@@ -1665,16 +1665,12 @@
       "label": "USD / Chinese yuan",
       "category": "Currency",
       "currency": "CNY",
-      "price": 6.665900230407715,
+      "price": 6.667600154876709,
       "changePercent": 0.03,
-      "timestamp": "2026-11-18",
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/CNY%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 6.742599964141846
-        },
         {
           "date": "2026-08-20",
           "value": 6.729499816894531
@@ -1934,6 +1930,10 @@
         {
           "date": "2026-11-18",
           "value": 6.665900230407715
+        },
+        {
+          "date": "2026-11-19",
+          "value": 6.667600154876709
         }
       ]
     },
@@ -1944,16 +1944,12 @@
       "label": "USD / Indian rupee",
       "category": "Currency",
       "currency": "INR",
-      "price": 93.47460174560547,
-      "changePercent": -0.52,
-      "timestamp": "2026-11-18",
+      "price": 93.46530151367188,
+      "changePercent": -0.01,
+      "timestamp": "2026-11-19",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/INR%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-19",
-          "value": 95.81639862060547
-        },
         {
           "date": "2026-08-20",
           "value": 95.49600219726562
@@ -2213,6 +2209,10 @@
         {
           "date": "2026-11-18",
           "value": 93.47460174560547
+        },
+        {
+          "date": "2026-11-19",
+          "value": 93.46530151367188
         }
       ]
     }
