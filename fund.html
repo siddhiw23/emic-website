@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  HIDDEN PAGE: not linked from the nav, footer, or any other page yet.
+  To launch: remove the robots meta below, then add
+  <a href="fund.html">Fund</a> to the primary and footer nav on every page.
+-->
+<meta name="robots" content="noindex, nofollow">
+<title>Emerging Market Fund — EMIC</title>
+<meta name="description" content="EMIC's student-run portfolio management team, investing real capital into emerging markets.">
+<link rel="icon" href="assets/emic-logo.png?v=20260812-2" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261116-1">
+<style>
+  /* ---------- Page head ---------- */
+  .fund-kicker{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--red);margin:0 0 16px;
+  }
+  .fund-head h1 em{font-style:italic;font-weight:420;color:var(--red);}
+
+  /* ---------- Returns tracker (placeholder) ---------- */
+  .tracker{
+    background:var(--paper-raised);border:1px solid var(--hairline);
+    box-shadow:0 12px 34px rgba(31,24,17,.05);
+  }
+  .tracker-head{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    padding:18px clamp(18px,3vw,28px);border-bottom:1px solid var(--hairline);
+  }
+  .tracker-head h2{font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:0;}
+  .soon{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--red);padding:5px 10px;border:1px solid rgba(179,27,27,.3);background:rgba(179,27,27,.05);
+  }
+  .tracker-stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--hairline);}
+  .tracker-stats div{padding:20px clamp(18px,3vw,28px);border-right:1px solid var(--hairline);}
+  .tracker-stats div:last-child{border-right:none;}
+  .tracker-stats dt{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--secondary);margin-bottom:8px;
+  }
+  .tracker-stats dd{margin:0;font-family:'Newsreader',serif;font-size:30px;line-height:1;color:var(--hairline);}
+  .tracker-chart{position:relative;height:clamp(200px,28vw,300px);padding:24px clamp(18px,3vw,28px);}
+  .tracker-chart svg{display:block;width:100%;height:100%;}
+  .tracker-chart p{
+    position:absolute;inset:0;margin:0;display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:0 24px;color:var(--secondary);font-size:16px;font-style:italic;
+  }
+  .tracker-chart p span{background:var(--paper-raised);padding:6px 14px;}
+  @media (max-width:700px){
+    .tracker-stats{grid-template-columns:repeat(2,1fr);}
+    .tracker-stats div:nth-child(2){border-right:none;}
+    .tracker-stats div:nth-child(-n+2){border-bottom:1px solid var(--hairline);}
+  }
+
+  /* ---------- Placeholder slots (sponsors, portfolio managers) ---------- */
+  .slots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:760px){ .slots{grid-template-columns:repeat(2,1fr);} }
+  .slot{
+    min-height:104px;display:flex;align-items:center;justify-content:center;text-align:center;
+    border:1px dashed #C8C0B0;color:var(--secondary);padding:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  }
+  .slot-person{flex-direction:column;gap:12px;min-height:0;padding:20px 16px;}
+  .slot-person span{display:block;width:72px;height:72px;border-radius:50%;background:var(--parchment);}
+  .slot-note{margin:16px 0 0;color:var(--secondary);font-size:15px;}
+
+  /* ---------- Join prompt ---------- */
+  .fund-join{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+  .fund-join h2{
+    font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.4vw,36px);
+    line-height:1.15;margin:0;max-width:22ch;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="mark" href="index.html"><span class="mark-copy"><strong>EMIC</strong><small>Emerging Markets Institute Club · Cornell University</small></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+</header>
+
+<div class="market-band" id="market-band" aria-label="Live emerging market ETF prices">
+  <a class="market-tab" href="em-watch.html">EM Watch</a>
+  <div class="market-track" id="market-track">Loading market data…</div>
+</div>
+
+<main>
+
+  <div class="page-head fund-head">
+    <div class="wrap">
+      <p class="fund-kicker">EMIC · Fund</p>
+      <h1>Emerging Market <em>Fund</em></h1>
+      <p class="lede">A student-run portfolio management team investing real capital into emerging markets, guided by professionals and alumni.</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Performance</span>
+      </div>
+      <div class="tracker" aria-label="Returns tracker, coming soon">
+        <div class="tracker-head">
+          <h2>Returns tracker</h2>
+          <span class="soon">Coming soon</span>
+        </div>
+        <dl class="tracker-stats">
+          <div><dt>Since inception</dt><dd>—</dd></div>
+          <div><dt>Year to date</dt><dd>—</dd></div>
+          <div><dt>vs. Benchmark</dt><dd>—</dd></div>
+          <div><dt>Holdings</dt><dd>—</dd></div>
+        </dl>
+        <div class="tracker-chart">
+          <svg viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true">
+            <g stroke="#E4DED2" stroke-width="1" vector-effect="non-scaling-stroke">
+              <line x1="0" y1="0.5" x2="400" y2="0.5"/>
+              <line x1="0" y1="25" x2="400" y2="25"/>
+              <line x1="0" y1="50" x2="400" y2="50"/>
+              <line x1="0" y1="75" x2="400" y2="75"/>
+            </g>
+            <line x1="0" y1="99.5" x2="400" y2="99.5" stroke="#C8C0B0" stroke-width="1" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <p><span>Fund performance will be published here once reporting begins.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">How the fund works</span>
+      </div>
+      <div class="areas">
+        <div class="area">
+          <h3>Real capital</h3>
+          <p>Students run the portfolio end to end, investing real capital into emerging markets.</p>
+        </div>
+        <div class="area">
+          <h3>Professional guidance</h3>
+          <p>Investment decisions are guided by professionals and EMIC alumni working in the industry.</p>
+        </div>
+        <div class="area">
+          <h3>Sponsor training</h3>
+          <p>Portfolio managers are trained and advised by EMIC's corporate sponsors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Advised by</span>
+      </div>
+      <div class="slots">
+        <div class="slot">Sponsor</div>
+        <div class="slot">Sponsor</div>
+        <div class="slot">Sponsor</div>
+        <div class="slot">Sponsor</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Portfolio managers</span>
+      </div>
+      <div class="slots">
+        <div class="slot slot-person"><span></span>Portfolio manager</div>
+        <div class="slot slot-person"><span></span>Portfolio manager</div>
+        <div class="slot slot-person"><span></span>Portfolio manager</div>
+        <div class="slot slot-person"><span></span>Portfolio manager</div>
+      </div>
+      <p class="slot-note">The fund's team will be announced soon.</p>
+    </div>
+  </section>
+
+  <section class="section band-parchment">
+    <div class="wrap fund-join">
+      <h2>Interested in managing the fund?</h2>
+      <a class="btn" href="recruitment.html">Find out how to join</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="f-brand"><img src="assets/emic-logo.png?v=20260812-2" alt="" width="54" height="54"><div class="f-mark">EMIC</div></div>
+      <div style="max-width:34ch;margin-top:6px;">The Emerging Markets Institute Club at Cornell University.</div>
+    </div>
+    <nav aria-label="Footer">
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="beating-sisyphus.html">Beating Sisyphus</a>
+      <a href="recruitment.html">Recruitment</a>
+      <a href="members.html">Members</a>
+    </nav>
+  </div>
+  <div class="wrap foot-legal">
+    <span>This organization is a registered student organization of Cornell University.</span>
+    <span>Equal Education and Employment</span>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
