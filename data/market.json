@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T06:45:19.445Z",
+  "updatedAt": "2026-11-23T23:52:12.036Z",
   "source": "https://finance.yahoo.com/",
   "sourceLabel": "Yahoo Finance",
   "delayed": true,
@@ -11,16 +11,12 @@
       "label": "Emerging Markets ex-SOE",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 30.01300048828125,
-      "changePercent": -0.11,
-      "timestamp": "2026-11-20",
+      "price": 30.289100646972656,
+      "changePercent": 0.92,
+      "timestamp": "2026-11-23",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/XC?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 32.66999816894531
-        },
         {
           "date": "2026-08-24",
           "value": 32.540000915527344
@@ -276,6 +272,10 @@
         {
           "date": "2026-11-20",
           "value": 30.01300048828125
+        },
+        {
+          "date": "2026-11-23",
+          "value": 30.289100646972656
         }
       ]
     },
@@ -286,16 +286,12 @@
       "label": "Latin America 40",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 28.979999542236328,
-      "changePercent": -2.29,
-      "timestamp": "2026-11-20",
+      "price": 29.579999923706055,
+      "changePercent": 2.07,
+      "timestamp": "2026-11-23",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/ILF?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 34.68000030517578
-        },
         {
           "date": "2026-08-24",
           "value": 34.77000045776367
@@ -551,6 +547,10 @@
         {
           "date": "2026-11-20",
           "value": 28.979999542236328
+        },
+        {
+          "date": "2026-11-23",
+          "value": 29.579999923706055
         }
       ]
     },
@@ -561,16 +561,12 @@
       "label": "Emerging Markets Asia",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 93.5,
-      "changePercent": -5.06,
-      "timestamp": "2026-11-20",
+      "price": 100.31999969482422,
+      "changePercent": 7.29,
+      "timestamp": "2026-11-23",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/EEMA?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 115.9800033569336
-        },
         {
           "date": "2026-08-24",
           "value": 114.51000213623047
@@ -826,6 +822,10 @@
         {
           "date": "2026-11-20",
           "value": 93.5
+        },
+        {
+          "date": "2026-11-23",
+          "value": 100.31999969482422
         }
       ]
     },
@@ -836,16 +836,12 @@
       "label": "Africa",
       "category": "Equity ETF",
       "currency": "USD",
-      "price": 23.239999771118164,
-      "changePercent": -2.84,
-      "timestamp": "2026-11-20",
+      "price": 23.760000228881836,
+      "changePercent": 2.24,
+      "timestamp": "2026-11-23",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/AFK?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 29.860000610351562
-        },
         {
           "date": "2026-08-24",
           "value": 29.540000915527344
@@ -1101,6 +1097,10 @@
         {
           "date": "2026-11-20",
           "value": 23.239999771118164
+        },
+        {
+          "date": "2026-11-23",
+          "value": 23.760000228881836
         }
       ]
     },
@@ -1111,16 +1111,12 @@
       "label": "Commodity Index",
       "category": "Commodity ETF",
       "currency": "USD",
-      "price": 29.31999969482422,
-      "changePercent": -1.01,
-      "timestamp": "2026-11-20",
+      "price": 29.110000610351562,
+      "changePercent": -0.72,
+      "timestamp": "2026-11-23",
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/DBC?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 31.260000228881836
-        },
         {
           "date": "2026-08-24",
           "value": 30.940000534057617
@@ -1376,6 +1372,10 @@
         {
           "date": "2026-11-20",
           "value": 29.31999969482422
+        },
+        {
+          "date": "2026-11-23",
+          "value": 29.110000610351562
         }
       ]
     },
@@ -1392,10 +1392,6 @@
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/MXN%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 16.94540023803711
-        },
         {
           "date": "2026-08-24",
           "value": 16.915000915527344
@@ -1672,10 +1668,6 @@
       "sourceLabel": "Yahoo Finance",
       "series": [
         {
-          "date": "2026-08-21",
-          "value": 6.722499847412109
-        },
-        {
           "date": "2026-08-24",
           "value": 6.7210001945495605
         },
@@ -1950,10 +1942,6 @@
       "source": "https://query1.finance.yahoo.com/v8/finance/chart/INR%3DX?range=3mo&interval=1d",
       "sourceLabel": "Yahoo Finance",
       "series": [
-        {
-          "date": "2026-08-21",
-          "value": 95.77220153808594
-        },
         {
           "date": "2026-08-24",
           "value": 95.70030212402344
