@@ -1,0 +1,1616 @@
+{
+ "updated": "2026-11-23",
+ "episodeCount": 26,
+ "countries": [
+  {
+   "iso3": "CHN",
+   "name": "China",
+   "mentions": 323,
+   "episodes": [
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 62,
+     "moment": "59:00",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=3540s"
+    },
+    {
+     "title": "Is China Facing a Lost Decade? Alicia García-Herrero on Real Estate, India & The New Cold War",
+     "mentions": 44,
+     "moment": "4:28",
+     "url": "https://www.youtube.com/watch?v=IU3dwIJSpWY&t=268s"
+    },
+    {
+     "title": "The End of Globalization? Eswar Prasad on the \"Doom Loop\"",
+     "mentions": 37,
+     "moment": "14:39",
+     "url": "https://www.youtube.com/watch?v=oc72fg30NQM&t=879s"
+    },
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 25,
+     "moment": "35:10",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=2110s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 24,
+     "moment": "16:15",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=975s"
+    },
+    {
+     "title": "How The Fed Impacts the Globe & Emerging Markets With Dr. Steven Kamin",
+     "mentions": 19,
+     "moment": "22:04",
+     "url": "https://www.youtube.com/watch?v=vrxWRc2BfoA&t=1324s"
+    },
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 17,
+     "moment": "41:20",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=2480s"
+    },
+    {
+     "title": "15 Years of Research, Digital Leapfrogging, and The Need For FDI",
+     "mentions": 16,
+     "moment": "9:45",
+     "url": "https://www.youtube.com/watch?v=27DtcrclnCc&t=585s"
+    },
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 16,
+     "moment": "3:19",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=199s"
+    },
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 12,
+     "moment": "7:06",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=426s"
+    },
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 12,
+     "moment": "28:22",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=1702s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 11,
+     "moment": "37:53",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=2273s"
+    },
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 7,
+     "moment": "40:55",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=2455s"
+    },
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 6,
+     "moment": "24:50",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=1490s"
+    },
+    {
+     "title": "\"Managerial MacGyverism\" and Riding the Bronco of Emerging Markets",
+     "mentions": 5,
+     "moment": "24:14",
+     "url": "https://www.youtube.com/watch?v=eRMOxxR35mk&t=1454s"
+    },
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 5,
+     "moment": "20:19",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=1219s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 3,
+     "moment": "37:21",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2241s"
+    },
+    {
+     "title": "President Iván Duque on Leadership; Beating Sisyphus x Tres Respuestas",
+     "mentions": 2,
+     "moment": "26:40",
+     "url": "https://www.youtube.com/watch?v=5OIX8_YjROA&t=1600s"
+    }
+   ]
+  },
+  {
+   "iso3": "USA",
+   "name": "United States",
+   "mentions": 291,
+   "episodes": [
+    {
+     "title": "How The Fed Impacts the Globe & Emerging Markets With Dr. Steven Kamin",
+     "mentions": 50,
+     "moment": "6:55",
+     "url": "https://www.youtube.com/watch?v=vrxWRc2BfoA&t=415s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 41,
+     "moment": "3:46",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=226s"
+    },
+    {
+     "title": "How to Invest Globally: A Macro Framework with Adrian Leon",
+     "mentions": 30,
+     "moment": "21:53",
+     "url": "https://www.youtube.com/watch?v=KCvpnJpe4og&t=1313s"
+    },
+    {
+     "title": "The End of Globalization? Eswar Prasad on the \"Doom Loop\"",
+     "mentions": 29,
+     "moment": "8:35",
+     "url": "https://www.youtube.com/watch?v=oc72fg30NQM&t=515s"
+    },
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 28,
+     "moment": "22:14",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=1334s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 25,
+     "moment": "1:26",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=86s"
+    },
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 20,
+     "moment": "31:10",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=1870s"
+    },
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 16,
+     "moment": "35:10",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=2110s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 16,
+     "moment": "1:02:51",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=3771s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 14,
+     "moment": "25:29",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=1529s"
+    },
+    {
+     "title": "\"Managerial MacGyverism\" and Riding the Bronco of Emerging Markets",
+     "mentions": 11,
+     "moment": "33:35",
+     "url": "https://www.youtube.com/watch?v=eRMOxxR35mk&t=2015s"
+    },
+    {
+     "title": "15 Years of Research, Digital Leapfrogging, and The Need For FDI",
+     "mentions": 9,
+     "moment": "16:29",
+     "url": "https://www.youtube.com/watch?v=27DtcrclnCc&t=989s"
+    },
+    {
+     "title": "Is China Facing a Lost Decade? Alicia García-Herrero on Real Estate, India & The New Cold War",
+     "mentions": 2,
+     "moment": "13:45",
+     "url": "https://www.youtube.com/watch?v=IU3dwIJSpWY&t=825s"
+    }
+   ]
+  },
+  {
+   "iso3": "NGA",
+   "name": "Nigeria",
+   "mentions": 127,
+   "episodes": [
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 41,
+     "moment": "20:00",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=1200s"
+    },
+    {
+     "title": "How Development Finance Can Unlock Nigeria’s Growth | Prof. Joseph Nnanna",
+     "mentions": 25,
+     "moment": "38:19",
+     "url": "https://www.youtube.com/watch?v=sDqMx45hRnE&t=2299s"
+    },
+    {
+     "title": "Africa's Growth Paradox, Inflation Shocks, and Currency Floating | Dr. Chukwuka Onyekwena",
+     "mentions": 23,
+     "moment": "41:03",
+     "url": "https://www.youtube.com/watch?v=dc63LFlGnrU&t=2463s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 21,
+     "moment": "46:22",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=2782s"
+    },
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 10,
+     "moment": "45:03",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=2703s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 4,
+     "moment": "49:34",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=2974s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 2,
+     "moment": "37:36",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2256s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 1,
+     "moment": "19:34",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1174s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 0,
+     "moment": "0:00",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=0s"
+    }
+   ]
+  },
+  {
+   "iso3": "BRA",
+   "name": "Brazil",
+   "mentions": 126,
+   "episodes": [
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 19,
+     "moment": "7:04",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=424s"
+    },
+    {
+     "title": "15 Years of Research, Digital Leapfrogging, and The Need For FDI",
+     "mentions": 16,
+     "moment": "9:45",
+     "url": "https://www.youtube.com/watch?v=27DtcrclnCc&t=585s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 16,
+     "moment": "18:18",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=1098s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 12,
+     "moment": "17:00",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=1020s"
+    },
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 12,
+     "moment": "43:38",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=2618s"
+    },
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 9,
+     "moment": "35:10",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=2110s"
+    },
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 7,
+     "moment": "21:55",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=1315s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 7,
+     "moment": "18:01",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1081s"
+    },
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 5,
+     "moment": "18:12",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=1092s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 5,
+     "moment": "18:05",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1085s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 5,
+     "moment": "9:48",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=588s"
+    },
+    {
+     "title": "Africa's Growth Paradox, Inflation Shocks, and Currency Floating | Dr. Chukwuka Onyekwena",
+     "mentions": 4,
+     "moment": "27:39",
+     "url": "https://www.youtube.com/watch?v=dc63LFlGnrU&t=1659s"
+    },
+    {
+     "title": "\"Managerial MacGyverism\" and Riding the Bronco of Emerging Markets",
+     "mentions": 3,
+     "moment": "13:39",
+     "url": "https://www.youtube.com/watch?v=eRMOxxR35mk&t=819s"
+    },
+    {
+     "title": "How The Fed Impacts the Globe & Emerging Markets With Dr. Steven Kamin",
+     "mentions": 3,
+     "moment": "20:11",
+     "url": "https://www.youtube.com/watch?v=vrxWRc2BfoA&t=1211s"
+    },
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 3,
+     "moment": "15:49",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=949s"
+    }
+   ]
+  },
+  {
+   "iso3": "IND",
+   "name": "India",
+   "mentions": 123,
+   "episodes": [
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 22,
+     "moment": "41:03",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=2463s"
+    },
+    {
+     "title": "Is China Facing a Lost Decade? Alicia García-Herrero on Real Estate, India & The New Cold War",
+     "mentions": 14,
+     "moment": "12:15",
+     "url": "https://www.youtube.com/watch?v=IU3dwIJSpWY&t=735s"
+    },
+    {
+     "title": "The End of Globalization? Eswar Prasad on the \"Doom Loop\"",
+     "mentions": 14,
+     "moment": "38:45",
+     "url": "https://www.youtube.com/watch?v=oc72fg30NQM&t=2325s"
+    },
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 13,
+     "moment": "43:07",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=2587s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 12,
+     "moment": "18:37",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=1117s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 10,
+     "moment": "15:09",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=909s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 9,
+     "moment": "25:00",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1500s"
+    },
+    {
+     "title": "15 Years of Research, Digital Leapfrogging, and The Need For FDI",
+     "mentions": 8,
+     "moment": "9:45",
+     "url": "https://www.youtube.com/watch?v=27DtcrclnCc&t=585s"
+    },
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 7,
+     "moment": "29:12",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=1752s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 5,
+     "moment": "7:18",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=438s"
+    },
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 5,
+     "moment": "11:50",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=710s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 3,
+     "moment": "12:19",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=739s"
+    },
+    {
+     "title": "How to Invest Globally: A Macro Framework with Adrian Leon",
+     "mentions": 1,
+     "moment": "28:11",
+     "url": "https://www.youtube.com/watch?v=KCvpnJpe4og&t=1691s"
+    }
+   ]
+  },
+  {
+   "iso3": "ARG",
+   "name": "Argentina",
+   "mentions": 80,
+   "episodes": [
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 38,
+     "moment": "36:15",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2175s"
+    },
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 12,
+     "moment": "34:33",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=2073s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 12,
+     "moment": "20:27",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1227s"
+    },
+    {
+     "title": "How The Fed Impacts the Globe & Emerging Markets With Dr. Steven Kamin",
+     "mentions": 8,
+     "moment": "43:08",
+     "url": "https://www.youtube.com/watch?v=vrxWRc2BfoA&t=2588s"
+    },
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 5,
+     "moment": "33:03",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=1983s"
+    },
+    {
+     "title": "Africa's Growth Paradox, Inflation Shocks, and Currency Floating | Dr. Chukwuka Onyekwena",
+     "mentions": 2,
+     "moment": "27:37",
+     "url": "https://www.youtube.com/watch?v=dc63LFlGnrU&t=1657s"
+    },
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 2,
+     "moment": "47:19",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=2839s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 1,
+     "moment": "21:27",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=1287s"
+    }
+   ]
+  },
+  {
+   "iso3": "COL",
+   "name": "Colombia",
+   "mentions": 51,
+   "episodes": [
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 16,
+     "moment": "52:28",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=3148s"
+    },
+    {
+     "title": "President Iván Duque on Leadership; Beating Sisyphus x Tres Respuestas",
+     "mentions": 13,
+     "moment": "0:22",
+     "url": "https://www.youtube.com/watch?v=5OIX8_YjROA&t=22s"
+    },
+    {
+     "title": "\"Managerial MacGyverism\" and Riding the Bronco of Emerging Markets",
+     "mentions": 12,
+     "moment": "1:02",
+     "url": "https://www.youtube.com/watch?v=eRMOxxR35mk&t=62s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 6,
+     "moment": "1:00:22",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=3622s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 4,
+     "moment": "19:13",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=1153s"
+    }
+   ]
+  },
+  {
+   "iso3": "CRI",
+   "name": "Costa Rica",
+   "mentions": 41,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 35,
+     "moment": "11:00",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=660s"
+    },
+    {
+     "title": "\"Managerial MacGyverism\" and Riding the Bronco of Emerging Markets",
+     "mentions": 4,
+     "moment": "35:48",
+     "url": "https://www.youtube.com/watch?v=eRMOxxR35mk&t=2148s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 2,
+     "moment": "50:25",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=3025s"
+    }
+   ]
+  },
+  {
+   "iso3": "KEN",
+   "name": "Kenya",
+   "mentions": 29,
+   "episodes": [
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 8,
+     "moment": "46:15",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=2775s"
+    },
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 7,
+     "moment": "33:40",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=2020s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 4,
+     "moment": "53:39",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=3219s"
+    },
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 4,
+     "moment": "7:06",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=426s"
+    },
+    {
+     "title": "15 Years of Research, Digital Leapfrogging, and The Need For FDI",
+     "mentions": 3,
+     "moment": "9:45",
+     "url": "https://www.youtube.com/watch?v=27DtcrclnCc&t=585s"
+    },
+    {
+     "title": "Why Firms Don't Train Workers and What it Costs Developing Economies ft. Nicholas Swanson",
+     "mentions": 2,
+     "moment": "10:03",
+     "url": "https://www.youtube.com/watch?v=KuLfwmVjtLo&t=603s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 1,
+     "moment": "27:38",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1658s"
+    }
+   ]
+  },
+  {
+   "iso3": "CHL",
+   "name": "Chile",
+   "mentions": 22,
+   "episodes": [
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 15,
+     "moment": "39:24",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=2364s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 5,
+     "moment": "58:56",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=3536s"
+    },
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 2,
+     "moment": "10:26",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=626s"
+    }
+   ]
+  },
+  {
+   "iso3": "MEX",
+   "name": "Mexico",
+   "mentions": 20,
+   "episodes": [
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 9,
+     "moment": "1:00:33",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=3633s"
+    },
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 6,
+     "moment": "14:34",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=874s"
+    },
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 2,
+     "moment": "20:04",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=1204s"
+    },
+    {
+     "title": "How The Fed Impacts the Globe & Emerging Markets With Dr. Steven Kamin",
+     "mentions": 2,
+     "moment": "2:28",
+     "url": "https://www.youtube.com/watch?v=vrxWRc2BfoA&t=148s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 1,
+     "moment": "45:59",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=2759s"
+    }
+   ]
+  },
+  {
+   "iso3": "ZAF",
+   "name": "South Africa",
+   "mentions": 20,
+   "episodes": [
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 7,
+     "moment": "33:32",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=2012s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 5,
+     "moment": "20:41",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=1241s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 3,
+     "moment": "23:28",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=1408s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 2,
+     "moment": "11:41",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=701s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 2,
+     "moment": "19:37",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1177s"
+    },
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 1,
+     "moment": "15:58",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=958s"
+    }
+   ]
+  },
+  {
+   "iso3": "VNM",
+   "name": "Vietnam",
+   "mentions": 20,
+   "episodes": [
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 8,
+     "moment": "46:15",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=2775s"
+    },
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 6,
+     "moment": "31:11",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=1871s"
+    },
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 3,
+     "moment": "32:13",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=1933s"
+    },
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 3,
+     "moment": "31:24",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=1884s"
+    }
+   ]
+  },
+  {
+   "iso3": "ETH",
+   "name": "Ethiopia",
+   "mentions": 18,
+   "episodes": [
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 6,
+     "moment": "46:39",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=2799s"
+    },
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 5,
+     "moment": "22:43",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=1363s"
+    },
+    {
+     "title": "Why Firms Don't Train Workers and What it Costs Developing Economies ft. Nicholas Swanson",
+     "mentions": 4,
+     "moment": "43:26",
+     "url": "https://www.youtube.com/watch?v=KuLfwmVjtLo&t=2606s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 2,
+     "moment": "47:35",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=2855s"
+    },
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 1,
+     "moment": "15:04",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=904s"
+    }
+   ]
+  },
+  {
+   "iso3": "ARE",
+   "name": "United Arab Emirates",
+   "mentions": 17,
+   "episodes": [
+    {
+     "title": "Mark Mobius: The Digital Currency Revolution: CBDCs, Crypto, and the Future of Global Finance",
+     "mentions": 17,
+     "moment": "36:00",
+     "url": "https://www.youtube.com/watch?v=hwPV1JZxUyY&t=2160s"
+    }
+   ]
+  },
+  {
+   "iso3": "IDN",
+   "name": "Indonesia",
+   "mentions": 16,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 7,
+     "moment": "56:47",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=3407s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 7,
+     "moment": "30:40",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1840s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 2,
+     "moment": "24:02",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=1442s"
+    }
+   ]
+  },
+  {
+   "iso3": "RUS",
+   "name": "Russian Federation",
+   "mentions": 15,
+   "episodes": [
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 8,
+     "moment": "15:05",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=905s"
+    },
+    {
+     "title": "The End of Globalization? Eswar Prasad on the \"Doom Loop\"",
+     "mentions": 5,
+     "moment": "31:45",
+     "url": "https://www.youtube.com/watch?v=oc72fg30NQM&t=1905s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 2,
+     "moment": "31:06",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1866s"
+    }
+   ]
+  },
+  {
+   "iso3": "JPN",
+   "name": "Japan",
+   "mentions": 14,
+   "episodes": [
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 6,
+     "moment": "37:17",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=2237s"
+    },
+    {
+     "title": "How to Invest Globally: A Macro Framework with Adrian Leon",
+     "mentions": 5,
+     "moment": "6:39",
+     "url": "https://www.youtube.com/watch?v=KCvpnJpe4og&t=399s"
+    },
+    {
+     "title": "Is China Facing a Lost Decade? Alicia García-Herrero on Real Estate, India & The New Cold War",
+     "mentions": 3,
+     "moment": "11:39",
+     "url": "https://www.youtube.com/watch?v=IU3dwIJSpWY&t=699s"
+    }
+   ]
+  },
+  {
+   "iso3": "BOL",
+   "name": "Bolivia",
+   "mentions": 13,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 7,
+     "moment": "58:10",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=3490s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 4,
+     "moment": "44:44",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2684s"
+    },
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 2,
+     "moment": "17:19",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=1039s"
+    }
+   ]
+  },
+  {
+   "iso3": "HKG",
+   "name": "Hong Kong",
+   "mentions": 13,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 13,
+     "moment": "7:21",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=441s"
+    }
+   ]
+  },
+  {
+   "iso3": "VEN",
+   "name": "Venezuela",
+   "mentions": 12,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 8,
+     "moment": "36:38",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=2198s"
+    },
+    {
+     "title": "President Iván Duque on Leadership; Beating Sisyphus x Tres Respuestas",
+     "mentions": 4,
+     "moment": "21:37",
+     "url": "https://www.youtube.com/watch?v=5OIX8_YjROA&t=1297s"
+    }
+   ]
+  },
+  {
+   "iso3": "DEU",
+   "name": "Germany",
+   "mentions": 11,
+   "episodes": [
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 7,
+     "moment": "35:57",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=2157s"
+    },
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 4,
+     "moment": "4:28",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=268s"
+    }
+   ]
+  },
+  {
+   "iso3": "ESP",
+   "name": "Spain",
+   "mentions": 10,
+   "episodes": [
+    {
+     "title": "Is China Facing a Lost Decade? Alicia García-Herrero on Real Estate, India & The New Cold War",
+     "mentions": 5,
+     "moment": "7:15",
+     "url": "https://www.youtube.com/watch?v=IU3dwIJSpWY&t=435s"
+    },
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 3,
+     "moment": "4:46",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=286s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 2,
+     "moment": "4:16",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=256s"
+    }
+   ]
+  },
+  {
+   "iso3": "URY",
+   "name": "Uruguay",
+   "mentions": 10,
+   "episodes": [
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 5,
+     "moment": "17:46",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1066s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 4,
+     "moment": "50:25",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=3025s"
+    },
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 1,
+     "moment": "34:10",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=2050s"
+    }
+   ]
+  },
+  {
+   "iso3": "GBR",
+   "name": "United Kingdom",
+   "mentions": 9,
+   "episodes": [
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 7,
+     "moment": "43:59",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=2639s"
+    },
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 2,
+     "moment": "24:13",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=1453s"
+    }
+   ]
+  },
+  {
+   "iso3": "PER",
+   "name": "Peru",
+   "mentions": 7,
+   "episodes": [
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 5,
+     "moment": "58:58",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=3538s"
+    },
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 1,
+     "moment": "28:32",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1712s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 1,
+     "moment": "50:25",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=3025s"
+    }
+   ]
+  },
+  {
+   "iso3": "KOR",
+   "name": "South Korea",
+   "mentions": 7,
+   "episodes": [
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 3,
+     "moment": "32:42",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=1962s"
+    },
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 2,
+     "moment": "37:17",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=2237s"
+    },
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 2,
+     "moment": "33:53",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=2033s"
+    }
+   ]
+  },
+  {
+   "iso3": "ZMB",
+   "name": "Zambia",
+   "mentions": 7,
+   "episodes": [
+    {
+     "title": "Why Firms Don't Train Workers and What it Costs Developing Economies ft. Nicholas Swanson",
+     "mentions": 7,
+     "moment": "22:20",
+     "url": "https://www.youtube.com/watch?v=KuLfwmVjtLo&t=1340s"
+    }
+   ]
+  },
+  {
+   "iso3": "GHA",
+   "name": "Ghana",
+   "mentions": 6,
+   "episodes": [
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 6,
+     "moment": "39:10",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=2350s"
+    }
+   ]
+  },
+  {
+   "iso3": "MYS",
+   "name": "Malaysia",
+   "mentions": 6,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 3,
+     "moment": "15:16",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=916s"
+    },
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 3,
+     "moment": "28:22",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=1702s"
+    }
+   ]
+  },
+  {
+   "iso3": "SGP",
+   "name": "Singapore",
+   "mentions": 6,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 5,
+     "moment": "15:56",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=956s"
+    },
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 1,
+     "moment": "33:53",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=2033s"
+    }
+   ]
+  },
+  {
+   "iso3": "ECU",
+   "name": "Ecuador",
+   "mentions": 5,
+   "episodes": [
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 3,
+     "moment": "42:24",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2544s"
+    },
+    {
+     "title": "How to Invest Globally: A Macro Framework with Adrian Leon",
+     "mentions": 1,
+     "moment": "19:18",
+     "url": "https://www.youtube.com/watch?v=KCvpnJpe4og&t=1158s"
+    },
+    {
+     "title": "President Iván Duque on Leadership; Beating Sisyphus x Tres Respuestas",
+     "mentions": 1,
+     "moment": "32:25",
+     "url": "https://www.youtube.com/watch?v=5OIX8_YjROA&t=1945s"
+    }
+   ]
+  },
+  {
+   "iso3": "NIC",
+   "name": "Nicaragua",
+   "mentions": 5,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 4,
+     "moment": "1:43",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=103s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 1,
+     "moment": "49:05",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2945s"
+    }
+   ]
+  },
+  {
+   "iso3": "THA",
+   "name": "Thailand",
+   "mentions": 5,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 3,
+     "moment": "15:16",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=916s"
+    },
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 2,
+     "moment": "23:28",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=1408s"
+    }
+   ]
+  },
+  {
+   "iso3": "EGY",
+   "name": "Egypt",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 2,
+     "moment": "29:18",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=1758s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 2,
+     "moment": "24:11",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=1451s"
+    }
+   ]
+  },
+  {
+   "iso3": "SLV",
+   "name": "El Salvador",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 2,
+     "moment": "36:48",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2208s"
+    },
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 2,
+     "moment": "1:43",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=103s"
+    }
+   ]
+  },
+  {
+   "iso3": "NOR",
+   "name": "Norway",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "Why Millions of Workers Choose Informal Jobs (And Why It’s Not Just Policy)",
+     "mentions": 4,
+     "moment": "50:02",
+     "url": "https://www.youtube.com/watch?v=a9H6Z-s4gK4&t=3002s"
+    }
+   ]
+  },
+  {
+   "iso3": "PAK",
+   "name": "Pakistan",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 3,
+     "moment": "49:38",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=2978s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 1,
+     "moment": "45:18",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=2718s"
+    }
+   ]
+  },
+  {
+   "iso3": "PHL",
+   "name": "Philippines",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "Applying Artificial Intelligence in Southeast Asia",
+     "mentions": 3,
+     "moment": "31:45",
+     "url": "https://www.youtube.com/watch?v=PlPHwuCOVBE&t=1905s"
+    },
+    {
+     "title": "Why the Future of Payments Is in the Global South | dLocal CEO Pedro Arnt",
+     "mentions": 1,
+     "moment": "45:45",
+     "url": "https://www.youtube.com/watch?v=BlM8g6WyQ40&t=2745s"
+    }
+   ]
+  },
+  {
+   "iso3": "RWA",
+   "name": "Rwanda",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "Why Firms Don't Train Workers and What it Costs Developing Economies ft. Nicholas Swanson",
+     "mentions": 3,
+     "moment": "9:32",
+     "url": "https://www.youtube.com/watch?v=KuLfwmVjtLo&t=572s"
+    },
+    {
+     "title": "Beyond Efficiency: AI as a Force Multiplier for Developing Nations",
+     "mentions": 1,
+     "moment": "51:48",
+     "url": "https://www.youtube.com/watch?v=5QJn1mJrjMQ&t=3108s"
+    }
+   ]
+  },
+  {
+   "iso3": "SAU",
+   "name": "Saudi Arabia",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "The Dollar's Demise? Lord Jim O'Neill on BRICS and What's Next",
+     "mentions": 4,
+     "moment": "10:25",
+     "url": "https://www.youtube.com/watch?v=9tEhN0WLkW8&t=625s"
+    }
+   ]
+  },
+  {
+   "iso3": "TUR",
+   "name": "Türkiye",
+   "mentions": 4,
+   "episodes": [
+    {
+     "title": "New Rules, New Opportunities: 2025 Emerging Market Multinationals Report",
+     "mentions": 4,
+     "moment": "48:31",
+     "url": "https://www.youtube.com/watch?v=IsYit1PdOzk&t=2911s"
+    }
+   ]
+  },
+  {
+   "iso3": "AUS",
+   "name": "Australia",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 3,
+     "moment": "23:29",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1409s"
+    }
+   ]
+  },
+  {
+   "iso3": "BDI",
+   "name": "Burundi",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "Why Firms Don't Train Workers and What it Costs Developing Economies ft. Nicholas Swanson",
+     "mentions": 3,
+     "moment": "43:26",
+     "url": "https://www.youtube.com/watch?v=KuLfwmVjtLo&t=2606s"
+    }
+   ]
+  },
+  {
+   "iso3": "CAN",
+   "name": "Canada",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 2,
+     "moment": "23:37",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1417s"
+    },
+    {
+     "title": "The End of Globalization? Eswar Prasad on the \"Doom Loop\"",
+     "mentions": 1,
+     "moment": "32:23",
+     "url": "https://www.youtube.com/watch?v=oc72fg30NQM&t=1943s"
+    }
+   ]
+  },
+  {
+   "iso3": "DOM",
+   "name": "Dominican Republic",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 2,
+     "moment": "34:38",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=2078s"
+    },
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 1,
+     "moment": "51:11",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=3071s"
+    }
+   ]
+  },
+  {
+   "iso3": "GTM",
+   "name": "Guatemala",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 2,
+     "moment": "1:43",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=103s"
+    },
+    {
+     "title": "Can We End Extreme Poverty? | Prof. Christopher Barrett",
+     "mentions": 1,
+     "moment": "27:45",
+     "url": "https://www.youtube.com/watch?v=983qdYvxPDg&t=1665s"
+    }
+   ]
+  },
+  {
+   "iso3": "MDG",
+   "name": "Madagascar",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "\"Be Bold\": Decades of Navigating Emerging Markets with Lourdes Casanova & Ann Miroux",
+     "mentions": 3,
+     "moment": "46:50",
+     "url": "https://www.youtube.com/watch?v=-JibJVltsEE&t=2810s"
+    }
+   ]
+  },
+  {
+   "iso3": "SOM",
+   "name": "Somalia",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 3,
+     "moment": "15:30",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=930s"
+    }
+   ]
+  },
+  {
+   "iso3": "UKR",
+   "name": "Ukraine",
+   "mentions": 3,
+   "episodes": [
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 3,
+     "moment": "18:11",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=1091s"
+    }
+   ]
+  },
+  {
+   "iso3": "CIV",
+   "name": "Côte d'Ivoire",
+   "mentions": 2,
+   "episodes": [
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 2,
+     "moment": "29:16",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=1756s"
+    }
+   ]
+  },
+  {
+   "iso3": "GUY",
+   "name": "Guyana",
+   "mentions": 2,
+   "episodes": [
+    {
+     "title": "President Iván Duque on Leadership; Beating Sisyphus x Tres Respuestas",
+     "mentions": 2,
+     "moment": "32:28",
+     "url": "https://www.youtube.com/watch?v=5OIX8_YjROA&t=1948s"
+    }
+   ]
+  },
+  {
+   "iso3": "HND",
+   "name": "Honduras",
+   "mentions": 2,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 2,
+     "moment": "1:43",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=103s"
+    }
+   ]
+  },
+  {
+   "iso3": "ISR",
+   "name": "Israel",
+   "mentions": 2,
+   "episodes": [
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 2,
+     "moment": "15:40",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=940s"
+    }
+   ]
+  },
+  {
+   "iso3": "MAR",
+   "name": "Morocco",
+   "mentions": 2,
+   "episodes": [
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 2,
+     "moment": "30:39",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=1839s"
+    }
+   ]
+  },
+  {
+   "iso3": "POL",
+   "name": "Poland",
+   "mentions": 2,
+   "episodes": [
+    {
+     "title": "What Causes Inflation? Jon Hartley",
+     "mentions": 2,
+     "moment": "15:51",
+     "url": "https://www.youtube.com/watch?v=_vtwlpiPsjw&t=951s"
+    }
+   ]
+  },
+  {
+   "iso3": "GEO",
+   "name": "Georgia",
+   "mentions": 1,
+   "episodes": [
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 1,
+     "moment": "36:25",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=2185s"
+    }
+   ]
+  },
+  {
+   "iso3": "HTI",
+   "name": "Haiti",
+   "mentions": 1,
+   "episodes": [
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 1,
+     "moment": "11:23",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=683s"
+    }
+   ]
+  },
+  {
+   "iso3": "NZL",
+   "name": "New Zealand",
+   "mentions": 1,
+   "episodes": [
+    {
+     "title": "Global Housing Affordability: Zoning, Informality, and the Cost of Regulation with Salim Furth",
+     "mentions": 1,
+     "moment": "23:30",
+     "url": "https://www.youtube.com/watch?v=ydm-KwwxMtA&t=1410s"
+    }
+   ]
+  },
+  {
+   "iso3": "PAN",
+   "name": "Panama",
+   "mentions": 1,
+   "episodes": [
+    {
+     "title": "Why Venezuela Collapsed & Costa Rica Thrived | Laura Chinchilla (Former President of Costa Rica)",
+     "mentions": 1,
+     "moment": "34:10",
+     "url": "https://www.youtube.com/watch?v=GX1C9gx3Mpk&t=2050s"
+    }
+   ]
+  },
+  {
+   "iso3": "SEN",
+   "name": "Senegal",
+   "mentions": 1,
+   "episodes": [
+    {
+     "title": "From Aid to Investment: Roland Siller on the Future of Development Finance",
+     "mentions": 1,
+     "moment": "3:58",
+     "url": "https://www.youtube.com/watch?v=QpbN0TCOhR8&t=238s"
+    },
+    {
+     "title": "What's Next For Africa?",
+     "mentions": 0,
+     "moment": "0:00",
+     "url": "https://www.youtube.com/watch?v=ZlC9R_eJY6o&t=0s"
+    }
+   ]
+  },
+  {
+   "iso3": "ZWE",
+   "name": "Zimbabwe",
+   "mentions": 1,
+   "episodes": [
+    {
+     "title": "Political Economy Experts Expose Populism's Fatal Flaw",
+     "mentions": 1,
+     "moment": "43:05",
+     "url": "https://www.youtube.com/watch?v=1ba0DARiAvs&t=2585s"
+    }
+   ]
+  }
+ ]
+}

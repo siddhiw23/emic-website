@@ -20,6 +20,19 @@ credentialed third-party API directly.
 The `Refresh public data` GitHub Actions workflow updates these files every six
 hours and can also be run manually.
 
+## Beating Sisyphus countries map
+
+- `data/bs-countries.json`: countries discussed in Beating Sisyphus episodes,
+  ranked by how often each is mentioned in the episode transcripts, with a
+  YouTube link to the part of each episode where it is discussed most. It is
+  not refreshed by the workflow: the podcast team regenerates it with
+  `build_insights.py --site-data <this repo>/data/bs-countries.json` after new
+  episodes and commits the result.
+- `assets/bs-world-map.json`: static country outlines for the map, pre-projected
+  (Equal Earth) from Natural Earth's 1:110m admin-0 countries, which are in the
+  public domain, via the `world-atlas` 2.0.2 package. Small states missing at
+  that scale are drawn as dots.
+
 ## Market quotes
 
 The market adapter reads only the sheet's published-web identifier and public

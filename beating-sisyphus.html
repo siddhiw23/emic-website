@@ -133,6 +133,50 @@
   .episode-list .f-date{margin-bottom:0;}
   .episode-more{margin-top:22px;}
 
+  /* ---------- Atlas: countries analyzed ---------- */
+  .bs-atlas{border-top:1px solid var(--line);}
+  .atlas-title{
+    font-family:'Newsreader',serif;font-weight:500;color:var(--cream);
+    font-size:clamp(26px,3.4vw,38px);line-height:1.12;letter-spacing:-.01em;
+    margin:0 0 10px;font-variation-settings:'opsz' 144;
+  }
+  .atlas-title em{font-style:italic;font-weight:420;color:var(--gold);}
+  .atlas-lede{margin:0 0 clamp(22px,3vw,34px);color:var(--text-dim);font-size:17px;max-width:56ch;}
+  .atlas{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:clamp(20px,3vw,40px);align-items:start;}
+  .atlas-map{position:relative;margin:0;}
+  .atlas-map svg{display:block;width:100%;height:auto;}
+  .atlas-map .land{fill:#2A231C;stroke:#15110D;stroke-width:.5;}
+  .atlas-map .hit{fill:var(--gold);cursor:pointer;transition:fill-opacity .15s;}
+  .atlas-map .hit:hover,.atlas-map .hit:focus-visible{fill-opacity:1 !important;outline:none;}
+  .atlas-map .hit.is-selected{fill:var(--cream);fill-opacity:1 !important;}
+  .atlas-tip{
+    position:absolute;pointer-events:none;transform:translate(-50%,calc(-100% - 12px));
+    background:#0E0B08;border:1px solid var(--gold-dim);color:var(--cream);
+    padding:5px 9px;font-size:13.5px;white-space:nowrap;display:none;
+  }
+  .atlas-tip span{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);margin-left:6px;}
+  .atlas-legend{display:flex;align-items:center;gap:10px;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .atlas-legend i{display:block;width:120px;height:6px;background:linear-gradient(90deg,rgba(200,169,107,.22),var(--gold));}
+  .atlas-panel{border-top:1px solid var(--gold-dim);padding-top:16px;}
+  .atlas-panel h3{font-family:'Newsreader',serif;font-weight:500;color:var(--cream);font-size:28px;line-height:1.1;margin:0 0 4px;}
+  .atlas-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;}
+  .atlas-panel ol{list-style:none;margin:0;padding:0;}
+  .atlas-rank button{
+    width:100%;display:flex;justify-content:space-between;gap:12px;align-items:baseline;
+    background:none;border:none;border-bottom:1px solid var(--line);padding:8px 0;cursor:pointer;
+    font:inherit;font-size:16px;color:var(--cream);text-align:left;
+  }
+  .atlas-rank button:hover{color:var(--gold);}
+  .atlas-rank button span{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);}
+  .atlas-episodes a{display:block;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--cream);font-size:15.5px;line-height:1.35;}
+  .atlas-episodes a:hover{color:var(--gold);}
+  .atlas-episodes .ae-time{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--gold);margin-bottom:3px;}
+  .atlas-episodes .ae-time small{color:var(--muted);font-size:inherit;margin-left:8px;}
+  .atlas-back{margin-top:14px;background:none;border:none;padding:0;cursor:pointer;font:inherit;font-size:14.5px;color:var(--cream);border-bottom:1px solid var(--gold-dim);}
+  .atlas-back:hover{color:var(--gold);border-bottom-color:var(--gold);}
+  .atlas-note{margin:clamp(18px,3vw,28px) 0 0;font-size:13px;color:var(--muted);max-width:72ch;}
+  @media (max-width:860px){ .atlas{grid-template-columns:1fr;} }
+
   /* ---------- Team ---------- */
   .bs-team{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:26px 18px;}
   @media (max-width:520px){ .bs-team{grid-template-columns:repeat(2,1fr);} }
@@ -317,6 +361,24 @@
     </div>
   </section>
 
+  <section class="section bs-atlas" id="atlas" aria-labelledby="atlas-title" hidden>
+    <div class="wrap">
+      <div class="index-rule">
+        <span class="ir-label">Around the world</span>
+      </div>
+      <h2 class="atlas-title" id="atlas-title">Countries across our conversations.</h2>
+      <p class="atlas-lede">Shaded by how often each country comes up in our episodes. Choose a country to jump to the moment we discuss it.</p>
+      <div class="atlas">
+        <figure class="atlas-map" id="atlas-map">
+          <div class="atlas-tip" id="atlas-tip" role="presentation"></div>
+          <figcaption class="atlas-legend"><span>Fewer mentions</span><i></i><span>More</span></figcaption>
+        </figure>
+        <aside class="atlas-panel" id="atlas-panel" aria-live="polite"></aside>
+      </div>
+      <p class="atlas-note" id="atlas-note"></p>
+    </div>
+  </section>
+
   <section class="section" style="padding-top:0;">
     <div class="wrap">
       <div class="index-rule">
@@ -402,6 +464,132 @@
     } catch (e) {
       el.innerHTML = '<p style="color:var(--secondary);margin:0;">Recent episodes are at <a class="textlink" href="https://beatingsisyphus.substack.com" target="_blank" rel="noopener">beatingsisyphus.substack.com</a>.</p>';
     }
+  })();
+
+  /* Atlas: countries shaded by mentions; choosing one lists its episodes with timestamp links. */
+  (async () => {
+    const section = document.getElementById('atlas');
+    const mapEl = document.getElementById('atlas-map');
+    const panel = document.getElementById('atlas-panel');
+    const tip = document.getElementById('atlas-tip');
+    let data, world;
+    try {
+      [data, world] = await Promise.all([
+        loadJson('bs-countries.json'),
+        fetch('assets/bs-world-map.json?v=20261123-1').then((r) => { if (!r.ok) throw new Error('map'); return r.json(); }),
+      ]);
+      if (!data.countries.length) throw new Error('No countries');
+    } catch (e) {
+      return; /* the section stays hidden */
+    }
+
+    const byIso = new Map(data.countries.map((c) => [c.iso3, c]));
+    const maxLog = Math.log(Math.max(...data.countries.map((c) => c.mentions), 2));
+    const shade = (mentions) => 0.22 + 0.78 * Math.log(Math.max(mentions, 1)) / maxLog;
+    const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+    const make = (tag, className, text) => {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (text != null) el.textContent = text;
+      return el;
+    };
+
+    const title = document.getElementById('atlas-title');
+    title.replaceChildren(make('em', null, String(data.countries.length)), ' countries across ',
+      make('em', null, String(data.episodeCount)), ' conversations.');
+    document.getElementById('atlas-note').textContent =
+      `Mentions counted in episode transcripts, updated ${data.updated}. Links open YouTube where the country is discussed most. Map: Natural Earth.`;
+
+    const svgNs = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNs, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${world.width} ${world.height}`);
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `World map of ${data.countries.length} countries discussed on Beating Sisyphus`);
+    const shapes = new Map();
+    const addShape = (iso, el) => {
+      const country = byIso.get(iso);
+      if (country) {
+        el.classList.add('hit');
+        el.style.fillOpacity = shade(country.mentions);
+        el.setAttribute('tabindex', '0');
+        el.setAttribute('role', 'button');
+        el.setAttribute('aria-label', `${country.name}, ${plural(country.mentions, 'mention')}`);
+        el.addEventListener('click', () => select(iso));
+        el.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); select(iso); }
+        });
+        el.addEventListener('pointermove', (event) => {
+          const box = mapEl.getBoundingClientRect();
+          tip.replaceChildren(country.name, make('span', null, plural(country.mentions, 'mention')));
+          tip.style.left = `${event.clientX - box.left}px`;
+          tip.style.top = `${event.clientY - box.top}px`;
+          tip.style.display = 'block';
+        });
+        el.addEventListener('pointerleave', () => { tip.style.display = 'none'; });
+        shapes.set(iso, el);
+      } else {
+        el.classList.add('land');
+      }
+      svg.append(el);
+    };
+    for (const [iso, d] of Object.entries(world.countries)) {
+      const path = document.createElementNS(svgNs, 'path');
+      path.setAttribute('d', d);
+      addShape(iso, path);
+    }
+    for (const [iso, [x, y]] of Object.entries(world.dots)) {
+      if (!byIso.has(iso)) continue;
+      const dot = document.createElementNS(svgNs, 'circle');
+      dot.setAttribute('cx', x);
+      dot.setAttribute('cy', y);
+      dot.setAttribute('r', 4);
+      addShape(iso, dot);
+    }
+    mapEl.prepend(svg);
+
+    function showRanking() {
+      shapes.forEach((el) => el.classList.remove('is-selected'));
+      const list = make('ol', 'atlas-rank');
+      for (const country of data.countries.slice(0, 10)) {
+        const button = make('button', null, country.name);
+        button.type = 'button';
+        button.append(make('span', null, plural(country.mentions, 'mention')));
+        button.addEventListener('click', () => select(country.iso3));
+        const item = make('li');
+        item.append(button);
+        list.append(item);
+      }
+      panel.replaceChildren(make('h3', null, 'Most discussed'),
+        make('p', 'atlas-meta', 'Or choose any country on the map'), list);
+    }
+
+    function select(iso) {
+      const country = byIso.get(iso);
+      if (!country) return;
+      shapes.forEach((el, key) => el.classList.toggle('is-selected', key === iso));
+      const list = make('ol', 'atlas-episodes');
+      for (const episode of country.episodes) {
+        const link = make('a');
+        link.href = safeExternalUrl(episode.url) || 'https://www.youtube.com/playlist?list=PLsusrzm7-OaTbS2kVoUfYs78COGlG85wf';
+        link.target = '_blank';
+        link.rel = 'noopener';
+        const time = make('span', 'ae-time', `▶ ${episode.moment}`);
+        time.append(make('small', null, plural(episode.mentions, 'mention')));
+        link.append(time, episode.title);
+        const item = make('li');
+        item.append(link);
+        list.append(item);
+      }
+      const back = make('button', 'atlas-back', '← Most discussed');
+      back.type = 'button';
+      back.addEventListener('click', showRanking);
+      panel.replaceChildren(make('h3', null, country.name),
+        make('p', 'atlas-meta', `${plural(country.mentions, 'mention')} · ${plural(country.episodes.length, 'episode')}`),
+        list, back);
+    }
+
+    showRanking();
+    section.hidden = false;
   })();
 
   /* Team grid with expand-below bio. */
