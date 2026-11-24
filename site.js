@@ -190,12 +190,24 @@ function buildDetail(p) {
   `;
 }
 
+/* Wix serves originals (often several MB) unless the URL asks for a size.
+   Request a copy that fits in 960x960 (keeps the aspect ratio, so per-photo
+   objectPosition crops still work); enc_auto lets Wix send AVIF/WebP. */
+function photoSrc(url) {
+  const m = /^https:\/\/static\.wixstatic\.com\/media\/([^/?#]+)$/.exec(url || '');
+  return m ? `${url}/v1/fit/w_960,h_960,q_80,enc_auto/${m[1]}` : url;
+}
+
+function photoImg(p) {
+  return `<img src="${photoSrc(p.photo)}" alt="" loading="lazy" decoding="async" style="object-position:${p.objectPosition || 'center'};transform:scale(${p.scale || 1});">`;
+}
+
 function renderPeople(gridId, list, opts = {}) {
   const grid = document.getElementById(gridId);
   if (!grid || !list) return;
   grid.innerHTML = list.map((p, i) => `
     <button class="person" data-i="${i}" type="button" aria-expanded="false">
-      <span class="p-photo">${p.photo ? `<img src="${p.photo}" alt="" style="object-position:${p.objectPosition || 'center'};transform:scale(${p.scale || 1});">` : ''}</span>
+      <span class="p-photo">${p.photo ? photoImg(p) : ''}</span>
       <span class="p-name" style="display:block;">${p.name}</span>
       ${opts.showRole && p.role ? `<span class="p-role" style="display:block;">${p.role}</span>` : ''}
       ${p.major ? `<span class="p-major" style="display:block;">${p.major}</span>` : ''}
@@ -261,4 +273,4 @@ window.addEventListener('resize', () => {
 });
 
 /* Pages call renderPeople with their own data (see members-data.js). */
-window.EMIC = { renderPeople };
+window.EMIC = { renderPeople, photoImg };

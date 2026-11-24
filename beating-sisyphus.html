@@ -435,8 +435,8 @@
   </div>
 </footer>
 
-<script src="members-data.js?v=20261116-1"></script>
-<script src="site.js"></script>
+<script src="members-data.js?v=20261124-1"></script>
+<script src="site.js?v=20261124-1"></script>
 <script>
   /* Recent episodes: everything after the featured post, titles and dates only. */
   (async () => {
@@ -597,7 +597,7 @@
   const bioPanel = document.getElementById('bs-bio');
   teamGrid.innerHTML = BS_TEAM.map((m, i) => `
     <button class="bs-member" data-i="${i}" type="button" aria-expanded="false">
-      <span class="bsm-photo"><img src="${m.photo}" alt="" style="object-position:${m.objectPosition || 'center'};transform:scale(${m.scale || 1});"></span>
+      <span class="bsm-photo">${EMIC.photoImg(m)}</span>
       <span class="bsm-name">${m.name}</span>
     </button>
   `).join('');
